@@ -1,0 +1,1 @@
+Move or disperse most Lingering Damage effects

@@ -1,0 +1,1 @@
+A slowed creatures Movement Speed is halved and it can not use any #Bonus_Actions or #Reactions. ( #Action is allowed)
