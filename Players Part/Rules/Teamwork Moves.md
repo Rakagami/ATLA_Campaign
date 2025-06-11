@@ -1,3 +1,4 @@
+PROBABLY NEEDS REBALANCING ON THE GO ALL THE TIME
 **Joining Moves:**  
 Benders can combine their abilities to create more powerful or creative effects, guided by the "rule of cool." This allows for dynamic and collaborative gameplay that rewards teamwork.
 
