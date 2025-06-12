@@ -10,3 +10,9 @@
 
 Tags:
 #Firebending
+
+Dear Iroh Tanaka,
+We hope this letter finds you well, we from team anju ~the avatar~ make our way Omashu. We think the bad guys (and girls and enbis) want to go to that village. Greeting from christopher. anyways that village has a chrystal that we think that might be the next target of the evil people.
+mfg  
+Team Anju
+THIS GOT EATEN BY ALEXANDER
