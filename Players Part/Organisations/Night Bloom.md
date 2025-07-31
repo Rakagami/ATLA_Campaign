@@ -22,7 +22,7 @@ The Night Bloom is a radical faction seeking to overthrow the Avatar’s influen
         Earthbending with a specialization in sand manipulation.
     - **Role:**  
         Oversees the Night Bloom’s military operations, crafting strategies for their attacks.
-3. **[[Rin Xolai]](he/him) (Spiritualist)**
+3. **[[Rin Kotak]](he/him) (Spiritualist)**
     
     - **Physical Description:**  
         A tall, gaunt man with alabaster skin and wispy, shoulder-length white hair that seems to shift like mist in the wind. His gray eyes are perpetually half-lidded, giving him a detached, eerie demeanor. His flowing black robes ripple unnaturally, as if caught in a constant breeze. His soft-spoken voice carries an unsettling intensity.
@@ -50,7 +50,7 @@ The Night Bloom is a radical faction seeking to overthrow the Avatar’s influen
 **Links**:
 - [[Armor]]
 - [[Isay Trekal]]
-- [[Rin Xolai]]
+- [[Rin Kotak]]
 - [[Night Bloom]]
 - [[Jin Koga]]
 

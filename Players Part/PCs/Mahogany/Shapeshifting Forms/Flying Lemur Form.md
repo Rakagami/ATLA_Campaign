@@ -1,5 +1,14 @@
 #### **Flying Lemur Form**
+**Transformation Points cost:** 2 [[Transformation Points]]
 
+| **Stat**                       | **Value** |
+| ------------------------------ | --------- |
+| **[[Strength]] ([[STR]])**     | 6 (-2)    |
+| **[[Dexterity]] ([[DEX]])**    | 24(+7)    |
+| **[[Constitution]] ([[CON]])** | 7 (-2)    |
+| [[Wisdom]]([[WIS]])            | 14(+2)    |
+| [[Intelligence]]([[Int]])      | 8(-1)     |
+**Transformation Points cost:** 2 [[Transformation Points]]
 - **Size:** Small
     
 - **Movement:**
@@ -13,13 +22,13 @@
 - **Combat Stats (Flying Lemur):**
     
     - [[Evasion]]: 20
-    - HP: 1 x [[CL]] (fragile but evasive).
+    - HP: 6 (fragile but evasive).
     - Attacks:
         - **Razor Claws:** Melee Weapon Attack, [[Dex]]+[[Proficiency]] to hit, 1d4 slashing damage.
 - **Uses:**  
     Perfect for scouting, infiltration, or swift movement through difficult terrain. The form allows quick evasion and small-scale reconnaissance.
 
-Airbending Slots: 2 * [[Proficiency]]
-	Available Moves:
-	- [[Wind Step]]
-	- 
+Bending Slots:
+	Air Lvl1: 4
+
+	

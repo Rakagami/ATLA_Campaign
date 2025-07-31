@@ -4,7 +4,7 @@
 Spirit-turned-human
 
 *Class*:  
-Druid (focus on nature, shape-shifting, and spiritual nourishment)
+Air Spirit
 
 ---
 
@@ -53,7 +53,8 @@ Confused and fascinated, I wander this unfamiliar world, trying to understand wh
 - **Shapeshifting Cost:**
 	- Human Form: 0 [[Transformation Points]]
     - Flying Lemur: 1 Point
-    - Bearturtle: 2 Points
+    - [[Bearturtle]]: 2 Points 
+    - [[Players Part/PCs/Mahogany/Shapeshifting Forms/Luma’tik|Luma’tik]] 2 [[Transformation Points]]
     -
 - **Exiting the Forms:**  
     Transformations end early if the form’s HP is reduced to 0 or voluntarily dropped. Remaining damage spills over to the character’s normal HP. 
@@ -61,19 +62,7 @@ Confused and fascinated, I wander this unfamiliar world, trying to understand wh
 
 ---
 
-### **Suggested Progression**
 
-As the campaign progresses, you can enhance these forms with additional abilities:
-
-1. **Flying Lemur:**
-    
-    - Improved flight speed or the ability to detect magical energy or unseen entities (like tremorsense in air).
-    - Ability to deliver small items or weapons during combat for added utility.
-    - 
-1. **Bearturtle:**
-    
-    - Gaining resistance to non-magical attacks while in form.
-    - Expanding the **Shell Shield** ability to shield multiple allies within range or granting temporary HP to shielded allies.
 
 **Links**:
 - [[Armor]]

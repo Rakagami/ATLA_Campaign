@@ -1,2 +1,0 @@
-[[Bearturtle.webp]]
-[[Character Summary]]
