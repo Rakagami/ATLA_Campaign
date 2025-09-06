@@ -1,7 +1,7 @@
 #### **Ice Daggers (2nd Level Move)**
 
 - **Cost:** 1-2*[[CL]] [[Water Charges]].
-- **Type:** Action.
+- **Type:** [[Action]].
 - **Range:** 20 ft.
 - **Effect:**  
     The waterbender creates sharp daggers of ice to hurl at targets.

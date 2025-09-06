@@ -1,5 +1,5 @@
 **Level 3**
-- **Action:** 3+ [[Danger Sense Slot]]
+- **[[Action]]:** 3+ [[Danger Sense Slot]]
 - **Range:** 2 * [[Danger Sense Slot]] Meter radius.
 - **Duration:** Until the start of your next Turn.
 - Create a rotating shield of air to protect yourself or allies.

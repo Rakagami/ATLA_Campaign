@@ -7,7 +7,7 @@ Benders can combine their abilities to create more powerful or creative effects,
 **Conditions to Join:**
 
 - **Proximity:** You must be within 10 feet of the ally initiating the Move.
-- **Action Type:** Joining the Move requires using your reaction.
+- **[[Action]] Type:** Joining the Move requires using your [[Reaction]].
 - **Move Compatibility:** The same Move does not need to be performed at the same Level Slot as the initiating Bender.
 
 ---

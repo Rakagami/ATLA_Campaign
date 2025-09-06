@@ -1,7 +1,7 @@
 #### **Healing Water (1st Level Move)**
 
 - **Cost:** 1-3 Water Charges.
-- **Type:** Action.
+- **Type:** [[Action]].
 - Duration: 1 round Concentration.
 - **Range:** Touch (through water).
 - **Effect:**  

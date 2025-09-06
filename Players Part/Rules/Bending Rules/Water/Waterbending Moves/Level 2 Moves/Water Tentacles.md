@@ -1,7 +1,7 @@
 #### **Water Tentacles (2nd Level Move)**
 
 - **Cost:** 2 Water Charges.
-- **Type:** Action.
+- **Type:** [[Action]].
 - **Range:** 15 ft.
 - **Effect:**  
     The waterbender summons two water tentacles to attack or grapple targets.

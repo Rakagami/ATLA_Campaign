@@ -1,6 +1,6 @@
 
 **Level 2**
-- **Action:** 1+ [[Danger Sense Slot]]
+- **[[Action]]:** 1+ [[Danger Sense Slot]]
 	- **Range:** 4 * [[Danger Sense Slot]] meters radius.
 - **Duration:** Instantaneous.
 - Create a swirling vortex of air arround you to deflect projectiles and disperse lingering Damgage effects.

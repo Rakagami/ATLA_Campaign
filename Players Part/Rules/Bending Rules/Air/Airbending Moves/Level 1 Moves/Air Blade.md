@@ -1,6 +1,6 @@
 
 **Level 1**
-- **Action:** 1 Action.
+- **[[Action]]:** 1 [[Action]].
 - **Range:** 5 * [[Airbending Slot]] meters.
 - **Duration:** Instantaneous.
 - **Damage**: 1d6 bludgeoning per [[Airbending Slot]].

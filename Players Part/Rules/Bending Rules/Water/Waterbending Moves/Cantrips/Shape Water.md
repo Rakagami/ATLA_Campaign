@@ -2,7 +2,7 @@
 
 - **Cost:** None.
 - **Range:** 30 ft.
-- **Type:** Action.
+- **Type:** [[Action]].
 - **Duration:** At Will. Concentration.
 - **Effect:**  
     You can manipulate a water, shaping it into simple forms, moving it, or changing its state (solid, liquid, mist) temporarily.

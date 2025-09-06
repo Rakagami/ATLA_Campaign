@@ -1,7 +1,7 @@
 #firebending #level1
 
 - **[[Flame Jet]]**
-  - **Action:**  #Action.
+  - **[[Action]]:**  #[[Action]].
   - **Range:** 5 * [[Firebending Slot]] meters.
   - **Damage:**   [[Firebending Slot]] * 1 d10 fire
   - **Attack Roll:** [[Wisdom]] + [[Proficiency]].

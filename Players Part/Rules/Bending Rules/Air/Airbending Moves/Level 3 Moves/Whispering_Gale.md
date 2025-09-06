@@ -1,7 +1,7 @@
 # Whispering Gale
 
 **Level 3**
-- **Action:** 1 Action.
+- **[[Action]]:** 1 [[Action]].
 - **Range:** 30 feet.
 - **Duration:** Concentration, up to 1 Minute.
 - Harness precision air currents to perform subtle or delicate tasks from a distance.

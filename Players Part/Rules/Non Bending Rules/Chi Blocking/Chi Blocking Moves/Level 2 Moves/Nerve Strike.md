@@ -1,5 +1,5 @@
 - **Cost:** 3+ EP.
-- **Type:** Action.
+- **Type:** [[Action]].
 - **Range:** Melee.
 - Attack: [[Dex]] + [[Proficiency]]
 - **Effect:**  

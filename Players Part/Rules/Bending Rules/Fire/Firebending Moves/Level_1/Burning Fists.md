@@ -1,5 +1,5 @@
 - **[[Burning Fists]]
-  - **Action:** #Action.
+  - **[[Action]]:** #[[Action]].
   - **Range:** melee.
 
   - Attack Roll: Attacks [[Firebending Slot]] times with [[Strength]] + [[Proficiency]].

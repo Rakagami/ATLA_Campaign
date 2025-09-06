@@ -6,3 +6,4 @@ Grants Damage reduction.
 [[Physical Armor]] reduces all Piercing Slashing and bludgeoning Damage.
 
 
+[[Barrier Armor]] Whenever you suffer unblocked damage Barrier Armor halves

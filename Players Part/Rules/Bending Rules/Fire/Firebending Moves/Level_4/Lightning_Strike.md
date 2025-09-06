@@ -2,7 +2,7 @@
 #firebending #level4
 
 - **Lightning Strike**
-  - **Action:** 2 Actions (Charge required).
+  - **[[Action]]:** 2 actions (Charge required).
   - **Range:** 10 * [[Firebending Slot]] meters.
   - **Duration:** Instantaneous.
   - **Damage:** 4d10 lightning.

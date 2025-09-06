@@ -19,11 +19,11 @@
 
 - **Abilities in Bearturtle Form:**
     - **Shell Shield:**
-	    - Reaction
+	    - [[Reaction]]
 	        When an ally within 3 meter is attacked, impose Disadvantage on the attack roll as you shift to protect them with your shell. Can be used a number of times equal to your [[Proficiency]] bonus per long rest.
 	    **Tuck in**: 
-	    - Reaction
-		    When you fail a dexterity saving throw you still only take half damage. Your Movement in the next round is halved.
+	    - [[Reaction]]
+		    When you fail a dexterity saving throw you still only take half damage. Your [[Movement]] in the next round is halved.
 
     - **Sturdy Form:**
 	    - You have Advantage on saving throws against being knocked prone or moved against your will.

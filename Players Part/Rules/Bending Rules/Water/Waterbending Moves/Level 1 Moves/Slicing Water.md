@@ -1,7 +1,7 @@
 #### **Slicing Water (1st Level Move)**
 
 - **Cost:** 2 Water Charges.
-- **Type:** Action.
+- **Type:** [[Action]].
 - **Range:** 15 ft cone.
 - **Effect:**  
     The waterbender unleashes a slicing wave of water in a cone, dealing damage to multiple targets.

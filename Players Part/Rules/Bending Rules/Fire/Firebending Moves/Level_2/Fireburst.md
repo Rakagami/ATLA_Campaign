@@ -1,5 +1,5 @@
 
-  - **Action:** 1 Action.
+  - **[[Action]]:** 1 [[Action]].
   - **Range:** 5 * [[Firebending Slot]] meters. Sphere with a radius of [[Firebending Slot]] * 1 meters.
   - **Duration:** Instantaneous.
   - **Damage:** 2d6 fire per [[Firebending Slot]].

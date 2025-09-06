@@ -34,12 +34,12 @@
 
 - **Refraction Veil:** While in bright or shifting light, Luma’tik gains advantage on Stealth and cannot be targeted by opportunity attacks. This effect ends if Luma’tik is in total darkness or complete silence.
     
-- **Mirage Flicker (1/[[Short Rest]]):** As a bonus action, Luma’tik can create up to two illusionary duplicates for 1 minute. Each duplicate mimics its movements and grants attackers disadvantage on attack rolls until they hit Luma’tik.
+- **Mirage Flicker (1/[[Short Rest]]):** As a [[Bonus Action]], Luma’tik can create up to two illusionary duplicates for 1 minute. Each duplicate mimics its movements and grants attackers disadvantage on attack rolls until they hit Luma’tik.
     
 - **Pulse of Dazzling Light (3/rest):** Emit a flash in a 10 m radius. Creatures must succeed on a DC (8 + [[Wisdom]] + [[Proficiency]]) Constitution saving throw or be **blinded** until the end of their next turn. Allies who avert their gaze are unaffected.
     
 - **Glimmerjump:** 
-- Reaction:
+- [[Reaction]]:
 	teleport to any point within 20 m that is brightly lit or reflects light (e.g., mirrors, water, crystal surfaces)
     
 

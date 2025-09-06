@@ -4,7 +4,7 @@
 
 - **Level 4: Blazing Phoenix**
 - Use at Least 4 [[Firebending Slot]]
-  - **Action:** 1 Action.
+  - **[[Action]]:** 1 [[Action]].
   - **Range:** 3 * [[Firebending Slot]] meters.
   - **Duration:** Instantaneous.
   - **Damage:** [[Firebending Slot]]]] * 2 d10 fire.

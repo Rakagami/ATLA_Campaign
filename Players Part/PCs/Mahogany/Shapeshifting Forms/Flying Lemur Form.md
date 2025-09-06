@@ -18,7 +18,7 @@
 
     - **Silent Glide:** Advantage on Stealth checks while flying.
     - **Acute Senses:** Advantage on Perception checks that rely on sight or hearing.
-    - **Quick Escape:** Disengage or dash as a bonus action.
+    - **Quick Escape:** Disengage or dash as a [[Bonus Action]].
 - **Combat Stats (Flying Lemur):**
     
     - [[Evasion]]: 20

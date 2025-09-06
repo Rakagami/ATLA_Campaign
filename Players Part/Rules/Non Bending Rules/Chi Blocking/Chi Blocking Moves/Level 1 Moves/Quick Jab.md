@@ -1,5 +1,5 @@
 - **Cost:** 1 + EP.
-- **Type:** Bonus Action.
+- **Type:** [[Bonus Action]].
 - **Range:** Melee.
 - Attack: [[Dex]]+[[Proficiency]]
 - **Effect:**  

@@ -2,7 +2,7 @@
 
 - **Cost:** 1 Water Charge.
 - **Range:** 20 ft.
-- **Action:** 1 Action.
+- **[[Action]]:** 1 [[Action]].
 - **Effect:**  
     The waterbender lashes out with a tendril of water, striking a target within range.
     - **Attack Roll:** Intelligence + [[Proficiency]] Bonus.

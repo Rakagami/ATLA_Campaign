@@ -1,7 +1,7 @@
 #### **Icecubes (Cantrip)**
 
 - **Cost:** None.
-- **Type:** Action.
+- **Type:** [[Action]].
 - **Range:** 3m
 - **Effect:**  
     The waterbender can freeze a small amount of water, such as a puddle or a drink-sized volume. The higher the Level the more water can be frozen.

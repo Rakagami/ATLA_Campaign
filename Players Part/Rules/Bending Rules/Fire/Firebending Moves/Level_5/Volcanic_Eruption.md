@@ -2,7 +2,7 @@
 #firebending #level5
 
 - **Volcanic Eruption**
-  - **Action:** 1 Action.
+  - **[[Action]]:** 1 [[Action]].
   - **Range:** 40 * [[Firebending Slot]] meters.
   - **Duration:** Instantaneous.
   - **Damage:** 6d10 fire.

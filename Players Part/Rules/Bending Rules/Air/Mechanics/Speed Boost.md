@@ -1,2 +1,3 @@
-Rules and effects for increasing movement speed using Airbending.
+![[Movement]] 
 
+Many Airbending techniques can boost movement

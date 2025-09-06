@@ -1,6 +1,6 @@
 
 #firebending #level2
-  - **Action:** 1 Action.
+  - **[[Action]]:** 1 [[Action]].
   - **Range:** 2 * [[Firebending Slot]] metercone.
   - **Duration:** Instantaneous.
   - **Damage:** 2*[[Firebending Slot]]d6 fire.

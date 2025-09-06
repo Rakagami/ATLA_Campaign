@@ -1,7 +1,7 @@
 #### **Piercing Water (1st Level Move)**
 
 - **Cost:** 1-3 Water Charge.
-- **Type:** Action.
+- **Type:** [[Action]].
 - **Range:** 15 meter.
 - **Effect:**  
     The waterbender shoots a sharp, pressurized stream of water at a target.
