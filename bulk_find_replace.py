@@ -103,6 +103,46 @@ def write_text_with_backup(path: Path, content: str, backup_suffix: Optional[str
     path.write_text(content, encoding="utf-8")
 
 
+# -------- Append String to Files --------
+def append_string_to_files(
+    files: Sequence[Path],
+    append_str: str,
+    dry_run: bool,
+    backup_suffix: Optional[str],
+    color: bool,
+    compact: bool,
+) -> int:
+    changed_files = 0
+    for f in files:
+        text = load_text(f)
+        if text is None:
+            continue
+        # Only append if not already present at the end
+        if text.rstrip().endswith(append_str):
+            if compact:
+                print(f"{colorize(color, '[SKIP]', Colors.GRAY)} {colorize(color, str(f), Colors.DIM)} (already present)")
+            else:
+                print(f"[skip] {f} (already present)")
+            continue
+        new_text = text
+        if not text.endswith("\n"):
+            new_text += "\n"
+        new_text += append_str + "\n"
+        changed_files += 1
+        if compact:
+            tag = "DRY" if dry_run else "WRITE"
+            tag_color = Colors.CYAN if dry_run else Colors.GREEN
+            print(f"{colorize(color, '[' + tag + ']', tag_color)} {colorize(color, str(f), Colors.BOLD)} (appended)")
+        else:
+            if dry_run:
+                print(f"[dry-run] {f} -> appended string")
+            else:
+                print(f"[write] {f} -> appended string")
+        if not dry_run:
+            write_text_with_backup(f, new_text, backup_suffix, color)
+    return changed_files
+
+
 def make_replacer(
     needle: str,
     replacement: Optional[str],
@@ -404,12 +444,19 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
         ),
     )
 
+    # NEW: append string to end of files
+    parser.add_argument(
+        "--append",
+        help="String to append to the end of each file (e.g., --append '[[Earthbending]]').",
+    )
+
     args = parser.parse_args(argv)
 
     # Validation: allow either find/replace/bracket OR collection mode (or both)
-    if not args.collectionfile:
+
+    if not args.collectionfile and not args.append:
         if not args.find:
-            parser.error("--find is required unless --collectionfile is used.")
+            parser.error("--find is required unless --collectionfile or --append is used.")
         if not args.bracket and args.replace is None:
             parser.error("--replace is required unless bracketing mode (-b/--bracket) is used.")
     else:
@@ -439,6 +486,26 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     total_changes = 0
     changed_files: List[Tuple[Path, int]] = []
+
+    # ---------- Append String Pipeline ----------
+    if args.append:
+        appended = append_string_to_files(
+            candidate_files,
+            args.append,
+            args.dry_run,
+            args.backup,
+            color_enabled,
+            args.compact,
+        )
+        if args.compact:
+            print(f"{colorize(color_enabled, 'Summary:', Colors.BOLD)} {colorize(color_enabled, 'APPEND', Colors.BLUE if args.dry_run else Colors.GREEN)} files={len(candidate_files)} appended={appended}")
+        else:
+            print(f"\n=== Summary (Append) ===")
+            print(f"Files scanned: {len(candidate_files)}")
+            print(f"Files appended: {appended}")
+        # If only append was requested, skip the rest
+        if not (args.find or args.collectionfile):
+            return 0
 
     # ---------- Find/Replace pipeline ----------
     if args.find:

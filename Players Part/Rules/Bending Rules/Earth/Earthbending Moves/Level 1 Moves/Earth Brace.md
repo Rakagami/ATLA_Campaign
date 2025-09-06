@@ -7,3 +7,4 @@
 	- Duration: 1 round.
 
 
+[[Earthbending]]

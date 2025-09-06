@@ -4,3 +4,4 @@
 - [[Rock Hurl]]
 Tags:
 #Earthbending
+[[Earthbending]]

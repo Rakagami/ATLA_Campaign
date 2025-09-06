@@ -17,3 +17,4 @@ Provides 10 * [[Earthbending Slot]]  [[Barrier Armor]]
 
 Tags:
 #Earthbending
+[[Earthbending]]

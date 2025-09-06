@@ -4,3 +4,4 @@
 - [[Earth Spike]]
 Tags:
 #Earthbending
+[[Earthbending]]

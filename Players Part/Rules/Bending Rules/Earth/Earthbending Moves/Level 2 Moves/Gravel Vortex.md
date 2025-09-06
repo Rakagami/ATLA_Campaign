@@ -20,3 +20,4 @@ Provides 10 * [[Earthbending Slot]] temporary Physical [[Armor]].
 
 Tags:
 #Earthbending
+[[Earthbending]]

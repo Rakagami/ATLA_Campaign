@@ -6,3 +6,4 @@
 
 **Effect**:
 - Lift and throw a small rock. Simple ranged attack.
+[[Earthbending]]

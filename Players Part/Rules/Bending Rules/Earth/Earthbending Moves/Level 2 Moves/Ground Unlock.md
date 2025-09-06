@@ -15,3 +15,4 @@ Revert Immobilisation through Ground Lock
 
 Tags:
 #Earthbending #Mobility #Immobilisation
+[[Earthbending]]

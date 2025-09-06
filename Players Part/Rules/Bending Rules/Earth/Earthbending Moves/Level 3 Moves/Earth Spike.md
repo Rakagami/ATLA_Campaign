@@ -13,3 +13,4 @@
 
 Tags:
 #Earthbending
+[[Earthbending]]

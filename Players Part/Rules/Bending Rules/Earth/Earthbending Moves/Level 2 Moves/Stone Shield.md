@@ -16,3 +16,4 @@ Provides 10 * [[Earthbending Slot]] temporary  [[Physical Armor]] until the star
 
 Tags:
 #Earthbending
+[[Earthbending]]
