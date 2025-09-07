@@ -1,140 +1,67 @@
-# Bulk Find & Replace Script – Usage Guide
+# bulk_find_replace.py — Quickstart
 
-This script is in the root folder. It recursively scans a folder tree and performs text find-and-replace operations on matching files. It is designed to be safe, flexible, and especially useful for managing Obsidian vaults or large code/text repositories.
+Copy-paste friendly commands. See also: [[bulk_find_replace (Manual)]], [[bulk_find_replace (FAQ)]]
 
----
-
-## 🔍 Preview Changes
-
-Run in **dry-run mode** to see what would be changed without writing any files:
-
-```bash
-python bulk_find_replace.py --find "Old" --replace "New" --ext .md .txt --dry-run
-```
-
-- `--find` → text string to search for.
-    
-- `--replace` → text string to replace with.
-    
-- `--ext` → limit to files with specified extensions.
-    
-- `--dry-run` → shows affected files and replacement counts, no writes.
-    
+> Tips: start with `--dry-run`, scope with `--ext .md`, keep backups with `--backup .bak`.
 
 ---
 
-## 💾 Apply Changes with Backups
+## Safe wiki-link bracketing
 
-Make the replacements and create backups of each modified file:
+Bracket plain mentions, skipping already-linked:
 
-```bash
-python bulk_find_replace.py --find "Old" --replace "New" --ext .md .txt --backup .bak
-```
+`python bulk_find_replace.py --ext .md --find "Bumi" --bracket --dry-run python bulk_find_replace.py --ext .md --find "Bumi" --bracket --backup .bak`
 
-- `--backup .bak` → creates a copy of the original file before writing changes (e.g., `file.md.bak`).
-    
+## Literal find/replace
 
----
+`python bulk_find_replace.py --ext .md --find "Omashu" --replace "City of Omashu" --backup .bak`
 
-## 🗂️ Bracketing Mode (-b)
+Case-sensitive:
 
-A special **bracketing flag** automatically wraps search matches with `[[` and `]]` if they are not already surrounded:
+`python bulk_find_replace.py --ext .md --case-sensitive --find "Spirit" --replace "spirit" --backup .bak`
 
-```bash
-python bulk_find_replace.py --find "Spirit" -b --ext .md
-```
+With punctuation/special chars (still literal):
 
-- Example: `Spirit` → `[[Spirit]]`
-    
-- If the word is already bracketed (`[[Spirit]]`), it will be left untouched.
-    
+`python bulk_find_replace.py --ext .md --find "[Action]" --replace "[Combat]" --backup .bak`
 
-Use this when retrofitting Obsidian-style wiki-links across your notes.
+## Scope control
 
----
+Only session logs:
 
-## ⚙️ Useful Flags
+`python bulk_find_replace.py Sessions --ext .md --include "**/Session*.md" --find "Appa" --replace "Appa the Sky Bison"`
 
-- `--exclude-dir build dist` → skip specific directories.
-    
-- `--include "**/*.md" "**/*.txt"` → only include files matching glob patterns.
-    
-- `--case-sensitive` → make search case-sensitive (default is case-insensitive).
-    
-- `--follow-symlinks` → descend into symlinked directories.
-    
+Exclude extra dirs:
 
----
+`python bulk_find_replace.py --ext .md --exclude-dir "Archive" "Exports" --find "Sokka" --replace "Sokka (Water Tribe)"`
 
-## 🚫 Default Exclusions
+Single file:
 
-The script skips common junk folders unless `--no-default-excludes` is used:
+`python bulk_find_replace.py Notes/NPCs/Katara.md --find "Waterbending" --replace "Waterbending (Healing)"`
 
-- `.git`
-    
-- `node_modules`
-    
-- `.obsidian`
-    
-- `__pycache__`
-    
-- `venv` / `.venv`
-    
+Follow symlinks (rare):
+
+`python bulk_find_replace.py --follow-symlinks --ext .md --find "Ba Sing Se" --replace "Ba Sing Se (Lower Ring)"`
+
+Multiple roots:
+
+`python bulk_find_replace.py Notes Lore --ext .md --find "Pai Sho" --replace "Pai Sho (White Lotus)"`
+
+## Collections (backlinks)
+
+Create/update `Action.md` backlinks block + `AllAction.md` embeds:
+
+`python bulk_find_replace.py --ext .md --collectionfile "Indexes/Action.md" --compact`
+
+## Append lines
+
+Append a footer if missing:
+
+`python bulk_find_replace.py --ext .md --append "[[Index:NPCs]]" --backup .bak`
+
+Combine append + replace in one pass:
+
+`python bulk_find_replace.py --ext .md \   --append "[[Index:Sessions]]" \   --find "Zuko" --replace "Zuko (Crowned Prince)" \   --backup .bak --compact`
 
 ---
 
-## 🧪 Examples
-
-1. Replace all mentions of _Zuko_ with _Prince Zuko_ in markdown:
-    
-    ```bash
-    python bulk_find_replace.py --find "Zuko" --replace "Prince Zuko" --ext .md
-    ```
-    
-2. Update _Ba Sing Se_ mentions and preview before applying:
-    
-    ```bash
-    python bulk_find_replace.py --find "Ba Sing Se" --replace "Ba Sing Se" --ext .md .txt --dry-run
-    ```
-    
-3. Add Obsidian-style links around _spirit_ in notes:
-    
-    ```bash
-    python bulk_find_replace.py --find "spirit" -b --ext .md
-    ```
-    
-4. Process only `notes/` folder, excluding `archive/`:
-    
-    ```bash
-    python bulk_find_replace.py notes --find "spirit" --replace "Spirit" --include "**/*.md" --exclude-dir archive
-    ```
-    
-
----
-
-## 🛡️ Safety Tips
-
-- Always start with `--dry-run`.
-    
-- Use `--backup` if applying wide changes.
-    
-- Limit scope with `--ext` or `--include` to avoid unintended edits.
-    
-
----
-
-✅ With this script, bulk editing across a vault or project becomes quick, reversible, and safe.
-
-### More usages Examples
-
-- Build a backlinks list for `[[action]].md` (scan only markdown):
-    
-    `python bulk_find_replace.py --ext .md --collectionfile [[action]].md`
-    
-- Combine with normal find/replace (runs both pipelines):
-    
-    `python bulk_find_replace.py --find "spirit" --replace "Spirit" --ext .md \   --collectionfile [[action]].md --collectionfile Condition.md`
-    
-- Compact, color-coded output:
-    
-    `python bulk_find_replace.py --ext .md --collectionfile [[action]].md --compact`
+That’s it. Keep `--dry-run` until output looks right; then drop it and keep `--backup .bak` for safety.
