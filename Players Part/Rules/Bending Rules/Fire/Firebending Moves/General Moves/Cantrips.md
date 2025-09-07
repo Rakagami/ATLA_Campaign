@@ -2,7 +2,7 @@
 # Cantrip Firebending Moves
 #firebending #moves
 
-- **[[Fire_Blast]]**
+- **[[Fire Blast]]**
 
 - **Flame Shield**
   - [[Reaction]]: Create a shield of fire, granting 2 [[Evasion]] against a single attack. If the attack is melee and misses, the attacker takes 1d8 fire damage.

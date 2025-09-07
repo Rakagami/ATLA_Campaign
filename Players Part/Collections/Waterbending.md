@@ -1,7 +1,15 @@
+#Collectionfile
+
+<!-- BEGIN-AUTO-COLLECTION:Waterbending -->
+## Backlinks
+
   ./
   └── Players Part
       └── Rules
           └── Bending Rules
+              ├── Earth
+                  └── glass fruit bending
+                      └── [[Glassfruit Seed Mechanics.md]]
               ├── Team-up Moves
                   └── Water-Water
                       ├── [[Freeze Projectiles.md]]
@@ -36,5 +44,8 @@
                           └── [[Shockfreeze.md]]
                       └── [[Waterbending Moves.md]]
                   └── [[Waterbending rules.md]]
+
+<!-- END-AUTO-COLLECTION -->
+
 
 

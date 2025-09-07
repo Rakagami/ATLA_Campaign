@@ -1,3 +1,7 @@
+#Collectionfile
+
+<!-- BEGIN-AUTO-COLLECTION:Earthbending -->
+## Backlinks
 
   ./
   └── Players Part
@@ -27,8 +31,13 @@
                           ├── [[Catapult Step.md]]
                           ├── [[Level 5 Moves.md]]
                           └── [[Shard Storm.md]]
+                  └── glass fruit bending
+                      └── [[Glassfruit Seed Mechanics.md]]
               └── Team-up Moves
                   └── Air-Earth
                       └── [[Sandstream.md]]
+
+<!-- END-AUTO-COLLECTION -->
+
 
 

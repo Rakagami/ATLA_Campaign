@@ -1,5 +1,3 @@
-
-
 ![[Emergency Air Push.md]]
 
 
@@ -12,13 +10,13 @@
 ---
 
 
-![[Gentle Push.md]]
+![[Airdash.md]]
 
 
 ---
 
 
-![[Wind Step.md]]
+![[Tail Wind.md]]
 
 
 ---
@@ -42,7 +40,7 @@
 ---
 
 
-![[Whispering_Gale.md]]
+![[Hovering Hands.md]]
 
 
 ---
@@ -78,7 +76,7 @@
 ---
 
 
-![[Danger Sense Slot.md]]
+![[Danger Sense Reaction.md]]
 
 
 ---
@@ -99,6 +97,10 @@
 ![[Speed Boost.md]]
 
 
+---
+
+
+![[Glassfruit Seed Mechanics.md]]
 
 
 ---

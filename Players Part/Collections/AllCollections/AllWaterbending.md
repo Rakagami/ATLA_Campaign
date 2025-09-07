@@ -1,4 +1,7 @@
+![[Glassfruit Seed Mechanics.md]]
 
+
+---
 
 
 ![[Freeze Projectiles.md]]

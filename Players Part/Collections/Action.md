@@ -1,23 +1,18 @@
+#Collectionfile
 
 <!-- BEGIN-AUTO-COLLECTION:Action -->
 ## Backlinks
 
   ./
-  ├── [[Bulk Find & Replace Script – Usage Guide.md]]
   └── Players Part
       └── Rules
           ├── Bending Rules
               ├── Air
                   └── Airbending Moves
-                      ├── Level 1 Moves
-                          ├── [[Air Blade.md]]
-                          └── [[Wind Step.md]]
                       ├── Level 2 Moves
-                          ├── [[Air Vortex.md]]
                           └── [[Wind spiral.md]]
                       └── Level 3 Moves
-                          ├── [[Cyclone Shield.md]]
-                          └── [[Whispering_Gale.md]]
+                          └── [[Hovering Hands.md]]
               ├── Earth
                   ├── Earthbending Moves
                       ├── Level 1 Moves
@@ -29,29 +24,24 @@
                   └── glass fruit bending
                       └── [[Glassfruit Seed Mechanics.md]]
               ├── Fire
-                  ├── Advanced Techniques
-                      ├── [[Advanced_Techniques.md]]
-                      └── [[Blazing_Phoenix.md]]
                   ├── Firebending Moves
                       ├── General Moves
                           ├── [[Cantrips.md]]
-                          └── [[Fire_Blast.md]]
+                          └── [[Fire Blast.md]]
                       ├── Level_1
                           ├── [[Burning Fists.md]]
                           └── [[Flame Jet.md]]
                       ├── Level_2
                           ├── [[Fireburst.md]]
-                          ├── [[Flame Barrage.md]]
-                          └── [[Infreno Wave.md]]
+                          └── [[Flame Barrage.md]]
                       ├── Level_3
-                          ├── [[Heat Mirage.md]]
                           ├── [[Rage Fuel.md]]
                           └── [[Scorching_Aura.md]]
                       ├── Level_4
-                          ├── [[Blazing_Phoenix.md]]
                           ├── [[Firestorm.md]]
                           └── [[Lightning_Strike.md]]
                       └── Level_5
+                          ├── [[Blazing Phoenix.md]]
                           ├── [[Infernal_Form.md]]
                           ├── [[Meteor_Shower.md]]
                           └── [[Volcanic_Eruption.md]]
@@ -61,6 +51,9 @@
                       ├── [[Dancing_Dragon_Style.md]]
                       ├── [[Explosive_Firebending.md]]
                       └── [[Lightning_Generation.md]]
+              ├── Team-up Moves
+                  └── Air-Fire
+                      └── [[Heat Mirage.md]]
               └── Water
                   └── Waterbending Moves
                       ├── Cantrips
@@ -98,3 +91,6 @@
           └── [[Teamwork Moves.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+

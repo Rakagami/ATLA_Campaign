@@ -1,18 +1,22 @@
+#Collectionfile
+
+<!-- BEGIN-AUTO-COLLECTION:Firebending -->
+## Backlinks
 
   ./
   └── Players Part
       └── Rules
           └── Bending Rules
-              └── Fire
-                  ├── Advanced Techniques
-                      ├── [[Advanced_Techniques.md]]
-                      └── [[Blazing_Phoenix.md]]
+              ├── Earth
+                  └── glass fruit bending
+                      └── [[Glassfruit Seed Mechanics.md]]
+              ├── Fire
                   ├── [[Core Attributes.md]]
                   ├── [[Firebending DC.md]]
                   ├── Firebending Moves
                       ├── General Moves
                           ├── [[Cantrips.md]]
-                          └── [[Fire_Blast.md]]
+                          └── [[Fire Blast.md]]
                       ├── Level_1
                           ├── [[Burning Fists.md]]
                           └── [[Flame Jet.md]]
@@ -21,14 +25,13 @@
                           ├── [[Flame Barrage.md]]
                           └── [[Infreno Wave.md]]
                       ├── Level_3
-                          ├── [[Heat Mirage.md]]
                           ├── [[Rage Fuel.md]]
                           └── [[Scorching_Aura.md]]
                       ├── Level_4
-                          ├── [[Blazing_Phoenix.md]]
                           ├── [[Firestorm.md]]
                           └── [[Lightning_Strike.md]]
                       ├── Level_5
+                          ├── [[Blazing Phoenix.md]]
                           ├── [[Infernal_Form.md]]
                           ├── [[Meteor_Shower.md]]
                           └── [[Volcanic_Eruption.md]]
@@ -43,5 +46,11 @@
                       ├── [[Dancing_Dragon_Style.md]]
                       ├── [[Explosive_Firebending.md]]
                       └── [[Lightning_Generation.md]]
+              └── Team-up Moves
+                  └── Air-Fire
+                      └── [[Heat Mirage.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+

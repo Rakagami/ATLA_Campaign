@@ -1,3 +1,17 @@
+# --- Bulk Find & Replace Script ---
+# This script provides advanced bulk find & replace, backlink collection, and file manipulation utilities for Markdown and text files.
+# It is designed for use in Obsidian vaults, code repositories, and similar folder structures.
+#
+# Features:
+#   - Recursive find & replace with optional bracketing (Obsidian-style links)
+#   - Backlink collection and auto-updating of collection files
+#   - Appending strings to files
+#   - Color-coded and compact output modes
+#   - Dry-run and backup support
+#   - Exclusion of common folders (e.g., .git, node_modules)
+#
+# Author: Samuelschoeberl (2025)
+#
 from pathlib import Path
 import argparse
 import os
@@ -7,10 +21,14 @@ from shutil import copy2
 from typing import Iterator, List, Optional, Sequence, Tuple
 import fnmatch
 
+
+# Default directories to exclude from scanning
 DEFAULT_EXCLUDES = {".git", "node_modules", ".obsidian", "__pycache__", "venv", ".venv", "DMs Part"}
+
 
 # -------- Color helpers --------
 class Colors:
+    """ANSI color codes for terminal output formatting."""
     RESET = "\033[0m"
     DIM = "\033[2m"
     BOLD = "\033[1m"
@@ -23,10 +41,13 @@ class Colors:
     GRAY = "\033[90m"
 
 
+
 def colorize(enabled: bool, text: str, *effects: str) -> str:
+    """Wrap text in ANSI color codes if enabled."""
     if not enabled or not effects:
         return text
     return "".join(effects) + text + Colors.RESET
+
 
 
 def iter_files(
@@ -36,8 +57,14 @@ def iter_files(
     use_default_excludes: bool,
     follow_symlinks: bool,
 ) -> Iterator[Path]:
-    """Yield files under roots honoring include patterns and directory excludes."""
-    # Normalize to names (not paths) for exclude dirs
+    """
+    Recursively yield files under the given root directories, honoring include glob patterns and directory excludes.
+    - roots: List of root directories or files to scan.
+    - include_globs: Glob patterns to include (e.g., ['**/*.md']).
+    - exclude_dirs: Directory names to exclude.
+    - use_default_excludes: Whether to use built-in excludes.
+    - follow_symlinks: Whether to follow symlinks.
+    """
     excludes = set(exclude_dirs)
     if use_default_excludes:
         excludes |= DEFAULT_EXCLUDES
@@ -65,7 +92,6 @@ def iter_files(
                 fpath = Path(dirpath) / fname
                 if include_globs:
                     # Test both path relative to root and absolute string
-                    # Build a path relative to the starting root for matching with **
                     try:
                         rel = str(fpath.relative_to(root))
                     except Exception:
@@ -75,7 +101,9 @@ def iter_files(
                 yield fpath
 
 
+
 def should_process_file(path: Path, exts: Sequence[str]) -> bool:
+    """Return True if the file should be processed based on extension filter."""
     if not exts:
         return True
     if not path.is_file():
@@ -83,7 +111,9 @@ def should_process_file(path: Path, exts: Sequence[str]) -> bool:
     return path.suffix.lower() in {e.lower() for e in exts}
 
 
+
 def load_text(path: Path) -> Optional[str]:
+    """Read a UTF-8 text file, returning None if not decodable."""
     try:
         return path.read_text(encoding="utf-8")
     except UnicodeDecodeError:
@@ -93,7 +123,9 @@ def load_text(path: Path) -> Optional[str]:
         return None
 
 
+
 def write_text_with_backup(path: Path, content: str, backup_suffix: Optional[str], color: bool) -> None:
+    """Write content to file, making a backup if requested."""
     if backup_suffix:
         try:
             copy2(path, Path(str(path) + backup_suffix))
@@ -103,7 +135,58 @@ def write_text_with_backup(path: Path, content: str, backup_suffix: Optional[str
     path.write_text(content, encoding="utf-8")
 
 
+
+# -------- Collectionfile Cleanup and Recreation --------
+def recreate_collectionfiles(roots: Sequence[Path], candidate_files: Sequence[Path], dry_run: bool, backup_suffix: Optional[str], color: bool, compact: bool):
+    """
+    Delete and recreate all files containing '#Collectionfile'.
+    This is used to refresh backlink collections in all collection files.
+    """
+    collectionfiles = []
+    for f in candidate_files:
+        text = load_text(f)
+        if text is not None and "#Collectionfile" in text:
+            collectionfiles.append(f)
+    for target in collectionfiles:
+        label = target.stem
+        backlinks = gather_backlinks(label, candidate_files, exclude_path=target)
+        # Debug info: print found backlinks for this collection file
+        print(f"[debug] Collection file: {target} | Label: '{label}' | Backlinks found: {len(backlinks)}")
+        for b in backlinks:
+            print(f"    [debug] backlink: {b}")
+        changed, count = update_collection_block(
+            target, roots, backlinks, label, dry_run, backup_suffix, color, compact
+        )
+        if changed:
+            if compact:
+                print(f"{colorize(color, '[RECREATE]', Colors.GREEN)} {colorize(color, str(target), Colors.BOLD)} (recreated with backlinks)")
+            else:
+                print(f"[recreate] {target} with {count} backlinks")
+        else:
+            if compact:
+                print(f"{colorize(color, '[SKIP]', Colors.GRAY)} {colorize(color, str(target), Colors.DIM)} (no changes)")
+            else:
+                print(f"[skip] {target} (no changes)")
+
+        # --- Also recreate All<CollectionName>.md with ![[...]] embeds in a subfolder ---
+        all_subfolder = target.parent / "AllCollections"
+        all_subfolder.mkdir(parents=True, exist_ok=True)
+        allfile = all_subfolder / f"All{label}.md"
+        if backlinks:
+            embed_lines = [f"![[{p.name}]]" for p in backlinks]
+            embed_content = "\n\n\n---\n\n\n".join(embed_lines) + "\n\n\n---\n\n\n"
+        else:
+            embed_content = "<!-- No backlinks found -->\n"
+        if not dry_run:
+            write_text_with_backup(allfile, embed_content, backup_suffix, color)
+        if compact:
+            print(f"{colorize(color, '[ALL]', Colors.CYAN)} {colorize(color, str(allfile), Colors.BOLD)} (recreated)")
+        else:
+            print(f"[allfile] {allfile} (recreated)")
+
+
 # -------- Append String to Files --------
+
 def append_string_to_files(
     files: Sequence[Path],
     append_str: str,
@@ -112,6 +195,10 @@ def append_string_to_files(
     color: bool,
     compact: bool,
 ) -> int:
+    """
+    Append a string to the end of each file, unless already present.
+    Returns the number of files changed.
+    """
     changed_files = 0
     for f in files:
         text = load_text(f)
@@ -143,12 +230,18 @@ def append_string_to_files(
     return changed_files
 
 
+
 def make_replacer(
     needle: str,
     replacement: Optional[str],
     case_sensitive: bool,
     bracket_mode: bool,
 ) -> Tuple[re.Pattern, str]:
+    """
+    Build a regex pattern and replacement for find/replace.
+    If bracket_mode is enabled, wrap matches with [[...]] unless already inside a link.
+    Returns (pattern, replacement or function).
+    """
     flags = 0 if case_sensitive else re.IGNORECASE
     escaped = re.escape(needle)
 
@@ -185,11 +278,16 @@ def make_replacer(
     return pattern, replacement
 
 
+
 def process_file(
     path: Path,
     pattern: re.Pattern,
     repl: str,
 ) -> Tuple[int, Optional[str]]:
+    """
+    Apply the regex pattern and replacement to the file's content.
+    Returns (number of replacements, new content or None if unchanged).
+    """
     text = load_text(path)
     if text is None:
         return 0, None
@@ -203,13 +301,19 @@ def process_file(
     return n, new_text
 
 
+
 # ---------- Backlink Collection Utilities ----------
 
+# Markers for auto-generated backlink blocks
 COLL_BEGIN_TMPL = "<!-- BEGIN-AUTO-COLLECTION:{label} -->"
 COLL_END = "<!-- END-AUTO-COLLECTION -->"
 
+
 def best_relative_without_suffix(path: Path, roots: Sequence[Path]) -> str:
-    """Return the shortest nice relative path (POSIX) without file suffix."""
+    """
+    Return the shortest relative path (POSIX style, no file suffix) from any root.
+    Used for pretty backlink display.
+    """
     candidates: List[str] = []
     for r in roots:
         try:
@@ -225,13 +329,16 @@ def best_relative_without_suffix(path: Path, roots: Sequence[Path]) -> str:
     return str(Path(chosen).with_suffix("")).replace("\\", "/")
 
 
+
 def gather_backlinks(
     label: str,
     candidate_files: Sequence[Path],
     exclude_path: Path,
 ) -> List[Path]:
-    """Return files that contain a wiki-link to the label (case-insensitive)."""
-    # Pattern matches [[...]] links, capturing the link target (before | or # or ]])
+    """
+    Return files that contain a wiki-link to the label (case-insensitive).
+    Used for backlink collection.
+    """
     link_pattern = re.compile(r"\[\[\s*([^\]|#]+)", re.IGNORECASE)
     results: List[Path] = []
     for f in candidate_files:
@@ -265,17 +372,17 @@ def update_collection_block(
     color: bool,
     compact: bool,
 ) -> Tuple[bool, int]:
-    """Insert or replace the auto-collection block inside target_file. Returns (changed, count)."""
+    """
+    Insert or replace the auto-collection block inside target_file.
+    Returns (changed, count of backlinks).
+    """
     begin = COLL_BEGIN_TMPL.format(label=label)
     end = COLL_END
 
-    # # Build the new block text
+    # Build the new block text with ASCII tree of backlinks
     lines = [begin, "## Backlinks", ""]
-
-    # Add ASCII graph to the markdown block, centered on cwd and only showing folders/files with backlinks
     from collections import defaultdict
     cwd = os.path.relpath(os.getcwd(), str(roots[0]) if roots else os.getcwd())
-    # Build a tree of all backlink paths
     tree = defaultdict(dict)
     for p in backlinks:
         rel = os.path.relpath(str(p), str(roots[0]) if roots else os.getcwd())
@@ -303,14 +410,13 @@ def update_collection_block(
     lines.append("")  # trailing newline
     block_text = "\n".join(lines)
 
-
-    # Delete the old file if it exists before writing a new one
+    # Read the current content (preserve other content)
     if target_file.exists():
         try:
-            target_file.unlink()
+            content = target_file.read_text(encoding="utf-8")
         except Exception as e:
-            print(colorize(color, f"[warn] Failed to delete old file {target_file}: {e}", Colors.YELLOW), file=sys.stderr)
-        content = ""
+            print(colorize(color, f"[warn] Failed to read file {target_file}: {e}", Colors.YELLOW), file=sys.stderr)
+            content = ""
     else:
         content = ""
 
@@ -355,9 +461,17 @@ def update_collection_block(
 
 
 def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
+
     parser = argparse.ArgumentParser(
         description="Recursively bulk find & replace text in files (safe for Obsidian vaults and repos)."
     )
+    
+    parser.add_argument(
+        "--recreate-collectionfiles",
+        action="store_true",
+        help="Delete and recreate all files containing #Collectionfile (run independently).",
+    )
+    
     parser.add_argument(
         "paths",
         nargs="*",
@@ -452,27 +566,32 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
 
     args = parser.parse_args(argv)
 
-    # Validation: allow either find/replace/bracket OR collection mode (or both)
-
-    if not args.collectionfile and not args.append:
-        if not args.find:
-            parser.error("--find is required unless --collectionfile or --append is used.")
-        if not args.bracket and args.replace is None:
-            parser.error("--replace is required unless bracketing mode (-b/--bracket) is used.")
-    else:
-        if args.find and (not args.bracket) and (args.replace is None):
-            parser.error("--replace is required when using --find (unless -b/--bracket).")
+    # Validation: allow either find/replace/bracket OR collection mode (or both),
+    # but allow --recreate-collectionfiles to run standalone
+    if not args.recreate_collectionfiles:
+        if not args.collectionfile and not args.append:
+            if not args.find:
+                parser.error("--find is required unless --collectionfile or --append is used.")
+            if not args.bracket and args.replace is None:
+                parser.error("--replace is required unless bracketing mode (-b/--bracket) is used.")
+        else:
+            if args.find and (not args.bracket) and (args.replace is None):
+                parser.error("--replace is required when using --find (unless -b/--bracket).")
 
     return args
 
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
+    print("[debug] bulk_find_replace.py main() started")
     args = parse_args(argv)
+    print(f"[debug] Parsed args: {args}")
 
     # Decide on color usage
     color_enabled = sys.stdout.isatty() and (os.environ.get("NO_COLOR") is None) and (not args.no_color)
+    print(f"[debug] color_enabled: {color_enabled}")
 
     roots = [Path(p).resolve() for p in args.paths]
+    print(f"[debug] roots: {roots}")
 
     # Candidate files to scan
     files_iter = iter_files(
@@ -483,7 +602,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         follow_symlinks=args.follow_symlinks,
     )
     candidate_files = [p for p in files_iter if should_process_file(p, args.ext)]
+    print(f"[debug] candidate_files: {len(candidate_files)} files found")
 
+    # ---------- Manual Collectionfile Recreation ----------
+    if args.recreate_collectionfiles:
+        print("[debug] Entering recreate_collectionfiles block")
+        recreate_collectionfiles(roots, candidate_files, args.dry_run, args.backup, color_enabled, args.compact)
+        print("[debug] Finished recreate_collectionfiles block")
+        return 0
     total_changes = 0
     changed_files: List[Tuple[Path, int]] = []
 
@@ -647,12 +773,5 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
 
 if __name__ == "__main__":
-    # Avoid auto-running when executed inside Jupyter/IPython during code generation.
-    # In normal CLI use (`python bulk_find_replace.py ...`), this condition will be False.
-    is_ipy = os.path.basename(sys.argv[0]) in {"ipykernel_launcher.py", "KernelApp.py"}
-    if not is_ipy:
-        try:
-            raise SystemExit(main())
-        except KeyboardInterrupt:
-            print("\nAborted by user.", file=sys.stderr)
-            raise SystemExit(130)
+    import sys
+    sys.exit(main())

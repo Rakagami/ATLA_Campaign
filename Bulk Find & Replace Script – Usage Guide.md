@@ -22,7 +22,7 @@ Case-sensitive:
 
 With punctuation/special chars (still literal):
 
-`python bulk_find_replace.py --ext .md --find "[Action]" --replace "[Combat]" --backup .bak`
+`python bulk_find_replace.py --ext .md --find "old" --replace "new" --backup .bak`
 
 ## Scope control
 

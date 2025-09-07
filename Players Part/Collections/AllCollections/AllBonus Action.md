@@ -10,7 +10,13 @@
 ---
 
 
-![[Wind Step.md]]
+![[Airdash.md]]
+
+
+---
+
+
+![[Cyclone Shield.md]]
 
 
 ---
@@ -35,6 +41,12 @@
 
 
 ![[Cantrips.md]]
+
+
+---
+
+
+![[Infreno Wave.md]]
 
 
 ---

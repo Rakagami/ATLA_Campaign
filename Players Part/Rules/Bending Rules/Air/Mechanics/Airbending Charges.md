@@ -1,3 +1,3 @@
 Mechanic to grant additional by using [[Airbending Charges]]. They get refilled at the start of your turn.
-These [[Airbending Charges]] can be used to power up airbending moves 1 slot per Charge or for buying [[Danger Sense Slot]] using a [[Reaction]].
+These [[Airbending Charges]] can be used to power up airbending moves 1 slot per Charge or for buying [[Danger Sense Reaction]] using a [[Reaction]].
 [[Airbending]]

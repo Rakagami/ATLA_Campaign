@@ -1,3 +1,4 @@
+#Collectionfile
 
 <!-- BEGIN-AUTO-COLLECTION:Bonus Action -->
 ## Backlinks
@@ -13,8 +14,10 @@
           ├── Bending Rules
               ├── Air
                   └── Airbending Moves
-                      └── Level 1 Moves
-                          └── [[Wind Step.md]]
+                      ├── Level 1 Moves
+                          └── [[Airdash.md]]
+                      └── Level 3 Moves
+                          └── [[Cyclone Shield.md]]
               ├── Earth
                   └── Earthbending Moves
                       ├── Base Moves
@@ -27,6 +30,8 @@
                   ├── Firebending Moves
                       ├── General Moves
                           └── [[Cantrips.md]]
+                      ├── Level_2
+                          └── [[Infreno Wave.md]]
                       ├── Level_3
                           ├── [[Rage Fuel.md]]
                           └── [[Scorching_Aura.md]]
@@ -48,3 +53,6 @@
                           └── [[Enhanced Reflexes.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+

@@ -1,3 +1,7 @@
+#Collectionfile
+
+<!-- BEGIN-AUTO-COLLECTION:Airbending -->
+## Backlinks
 
   ./
   └── Players Part
@@ -8,23 +12,22 @@
                       ├── [[Emergency Air Push.md]]
                       ├── Level 1 Moves
                           ├── [[Air Blade.md]]
-                          ├── [[Gentle Push.md]]
-                          └── [[Wind Step.md]]
+                          ├── [[Airdash.md]]
+                          └── [[Tail Wind.md]]
                       ├── Level 2 Moves
                           ├── [[Air Vortex.md]]
                           └── [[Wind spiral.md]]
                       ├── Level 3 Moves
                           ├── [[Cyclone Shield.md]]
-                          └── [[Whispering_Gale.md]]
+                          └── [[Hovering Hands.md]]
                       └── Level 5 Moves
                           └── [[Tornado Shield.md]]
-                  ├── [[Players Part/Collections/Airbending]]
                   └── Mechanics
                       ├── [[_Mechanics.md]]
                       ├── [[Airbending Charges.md]]
                       ├── [[Airbending DC.md]]
                       ├── [[Airbending Slot.md]]
-                      ├── [[Danger Sense Slot.md]]
+                      ├── [[Danger Sense Reaction.md]]
                       ├── [[Group_Evasion_Boost.md]]
                       ├── [[Shifting Winds.md]]
                       └── [[Speed Boost.md]]
@@ -36,3 +39,6 @@
                       └── [[Sandstream.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+

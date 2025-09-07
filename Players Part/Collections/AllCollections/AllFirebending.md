@@ -1,16 +1,4 @@
-
-
-
----
-
-
-![[Advanced_Techniques.md]]
-
-
----
-
-
-![[Blazing_Phoenix.md]]
+![[Glassfruit Seed Mechanics.md]]
 
 
 ---
@@ -34,7 +22,7 @@
 ---
 
 
-![[Fire_Blast.md]]
+![[Fire Blast.md]]
 
 
 ---
@@ -70,12 +58,6 @@
 ---
 
 
-![[Heat Mirage.md]]
-
-
----
-
-
 ![[Rage Fuel.md]]
 
 
@@ -88,12 +70,6 @@
 ---
 
 
-![[Blazing_Phoenix.md]]
-
-
----
-
-
 ![[Firestorm.md]]
 
 
@@ -101,6 +77,12 @@
 
 
 ![[Lightning_Strike.md]]
+
+
+---
+
+
+![[Blazing Phoenix.md]]
 
 
 ---
@@ -173,6 +155,12 @@
 
 
 ![[Lightning_Generation.md]]
+
+
+---
+
+
+![[Heat Mirage.md]]
 
 
 ---

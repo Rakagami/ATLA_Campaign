@@ -1,3 +1,4 @@
+#Collectionfile
 
 <!-- BEGIN-AUTO-COLLECTION:Reaction -->
 ## Backlinks
@@ -13,7 +14,9 @@
           ├── Bending Rules
               ├── Air
                   ├── Airbending Moves
-                      └── [[Emergency Air Push.md]]
+                      ├── [[Emergency Air Push.md]]
+                      └── Level 1 Moves
+                          └── [[Air Blade.md]]
                   └── Mechanics
                       └── [[Airbending Charges.md]]
               ├── Earth
@@ -44,3 +47,6 @@
           └── [[Teamwork Moves.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+

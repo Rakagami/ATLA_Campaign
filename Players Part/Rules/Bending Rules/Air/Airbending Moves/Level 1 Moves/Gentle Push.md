@@ -1,21 +1,10 @@
-
+ [[Danger Sense Reaction]].
 **Level 1**
-- **Cost:** 1+  [[Danger Sense Slot]].
-- **Range:** 3 * [[Danger Sense Slot]] meters.
-- **Duration:** Until the start of your Turn.
-- Use air currents to nudge or redirect small objects or creatures including yourself.
+- **Range:** 3 * [[Airbending Slot]] meters.
 
 **Effects:**
-- Push up to 1* [[Danger Sense Slot ]]objects or creatures within Range, up to 1 * [[Danger Sense Slot ]]Meters in a chosen direction.
+- Push up to [[Airbending Slot]]  objects or creatures within Range away, up to Airbending Slot Meters in a chosen direction.
 - Creatures must make a Strength save against your [[Airbending DC]].
 
+![[Airbending DC]]
 
-
-**Links:**
--[[Danger Sense Slot ]]
-- [[_Airbending Moves]]
-- [[Airbending DC]]
-
-Tags:
-#Airbending #Control #Danger_Sense_Slot 
-[[Airbending]]

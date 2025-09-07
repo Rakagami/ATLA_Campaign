@@ -1,40 +1,10 @@
-![[Bulk Find & Replace Script – Usage Guide.md]]
-
-
----
-
-
-![[Air Blade.md]]
-
-
----
-
-
-![[Wind Step.md]]
-
-
----
-
-
-![[Air Vortex.md]]
-
-
----
-
-
 ![[Wind spiral.md]]
 
 
 ---
 
 
-![[Cyclone Shield.md]]
-
-
----
-
-
-![[Whispering_Gale.md]]
+![[Hovering Hands.md]]
 
 
 ---
@@ -70,25 +40,13 @@
 ---
 
 
-![[Advanced_Techniques.md]]
-
-
----
-
-
-![[Blazing_Phoenix.md]]
-
-
----
-
-
 ![[Cantrips.md]]
 
 
 ---
 
 
-![[Fire_Blast.md]]
+![[Fire Blast.md]]
 
 
 ---
@@ -118,18 +76,6 @@
 ---
 
 
-![[Infreno Wave.md]]
-
-
----
-
-
-![[Heat Mirage.md]]
-
-
----
-
-
 ![[Rage Fuel.md]]
 
 
@@ -142,12 +88,6 @@
 ---
 
 
-![[Blazing_Phoenix.md]]
-
-
----
-
-
 ![[Firestorm.md]]
 
 
@@ -155,6 +95,12 @@
 
 
 ![[Lightning_Strike.md]]
+
+
+---
+
+
+![[Blazing Phoenix.md]]
 
 
 ---
@@ -203,6 +149,12 @@
 
 
 ![[Lightning_Generation.md]]
+
+
+---
+
+
+![[Heat Mirage.md]]
 
 
 ---

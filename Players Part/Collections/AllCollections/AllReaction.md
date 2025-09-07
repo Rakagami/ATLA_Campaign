@@ -16,6 +16,12 @@
 ---
 
 
+![[Air Blade.md]]
+
+
+---
+
+
 ![[Airbending Charges.md]]
 
 
