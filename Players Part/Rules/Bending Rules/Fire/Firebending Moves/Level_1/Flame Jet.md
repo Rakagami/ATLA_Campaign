@@ -7,3 +7,4 @@
   - **Attack Roll:** [[Wisdom]] + [[Proficiency]].
   - Unleash a burst of flames in a straight line, damaging all targets in its path.
   - [[Lingering Effect]]
+[[Firebending]]

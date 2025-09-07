@@ -8,3 +8,4 @@
 
 - **Combustion Blast**
   - *[[Action]]*: Focus intensely on a single point. After 2 rounds, unleash a massive explosion. All creatures within 30 feet of the point must make a Constitution saving throw or take 6d10 fire damage.
+[[Firebending]]

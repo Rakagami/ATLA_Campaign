@@ -19,3 +19,4 @@
 
 Tags:
 #Airbending #Utility #Precision
+[[Players Part/Collections/Airbending]]

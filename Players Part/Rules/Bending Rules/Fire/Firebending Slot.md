@@ -32,3 +32,4 @@
 
 Tags:
 #Firebending
+[[Firebending]]

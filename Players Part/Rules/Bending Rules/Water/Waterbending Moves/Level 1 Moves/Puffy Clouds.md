@@ -24,3 +24,4 @@ The bender draws a small amount of water and vaporizes it into a dense mist that
 **Advanced Technique (Mastery Level):**
 
 - _Cleansing Veil:_ Condenses the mist into a swirling cloak around allies, granting them resistance to poison, disease, or negative spiritual effects for a short duration.
+[[Waterbending]]

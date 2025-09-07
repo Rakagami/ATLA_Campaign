@@ -8,3 +8,4 @@
   - Release multiple smaller blasts of fire in quick succession, targeting up to three creatures within range.
 
 #firebending #level2
+[[Firebending]]

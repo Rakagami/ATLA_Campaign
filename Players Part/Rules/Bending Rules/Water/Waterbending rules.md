@@ -34,3 +34,4 @@ Mud bending costs more charges as it is harder to bend than pure water. (*1.5)
 
 Tags:
 #Waterbending
+[[Waterbending]]

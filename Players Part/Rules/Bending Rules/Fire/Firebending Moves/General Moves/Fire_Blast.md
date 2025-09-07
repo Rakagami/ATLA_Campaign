@@ -18,3 +18,4 @@
 
 Tags:
 #Firebending #Damage
+[[Firebending]]

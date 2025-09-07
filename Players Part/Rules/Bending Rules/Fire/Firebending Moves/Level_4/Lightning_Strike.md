@@ -8,3 +8,4 @@
   - **Damage:** 4d10 lightning.
   - **Attack Roll:** [[Wisdom]] + [[Proficiency]].
   - After charging for a round, unleash a bolt of lightning at a single target.
+[[Firebending]]

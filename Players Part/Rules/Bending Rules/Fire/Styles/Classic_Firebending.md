@@ -4,3 +4,4 @@
 
 - Focuses on powerful, straightforward attacks.
 - **Move: [[Flame Jet]]
+[[Firebending]]

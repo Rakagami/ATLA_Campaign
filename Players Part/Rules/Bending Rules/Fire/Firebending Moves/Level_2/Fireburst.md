@@ -9,3 +9,4 @@
 
 
 #firebending #level2 #Lingering_Effect
+[[Firebending]]

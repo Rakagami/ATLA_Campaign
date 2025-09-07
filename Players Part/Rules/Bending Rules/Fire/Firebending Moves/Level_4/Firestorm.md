@@ -8,3 +8,4 @@
   - **Damage:** [[Firebending Slot]] * 2 d12 fire.
   - Create a localized storm of fire in a 3 * [[Firebending Slot]] meters radius, damaging all creatures within the area.
 
+[[Firebending]]

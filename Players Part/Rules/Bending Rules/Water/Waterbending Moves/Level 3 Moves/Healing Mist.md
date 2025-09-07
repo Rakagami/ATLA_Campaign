@@ -26,3 +26,4 @@ The bender draws a small amount of water from the [[Healing Spring of Akara]] an
 **Advanced Technique (Mastery Level):**
 
 - _Cleansing Veil:_ Condenses the mist into a swirling cloak around allies, granting them resistance to poison, disease, or negative spiritual effects for a short duration.
+[[Waterbending]]

@@ -12,3 +12,4 @@
 
 - **Intimidating Flame**
   - [[Bonus Action]]: Manipulate your fire to intimidate nearby creatures. Targets within 2 Meter must make a Wisdom saving throw or become frightened until the end of your next turn.
+[[Firebending]]

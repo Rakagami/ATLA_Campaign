@@ -16,3 +16,4 @@
     
     - **Skill Checks:** A waterbender can perform a skill check to draw water from their surroundings DC is determined by how dry the area is. Success restores Water Charges, depending on the environment.
     - **Abilities:** Certain abilities allow Water Charges recovery or water reuse.
+[[Waterbending]]

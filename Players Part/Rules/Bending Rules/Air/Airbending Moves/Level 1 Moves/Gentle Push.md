@@ -18,3 +18,4 @@
 
 Tags:
 #Airbending #Control #Danger_Sense_Slot 
+[[Players Part/Collections/Airbending]]

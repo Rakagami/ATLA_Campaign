@@ -15,3 +15,4 @@
   - **Duration:** 3 rounds.
   - Transform your stress penalty into a bonus. For every stress point, gain a +1 to accuracy and damage rolls for the duration. At the end of the effect, stress resets to 0.
   - Unleash the power of your rage, turning your inner turmoil into devastating strength.
+[[Firebending]]
