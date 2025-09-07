@@ -3,7 +3,7 @@
 
 1. **Repository klonen oder herunterladen**  
    ```bash
-   git clone <repo-url>```
+   git clone <repo-url>
 Als Obsidian Vault öffnen
 
 Starte Obsidian
