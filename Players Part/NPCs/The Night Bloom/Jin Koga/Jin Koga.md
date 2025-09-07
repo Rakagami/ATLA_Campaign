@@ -12,3 +12,4 @@ she her
 
 Tags:
 #Earthbending
+[[NPC]]

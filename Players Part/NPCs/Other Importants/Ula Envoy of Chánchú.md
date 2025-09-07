@@ -26,3 +26,4 @@
 - [[Undersands Village ]]
 - [[Spirit Benders ]]
 - [[Mushroom Leather Techniques ]]
+[[NPC]]

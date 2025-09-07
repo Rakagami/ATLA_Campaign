@@ -9,3 +9,4 @@
 
 Tags:
 #Waterbending
+[[NPC]]

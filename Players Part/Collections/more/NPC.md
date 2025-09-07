@@ -1,0 +1,22 @@
+#Collectionfile 
+
+<!-- BEGIN-AUTO-COLLECTION:NPC -->
+## Backlinks
+
+  ./
+  └── Players Part
+      └── NPCs
+          ├── Lotus
+              ├── [[Grandmaster Iroh Tanaka.md]]
+              ├── [[Mistress Akira Meiyu.md]]
+              └── [[Phot the Sandsnake.md]]
+          ├── Other Importants
+              └── [[Ula Envoy of Chánchú.md]]
+          └── The Night Bloom
+              ├── [[Isay Trekal.md]]
+              ├── Jin Koga
+                  └── [[Jin Koga.md]]
+              └── Rin Kotak
+                  └── [[Rin Kotak.md]]
+
+<!-- END-AUTO-COLLECTION -->

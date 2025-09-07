@@ -35,3 +35,4 @@ Akira Meiyu
 DAMAGE
 9
 
+[[NPC]]
