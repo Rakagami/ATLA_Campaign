@@ -168,21 +168,21 @@ def recreate_collectionfiles(roots: Sequence[Path], candidate_files: Sequence[Pa
             else:
                 print(f"[skip] {target} (no changes)")
 
-        # --- Also recreate All<CollectionName>.md with ![[...]] embeds in a subfolder ---
-        all_subfolder = target.parent / "AllCollections"
-        all_subfolder.mkdir(parents=True, exist_ok=True)
-        allfile = all_subfolder / f"All{label}.md"
+        # --- Also recreate Expanded<CollectionName>.md with ![[...]] embeds in a subfolder ---
+        expanded_subfolder = target.parent / "ExpandedCollections"
+        expanded_subfolder.mkdir(parents=True, exist_ok=True)
+        expandedfile = expanded_subfolder / f"Expanded{label}.md"
         if backlinks:
             embed_lines = [f"![[{p.name}]]" for p in backlinks]
             embed_content = "\n\n\n---\n\n\n".join(embed_lines) + "\n\n\n---\n\n\n"
         else:
             embed_content = "<!-- No backlinks found -->\n"
         if not dry_run:
-            write_text_with_backup(allfile, embed_content, backup_suffix, color)
+            write_text_with_backup(expandedfile, embed_content, backup_suffix, color)
         if compact:
-            print(f"{colorize(color, '[ALL]', Colors.CYAN)} {colorize(color, str(allfile), Colors.BOLD)} (recreated)")
+            print(f"{colorize(color, '[EXPANDED]', Colors.CYAN)} {colorize(color, str(expandedfile), Colors.BOLD)} (recreated)")
         else:
-            print(f"[allfile] {allfile} (recreated)")
+            print(f"[expandedfile] {expandedfile} (recreated)")
 
 
 # -------- Append String to Files --------
