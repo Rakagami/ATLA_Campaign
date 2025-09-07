@@ -1,9 +1,6 @@
 
 
 
----
-
-
 ![[Freeze Projectiles.md]]
 
 
