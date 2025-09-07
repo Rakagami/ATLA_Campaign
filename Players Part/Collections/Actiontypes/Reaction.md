@@ -13,12 +13,10 @@
       └── Rules
           ├── Bending Rules
               ├── Air
-                  ├── Airbending Moves
+                  └── Airbending Moves
                       ├── [[Emergency Air Push.md]]
                       └── Level 1 Moves
                           └── [[Air Blade.md]]
-                  └── Mechanics
-                      └── [[Airbending Charges.md]]
               ├── Earth
                   ├── Earthbending Moves
                       ├── Level 1 Moves
@@ -47,6 +45,10 @@
           └── [[Teamwork Moves.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+
+
 
 
 

@@ -5,6 +5,9 @@
 
   ./
   └── Players Part
+      ├── Collections
+          └── more
+              └── [[Danger Sense Reaction.md]]
       └── Rules
           └── Bending Rules
               ├── Air
@@ -23,12 +26,8 @@
                       └── Level 5 Moves
                           └── [[Tornado Shield.md]]
                   └── Mechanics
-                      ├── [[_Mechanics.md]]
-                      ├── [[Airbending Charges.md]]
                       ├── [[Airbending DC.md]]
                       ├── [[Airbending Slot.md]]
-                      ├── [[Danger Sense Reaction.md]]
-                      ├── [[Group_Evasion_Boost.md]]
                       ├── [[Shifting Winds.md]]
                       └── [[Speed Boost.md]]
               ├── Earth
@@ -39,6 +38,10 @@
                       └── [[Sandstream.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+
+
 
 
 

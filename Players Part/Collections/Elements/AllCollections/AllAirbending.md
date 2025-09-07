@@ -1,3 +1,9 @@
+![[Danger Sense Reaction.md]]
+
+
+---
+
+
 ![[Emergency Air Push.md]]
 
 
@@ -52,18 +58,6 @@
 ---
 
 
-![[_Mechanics.md]]
-
-
----
-
-
-![[Airbending Charges.md]]
-
-
----
-
-
 ![[Airbending DC.md]]
 
 
@@ -71,18 +65,6 @@
 
 
 ![[Airbending Slot.md]]
-
-
----
-
-
-![[Danger Sense Reaction.md]]
-
-
----
-
-
-![[Group_Evasion_Boost.md]]
 
 
 ---

@@ -22,12 +22,6 @@
 ---
 
 
-![[Airbending Charges.md]]
-
-
----
-
-
 ![[Earth Brace.md]]
 
 
