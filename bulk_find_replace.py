@@ -292,7 +292,7 @@ def update_collection_block(
             # Only bracket files (leaf nodes), not folders
             if subtree:
                 lines.append(f"{prefix}{connector}{name}")
-                extension = "    " if idx == len(items)-1 else "│   "
+                extension = "    "  # Always use spaces, no vertical lines
                 print_tree(subtree, prefix + extension, True)
             else:
                 lines.append(f"{prefix}{connector}[[{name}]]")
@@ -627,7 +627,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                     # Only bracket files (leaf nodes), not folders
                     if subtree:
                         print(f"{prefix}{connector}{name}")
-                        extension = "    " if idx == len(items)-1 else "│   "
+                        extension = "    "  # Always use spaces, no vertical lines
                         print_tree(subtree, prefix + extension, True)
                     else:
                         print(f"{prefix}{connector}[[{name}]]")
