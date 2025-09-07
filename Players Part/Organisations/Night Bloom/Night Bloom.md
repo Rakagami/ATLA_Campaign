@@ -1,3 +1,4 @@
+[[Organisations]]
 #### Overview:
 
 The Night Bloom is a radical faction seeking to overthrow the Avatar’s influence, advocating for a world ruled collectively by elite benders. They view the Avatar as a relic of oppression and seek to reshape the spiritual and physical realms.

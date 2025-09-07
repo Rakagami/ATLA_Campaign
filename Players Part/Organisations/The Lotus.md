@@ -1,6 +1,7 @@
+[[Organisations]]
 #### Overview:
 
-The Lotus is a venerable organization dedicated to the balance of the world, acting as spiritual guides and protectors of harmony. They host the annual [[Ceremony of the Lotus]], symbolizing their commitment to unity among benders.
+The Lotus is a venerable organization dedicated to the balance of the world, acting as spiritual guides and protectors of harmony. They host the annual [[Ceremony of the Resonance]], symbolizing their commitment to unity among benders.
 
 
 ---
