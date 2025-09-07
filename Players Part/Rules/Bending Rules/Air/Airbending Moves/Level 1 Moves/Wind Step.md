@@ -18,4 +18,4 @@
 
 Tags:
 #Airbending #Mobility
-[[Players Part/Collections/Airbending]]
+[[Airbending]]

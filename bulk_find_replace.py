@@ -555,6 +555,16 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             # Collect for ASCII graph
             backlink_graph.append((label, [best_relative_without_suffix(p, roots) for p in backlinks]))
 
+            # --- Create All<CollectionName>.md with embedded links ---
+            allfile = target.parent / f"All{label}.md"
+            if backlinks:
+                embed_lines = [f"![[{p.name}]]" for p in backlinks]
+                embed_content = "\n\n\n---\n\n\n".join(embed_lines) + "\n\n\n---\n\n\n"
+            else:
+                embed_content = "<!-- No backlinks found -->\n"
+            if not args.dry_run:
+                write_text_with_backup(allfile, embed_content, args.backup, color_enabled)
+
     # ---------- Summary ----------
     if args.compact:
         parts = [

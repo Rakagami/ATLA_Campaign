@@ -20,4 +20,4 @@ Tags:
 
 
 
-[[Players Part/Collections/Airbending]]
+[[Airbending]]

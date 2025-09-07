@@ -2,4 +2,4 @@
 [[Group_Evasion_Boost]]
 [[Speed Boost]]
 [[Shifting Winds]]
-[[Players Part/Collections/Airbending]]
+[[Airbending]]

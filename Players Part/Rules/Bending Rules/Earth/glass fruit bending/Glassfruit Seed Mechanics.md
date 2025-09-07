@@ -107,7 +107,7 @@ Must be initiated by another Earthbender in line of sight
 
 
 [[Earthbending]] 
-[[Players Part/Collections/Airbending]]
+[[Airbending]]
 [[Waterbending]]
 [[Firebending]]
 [[Team-up Moves]]

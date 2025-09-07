@@ -17,4 +17,4 @@ Lingering Effect:  All Ranged Attacks in the area are made with Disadvantage.
 
 Tags:
 #Airbending #Defense #Support #Danger_Sense_Slot 
-[[Players Part/Collections/Airbending]]
+[[Airbending]]

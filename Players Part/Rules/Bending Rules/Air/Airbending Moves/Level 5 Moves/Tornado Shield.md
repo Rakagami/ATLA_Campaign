@@ -1,2 +1,2 @@
 
-[[Players Part/Collections/Airbending]]
+[[Airbending]]
