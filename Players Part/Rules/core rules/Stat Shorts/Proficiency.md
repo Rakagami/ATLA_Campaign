@@ -7,6 +7,7 @@ Your proficiency Bonus depends on your [[CL]]:
 | 9-12        | 4                 |
 | 13-16       | 5                 |
 | 17-20       | 6                 |
+|             |                   |
 
 
 

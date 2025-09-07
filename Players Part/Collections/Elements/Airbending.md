@@ -6,7 +6,7 @@
   ./
   └── Players Part
       ├── Collections
-          └── more
+          └── Actiontypes
               └── [[Danger Sense Reaction.md]]
       └── Rules
           └── Bending Rules
@@ -38,6 +38,7 @@
                       └── [[Sandstream.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

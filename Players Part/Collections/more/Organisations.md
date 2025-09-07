@@ -1,8 +1,5 @@
 #Collectionfile 
 
-- [[Night Bloom]]
-- [[The Lotus]]
-
 <!-- BEGIN-AUTO-COLLECTION:Organisations -->
 ## Backlinks
 
@@ -14,3 +11,4 @@
           └── [[The Lotus.md]]
 
 <!-- END-AUTO-COLLECTION -->
+

@@ -174,7 +174,7 @@ def recreate_collectionfiles(roots: Sequence[Path], candidate_files: Sequence[Pa
         expandedfile = expanded_subfolder / f"Expanded{label}.md"
         if backlinks:
             embed_lines = [f"![[{p.name}]]" for p in backlinks]
-            embed_content = "\n\n\n---\n\n\n".join(embed_lines) + "\n\n\n---\n\n\n"
+            embed_content = "\n\n---\n---\n---\n\n".join(embed_lines) + "\n\n---\n---\n---\n\n"
         else:
             embed_content = "<!-- No backlinks found -->\n"
         if not dry_run:
