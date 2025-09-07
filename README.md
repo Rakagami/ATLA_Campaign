@@ -1,5 +1,19 @@
 # ATLA_Campaign
+## 🚀 How to Set Up
 
+1. **Repository klonen oder herunterladen**  
+   ```bash
+   git clone <repo-url>```
+Als Obsidian Vault öffnen
+
+Starte Obsidian
+.
+
+Wähle "Open folder as vault".
+
+Navigiere zum heruntergeladenen Repository und öffne es.
+
+👉 So bekommst du die beste File Explorer Experience und kannst alle Notizen, Links und Strukturen direkt nutzen.
 ## bulk_find_replace.py — Quickstart
 
 Copy-paste friendly commands. See also: [[bulk_find_replace (Manual)]], [[bulk_find_replace (FAQ)]]
