@@ -1,0 +1,12 @@
+{
+  "obsidian-git:push": [
+    {
+      "modifiers": [
+        "Alt",
+        "Ctrl",
+        "Mod"
+      ],
+      "key": "C"
+    }
+  ]
+}

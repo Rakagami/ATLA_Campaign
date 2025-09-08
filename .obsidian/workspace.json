@@ -1,0 +1,477 @@
+{
+  "main": {
+    "id": "604f2c635d822eb3",
+    "type": "split",
+    "children": [
+      {
+        "id": "e374eda2deea2cd3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e5ff2dc1a4026915",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Collectionfiles/Elemental Bending/Airbending.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Airbending"
+            }
+          },
+          {
+            "id": "abb4262f3717b8d4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Collectionfiles/Actiontypes/Danger Sense Reaction.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Danger Sense Reaction"
+            }
+          },
+          {
+            "id": "fbb405e3e9bc4696",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Collectionfiles/Elemental Bending/Earthbending.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Earthbending"
+            }
+          },
+          {
+            "id": "d3f91c2ed1ddcd01",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Collectionfiles/Elemental Bending/Firebending.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Firebending"
+            }
+          },
+          {
+            "id": "94edc1080aa81477",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Collectionfiles/Elemental Bending/Waterbending.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Waterbending"
+            }
+          },
+          {
+            "id": "2a6caa50258d7b87",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Rules/Bending Rules/Water/Water Charges.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Water Charges"
+            }
+          },
+          {
+            "id": "04637525ddbd7b55",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Rules/Bending Rules/Water/Waterbottle Water Charges.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Waterbottle Water Charges"
+            }
+          },
+          {
+            "id": "206e29507e7ac9f1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Rules/_Rules.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "_Rules"
+            }
+          },
+          {
+            "id": "50e27bc289b28092",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Collectionfiles/Actiontypes/Action.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Action"
+            }
+          },
+          {
+            "id": "b08db2026b2d1809",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Collectionfiles/more/NPC.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "NPC"
+            }
+          }
+        ],
+        "currentTab": 7
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8f8b5825d1fcd2aa",
+    "type": "split",
+    "children": [
+      {
+        "id": "7adb978c849078f4",
+        "type": "tabs",
+        "dimension": 80.51948051948052,
+        "children": [
+          {
+            "id": "bf97f7a300bd33a1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "0f422ab2a1eefdc8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "3fb9875dc7fc1da9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "c73b107b16b2cbb4",
+        "type": "tabs",
+        "dimension": 19.480519480519483,
+        "children": [
+          {
+            "id": "e62111f748eb4750",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ae20c8aeba8214cb",
+    "type": "split",
+    "children": [
+      {
+        "id": "0fd8b6ecadb5ae0c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5eb6b9e3d94cca43",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Players Part/Rules/_Rules.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for _Rules"
+            }
+          },
+          {
+            "id": "1246f6a805a3cec7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Players Part/Rules/_Rules.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from _Rules"
+            }
+          },
+          {
+            "id": "7e42c8a97cc7db69",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "09cc1513ccfc72b6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Players Part/Rules/_Rules.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of _Rules"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 306.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "0f422ab2a1eefdc8",
+  "lastOpenFiles": [
+    "__pycache__/Wiki_File_System_Manager.cpython-312.pyc",
+    "__pycache__",
+    "Wiki_File_System_Manager – Manual.md",
+    "Players Part/Collectionfiles/Elemental Bending/Airbending.md",
+    "README.md",
+    "Wiki_File_System_Manager.py",
+    "Players Part/The official Avatar Legends RPG that we dont use but FYI.pdf",
+    "File_System_Manager.py",
+    "Players Part/Rules/Bending Rules/Water/Waterbending Level.md",
+    "Players Part/Rules/Bending Rules/Water/Waterbottle Water Charges.md",
+    "Players Part/Collectionfiles/Actiontypes/Action.md",
+    "Players Part/Rules/Bending Rules/Water/Water Charges.md",
+    "Players Part/Rules/Bending Rules/Air/Mechanics/Airbending Level.md",
+    "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Waterbending Moves.md",
+    "Players Part/Rules/Bending Rules/_Bending Rules.md",
+    "Players Part/Rules/Bending Rules/Air/Mechanics/Speed Boost.md",
+    "Players Part/Collectionfiles/Elemental Bending/Waterbending.md",
+    "Players Part/Collectionfiles/Actiontypes/Danger Sense Reaction.md",
+    "Players Part/Rules/Bending Rules/Water/_Water.md",
+    "Players Part/Collectionfiles/more/NPC.md",
+    "Players Part/Collectionfiles/Elemental Bending/Firebending.md",
+    "Players Part/Collectionfiles/Elemental Bending/Earthbending.md",
+    "Players Part/Rules/Bending Rules/Air/Airbending Moves/Level 2 Moves/Air Vortex.md",
+    "Players Part/Rules/Bending Rules/Air/Airbending Moves/Level 1 Moves/Air Blade.md",
+    "Players Part/Rules/Bending Rules/Air/Airbending Moves/Level 1 Moves/Tail Wind.md",
+    "Players Part/Rules/Bending Rules/Earth/Earthbending Moves/Level 2 Moves/Gravel Vortex.md",
+    "Players Part/Rules/Bending Rules/Fire/Firebending DC.md",
+    "Players Part/Rules/Bending Rules/Fire/Firebending Moves/General Moves/Fire Blast.md",
+    "Players Part/NPCs/The Night Bloom/Rin Kotak/Rin Kotak.md",
+    "Players Part/NPCs/Other Importants/Ula Envoy of Chánchú.md",
+    "Players Part/Collectionfiles/Elemental Bending/ExpandedCollections",
+    "Players Part/Collectionfiles/Elemental Bending",
+    "Players Part/Collectionfiles/more/ExpandedCollections",
+    "Players Part/Collectionfiles/Elements/ExpandedCollections",
+    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections",
+    "Players Part/Collectionfiles/more",
+    "Players Part/Maps/Avatar World.jpg",
+    "Players Part/NPCs/The Night Bloom/Rin Kotak/Rin Kotak.png",
+    "Players Part/PCs/Mahogany/Shapeshifting Forms/Pics/Luma'tik.png",
+    "Players Part/PCs/Mahogany/Shapeshifting Forms/Pics/Bearturtle.webp",
+    "Players Part/NPCs/The Night Bloom/Rin Kotak/meditating dark.png",
+    "Players Part/NPCs/The Night Bloom/Rin Kotak/meditating cartoon.png",
+    "DMs Part/Locations/Visual References/Pasted image 20250104171805.png",
+    "DMs Part/NPCs/DMPCs/Kaedo.png",
+    "DMs Part/NPCs/Night Bloom/Dark Spirits/boba.png",
+    "DMs Part/NPCs/Night Bloom/Dark Spirits/Frostling puppetier.png"
+  ]
+}

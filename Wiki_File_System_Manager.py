@@ -18,6 +18,32 @@ import os
 import re
 import sys
 from shutil import copy2
+import subprocess
+# -------- Color helpers --------
+def Sync():
+    """
+    Syncs the local repository with the remote 'main' branch.
+    Pulls all changes from 'origin/main' into the current branch.
+    """
+    try:
+        # Stage all changes
+        subprocess.run(["git", "add", "-A"], check=True)
+        # Commit with automated message (ignore if nothing to commit)
+        subprocess.run(["git", "commit", "-m", "Automated sync commit"], check=False)
+        # Push local commits to remote
+        subprocess.run(["git", "push", "origin", "HEAD"], check=True)
+        # Fetch latest from origin
+        subprocess.run(["git", "fetch", "origin"], check=True)
+        # Merge origin/main into current branch
+        subprocess.run(["git", "merge", "origin/main"], check=True)
+        print("Sync complete: local changes committed, pushed, and up to date with remote main.")
+        # Now run the collectionfile recreation
+        print("Running --recreate-collectionfiles...")
+        main(["--recreate-collectionfiles"])
+    except subprocess.CalledProcessError as e:
+        print(f"Error during sync: {e}")
+        return 1
+    return 0
 from typing import Iterator, List, Optional, Sequence, Tuple
 import fnmatch
 
