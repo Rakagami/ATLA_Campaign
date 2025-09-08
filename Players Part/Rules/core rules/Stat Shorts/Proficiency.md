@@ -1,7 +1,7 @@
-Your proficiency Bonus depends on your [[CL]]:
+Your [[proficiency]] Bonus depends on your [[CL]]:
 #Collectionfile 
 
-| [[CL]]Range | Proficiency Bonus |
+| [[CL]]Range | [[Proficiency]] Bonus |
 | ----------- | ----------------- |
 | 1-4         | 2                 |
 | 5-8         | 3                 |

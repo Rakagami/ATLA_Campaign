@@ -6,6 +6,12 @@ To sync your local vault with the remote repository **and** automatically update
 python -c "from Wiki_File_System_Manager import Sync; Sync()"
 ```
 
+To manually recreate all collectionfiles (backlink blocks) without syncing:
+
+```bash
+python Wiki_File_System_Manager.py --ext .md --recreate-collectionfiles
+```
+
 This will:
 
 - Stage, commit, and push all local changes
@@ -28,8 +34,8 @@ Copy-paste friendly commands. See also: [[Wiki_File_System_Manager (Manual)]], [
 Bracket plain mentions, skipping already-linked:
 
 ```bash
-python Wiki_File_System_Manager.py --ext .md --find "Bumi" --bracket --dry-run
-python Wiki_File_System_Manager.py --ext .md --find "Bumi" --bracket --backup .bak
+python Wiki_File_System_Manager.py --ext .md --find "[[[[Bumi]]]]" --bracket --dry-run
+python Wiki_File_System_Manager.py --ext .md --find "[[[[Bumi]]]]" --bracket --backup .bak
 ```
 
 ### Literal find/replace
