@@ -216,13 +216,13 @@ def write_text_with_backup(path: Path, content: str, backup_suffix: Optional[str
 # -------- Collectionfile Cleanup and Recreation --------
 def recreate_collectionfiles(roots: Sequence[Path], candidate_files: Sequence[Path], dry_run: bool, backup_suffix: Optional[str], color: bool, compact: bool):
     """
-    Delete and recreate all files containing '#Collectionfile'.
+    Delete and recreate all files containing '\Collectionfile'.
     This is used to refresh backlink collections in all collection files.
     """
     collectionfiles = []
     for f in candidate_files:
         text = load_text(f)
-        if text is not None and "#Collectionfile" in text:
+        if text is not None and "<#>Collectionfile" in text:
             collectionfiles.append(f)
     for target in collectionfiles:
         label = target.stem
@@ -546,7 +546,7 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser.add_argument(
         "--recreate-collectionfiles",
         action="store_true",
-        help="Delete and recreate all files containing #Collectionfile (run independently).",
+        help="Delete and recreate all files containing <#>Collectionfile (run independently).",
     )
     
     parser.add_argument(
