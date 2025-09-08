@@ -35,7 +35,24 @@ def Sync():
             with open(filepath, 'w', encoding='utf-8') as f:
                 f.writelines(lines)
 
-    remove_auto_collection_block(__file__)
+        def remove_auto_collection_block(filepath):
+            # Never mutate Wiki_File_System_Manager.py
+            if os.path.abspath(filepath) == os.path.abspath(__file__):
+                return
+            with open(filepath, 'r', encoding='utf-8') as f:
+                lines = f.readlines()
+            start = None
+            for i, line in enumerate(lines):
+                if line.strip().startswith('<!-- BEGIN-AUTO-COLLECTION:'):
+                    start = i
+                    break
+            if start is not None:
+                lines = lines[:start]
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    f.writelines(lines)
+
+        # Never mutate Wiki_File_System_Manager.py
+        # remove_auto_collection_block(__file__)
     """
     Syncs the local repository with the remote 'main' branch.
     Pulls all changes from 'origin/main' into the current branch.
@@ -177,7 +194,17 @@ def write_text_with_backup(path: Path, content: str, backup_suffix: Optional[str
         except Exception as e:
             # Warning printed in yellow if color is enabled
             print(colorize(color, f"[warn] Failed to create backup for {path}: {e}", Colors.YELLOW), file=sys.stderr)
-    path.write_text(content, encoding="utf-8")
+        # Never mutate Wiki_File_System_Manager.py
+        if os.path.abspath(str(path)) == os.path.abspath(__file__):
+            if color:
+                print(f"{Colors.DIM}[skip]{Colors.RESET} {path} (self-mutation prevented)")
+            return
+        if backup_suffix:
+            backup_path = path.with_suffix(path.suffix + backup_suffix)
+            copy2(path, backup_path)
+            if color:
+                print(f"{Colors.DIM}[backup]{Colors.RESET} {backup_path}")
+        path.write_text(content, encoding="utf-8")
 
 
 
@@ -195,10 +222,6 @@ def recreate_collectionfiles(roots: Sequence[Path], candidate_files: Sequence[Pa
     for target in collectionfiles:
         label = target.stem
         backlinks = gather_backlinks(label, candidate_files, exclude_path=target)
-        # Debug info: print found backlinks for this collection file
-        print(f"[debug] Collection file: {target} | Label: '{label}' | Backlinks found: {len(backlinks)}")
-        for b in backlinks:
-            print(f"    [debug] backlink: {b}")
         changed, count = update_collection_block(
             target, roots, backlinks, label, dry_run, backup_suffix, color, compact
         )
@@ -207,7 +230,6 @@ def recreate_collectionfiles(roots: Sequence[Path], candidate_files: Sequence[Pa
                 print(f"{colorize(color, '[RECREATE]', Colors.GREEN)} {colorize(color, str(target), Colors.BOLD)} (recreated with backlinks)")
             else:
                 print(f"[recreate] {target} with {count} backlinks")
-        else:
             if compact:
                 print(f"{colorize(color, '[SKIP]', Colors.GRAY)} {colorize(color, str(target), Colors.DIM)} (no changes)")
             else:
@@ -421,6 +443,11 @@ def update_collection_block(
     Insert or replace the auto-collection block inside target_file.
     Returns (changed, count of backlinks).
     """
+
+    # If there are no backlinks, do not insert a block
+    if not backlinks:
+        return False, 0
+
     begin = COLL_BEGIN_TMPL.format(label=label)
     end = COLL_END
 
@@ -833,10 +860,3 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 if __name__ == "__main__":
     import sys
     sys.exit(main())
-
-<!-- BEGIN-AUTO-COLLECTION:Wiki_File_System_Manager -->
-## Backlinks
-
-  ./
-
-<!-- END-AUTO-COLLECTION -->
