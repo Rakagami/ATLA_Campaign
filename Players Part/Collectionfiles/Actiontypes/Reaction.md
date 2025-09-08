@@ -9,18 +9,14 @@
           └── Mahogany
               └── Shapeshifting Forms
                   ├── [[Bearturtle.md]]
-                  ├── [[Luma’tik.md]]
-                  └── [[Luma’tik.md.bak]]
+                  └── [[Luma’tik.md]]
       └── Rules
           ├── Bending Rules
               ├── Air
-                  ├── Airbending Moves
+                  └── Airbending Moves
                       ├── [[Emergency Air Push.md]]
-                      ├── [[Emergency Air Push.md.bak]]
                       └── Level 1 Moves
                           └── [[Air Blade.md]]
-                  └── Mechanics
-                      └── [[Airbending Charges.md.bak]]
               ├── Earth
                   ├── Earthbending Moves
                       ├── Level 1 Moves
@@ -29,15 +25,15 @@
                           ├── [[Gravel Vortex.md]]
                           └── [[Stone Shield.md]]
                   └── glass fruit bending
-                      ├── [[Glassfruit Seed Mechanics.md]]
-                      └── [[Glassfruit Seed Mechanics.md.bak]]
+                      └── [[Glassfruit Seed Mechanics.md]]
               ├── Fire
                   └── Firebending Moves
                       └── General Moves
-                          ├── [[Cantrips.md]]
-                          └── [[Cantrips.md.bak]]
+                          └── [[Cantrips.md]]
               └── Water
                   ├── Waterbending Moves
+                      ├── Level 2 Moves
+                          └── [[Freeze.md]]
                       └── Level 3 Moves
                           └── [[Icicle Ammunition.md]]
                   └── [[Waterbending rules.md]]
@@ -48,10 +44,10 @@
                           └── [[Evasive manouvers.md]]
                       └── Level 3 Moves
                           └── [[Bedning Redirect.md]]
-          ├── [[Teamwork Moves.md]]
-          └── [[Teamwork Moves.md.bak]]
+          └── [[Teamwork Moves.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

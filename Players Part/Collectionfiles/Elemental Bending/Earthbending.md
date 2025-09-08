@@ -32,15 +32,14 @@
                           ├── [[Level 5 Moves.md]]
                           └── [[Shard Storm.md]]
                   └── glass fruit bending
-                      ├── [[Glassfruit Seed Mechanics.md]]
-                      └── [[Glassfruit Seed Mechanics.md.bak]]
+                      └── [[Glassfruit Seed Mechanics.md]]
               └── Team-up Moves
                   └── Air-Earth
-                      ├── [[Sandstream.md]]
-                      └── [[Sandstream.md.bak]]
+                      └── [[Sandstream.md]]
   └── [[Wiki_File_System_Manager.py]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

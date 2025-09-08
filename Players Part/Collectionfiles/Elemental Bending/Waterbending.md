@@ -9,13 +9,13 @@
           └── Bending Rules
               ├── Earth
                   └── glass fruit bending
-                      ├── [[Glassfruit Seed Mechanics.md]]
-                      └── [[Glassfruit Seed Mechanics.md.bak]]
+                      └── [[Glassfruit Seed Mechanics.md]]
               ├── Team-up Moves
                   └── Water-Water
                       ├── [[Freeze Projectiles.md]]
                       └── [[Frozen Aegis.md]]
               └── Water
+                  ├── [[Cyclic Flow.md]]
                   ├── [[Water Charges.md]]
                   ├── [[Waterbending DC.md]]
                   ├── [[Waterbending Level.md]]
@@ -47,6 +47,7 @@
                   └── [[Waterbottle Water Charges.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 
