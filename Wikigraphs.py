@@ -224,6 +224,79 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
 
     ids, labels, parents, values = build_plotly_lists(sizes, root_label=root.name)
 
+    # Helper to remove backlink collection blocks from files that declare #collectionfile
+    def remove_backlink_collection(s: str) -> str:
+        if not s:
+            return s
+        if '#collectionfile' not in s.lower():
+            return s
+        # Remove headings that mention 'backlink' and the content under them until next heading
+        s = re.sub(r'(?mi)^\s*#{1,6}.*backlink.*\n(?:^(?!\s*#{1,6}).*\n?)*', '', s)
+        # Remove plain 'Backlinks' section (no heading) and following list-like lines
+        s = re.sub(r'(?mi)^\s*backlinks\s*[:\-]?\s*\n(?:^(?!\s*#{1,6}).*\n?)*', '', s)
+        # Remove standalone wikilink list items (common backlink lists)
+        s = re.sub(r'(?m)^[ \t]*[-*]\s*\[\[.*?\]\].*\n?', '', s)
+        s = re.sub(r'(?m)^[ \t]*\[\[.*?\]\].*\n?', '', s)
+        return s.strip()
+
+    # Helper to replace markdown tables with a compact summary representation
+    def replace_tables(s: str) -> str:
+        if not s:
+            return s
+        lines = s.splitlines()
+        out_lines: List[str] = []
+        i = 0
+        while i < len(lines):
+            ln = lines[i]
+            # detect potential table: line contains '|' and next line is a separator like '|---|:---|'
+            if '|' in ln and i + 1 < len(lines):
+                sep = lines[i + 1]
+                if re.match(r'^\s*\|?\s*[:\-]+\s*(\|\s*[:\-]+\s*)*\|?\s*$', sep):
+                    # collect data rows after separator
+                    header = ln
+                    j = i + 2
+                    data_rows: List[str] = []
+                    while j < len(lines) and '|' in lines[j] and lines[j].strip() != '':
+                        data_rows.append(lines[j])
+                        j += 1
+                    # extract header cells
+                    header_cells = [c.strip() for c in re.split(r'\s*\|\s*', header.strip().strip('|')) if c.strip()]
+                    # helper to sanitize inline markdown in headers/cells
+                    def sanitize_inline(cell: str) -> str:
+                        if not cell:
+                            return ''
+                        # wikilinks [[target|display]] or [[target]] -> display/target
+                        cell = re.sub(r'\[\[([^|\]]+)\|([^\]]+)\]\]', r'\2', cell)
+                        cell = re.sub(r'\[\[([^\]]+)\]\]', r'\1', cell)
+                        # markdown links [text](url) -> text
+                        cell = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', cell)
+                        # remove emphasis and code markers
+                        cell = re.sub(r'[\*_`~]+', '', cell)
+                        # collapse multiple spaces
+                        cell = re.sub(r'\s+', ' ', cell)
+                        return cell.strip()
+
+                    if header_cells:
+                        # produce a cleaned, full table representation preserving rows
+                        clean_header = ' | '.join(sanitize_inline(h) for h in header_cells)
+                        out_lines.append(clean_header)
+                        # append each data row, cleaned
+                        for row in data_rows:
+                            row_text = row.strip().strip('|')
+                            row_cells = [c.strip() for c in re.split(r'\s*\|\s*', row_text)]
+                            clean_row = ' | '.join(sanitize_inline(c) for c in row_cells)
+                            out_lines.append(clean_row)
+                    else:
+                        # no headers found; include raw data rows cleaned
+                        for row in data_rows:
+                            row_text = row.strip()
+                            out_lines.append(sanitize_inline(row_text))
+                    i = j
+                    continue
+            out_lines.append(ln)
+            i += 1
+        return '\n'.join(out_lines)
+
     # Build hovertext for each node. For file leaf nodes, prefer markdown content if available.
     hovertexts: List[str] = []
     for node_id in ids:
@@ -232,8 +305,9 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
         else:
             txt = contents.get(node_id, '')
             if txt:
-                # Replace newlines for HTML hover and shorten further if needed
-                h = txt.replace('\n', '<br>')
+                # Remove backlink collections and collapse tables first, then convert newlines
+                cleaned = replace_tables(remove_backlink_collection(txt))
+                h = cleaned.replace('\n', '<br>')
                 if len(h) > 1000:
                     h = h[:1000] + '...'
                 hovertexts.append(h)
@@ -250,8 +324,10 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
         if not raw:
             treemap_hovertexts.append('')
             continue
+        # Pre-process to remove backlink collections and collapse tables
+        pre = replace_tables(remove_backlink_collection(raw))
         # take first 2 non-empty lines
-        lines = raw.splitlines()
+        lines = pre.splitlines()
         first_lines: List[str] = []
         for ln in lines:
             t = ln.strip()
@@ -329,16 +405,19 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
                         return target
 
                     resolved = re.sub(r'!\[\[([^\]]+)\]\]', embed_repl, raw)
-                    # sanitize the resolved text (it may already be sanitized pieces)
-                    t = sanitized.replace('\n', '<br>')
-                    # If resolved produced additional content, prioritize it
+                    # Prefer resolved content if it produced additional material
                     if resolved and resolved != raw:
-                        t = re.sub(r'\n+', '<br>', resolved.strip())
+                        resolved_clean = replace_tables(remove_backlink_collection(resolved))
+                        t = re.sub(r'\n+', '<br>', resolved_clean.strip())
+                    else:
+                        # Fallback to sanitized content for display
+                        san_clean = replace_tables(remove_backlink_collection(sanitized))
+                        t = san_clean.replace('\n', '<br>')
                     txt = t
                 else:
-                    t = sanitized.replace('\n', '<br>')
-                    if len(t) > 300:
-                        t = t[:300] + '...'
+                    san_clean = replace_tables(remove_backlink_collection(sanitized))
+                    t = san_clean.replace('\n', '<br>')
+                    # Do not truncate treemap cell text — show full sanitized content
                     txt = t
         cell_texts.append(txt)
 

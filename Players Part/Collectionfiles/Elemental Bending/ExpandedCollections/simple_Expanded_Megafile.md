@@ -1,9 +1,3 @@
-wikigraph_sunburst.html
-
----
----
----
-
 wikigraph_treemap.html
 
 ---
@@ -175,7 +169,6 @@ Backlinks
 
   ./
   ├── graphs
-      ├── wikigraphsunburst.html
       └── wikigraphtreemap.html
   └── Players Part
       └── Rules

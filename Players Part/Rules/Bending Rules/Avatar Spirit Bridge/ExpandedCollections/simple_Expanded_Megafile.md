@@ -27,9 +27,6 @@ Team-up Moves
 Backlinks
 
   ./
-  ├── graphs
-      ├── wikigraphsunburst.html
-      └── wikigraphtreemap.html
   └── Players Part
       └── Rules
           └── Bending Rules

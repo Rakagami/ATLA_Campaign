@@ -1,16 +1,3 @@
-wikigraph_sunburst.html
-
----
----
----
-
-wikigraph_treemap.html
-
----
----
----
-
-
 You have your CL  2  amount of Transformation Points
 
 transformation
@@ -99,7 +86,6 @@ Backlinks
 
   ./
   ├── graphs
-      ├── wikigraphsunburst.html
       └── wikigraphtreemap.html
   └── Players Part
       ├── PCs
