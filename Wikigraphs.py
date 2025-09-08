@@ -20,6 +20,7 @@ import os
 import plotly
 from pathlib import Path
 import colorsys
+import hashlib
 import re
 from typing import Dict, List, Tuple
 
@@ -343,26 +344,16 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
             h = h + '...'
         treemap_hovertexts.append(h)
 
-    # Compute depth per node and map to colors.
-    depths: List[int] = []
-    for node_id in ids:
-        if node_id == "/":
-            d = 0
-        else:
-            # depth = number of separators; directories have trailing slash which counts
-            d = node_id.count('/')
-        depths.append(d)
-
-    max_depth = max(depths) if depths else 1
-
-    def depth_to_hex(depth: int) -> str:
-        # Map depth to a hue along the circle; normalize by max_depth
-        h = (depth / max_depth) if max_depth > 0 else 0.0
-        # Use moderate saturation and value for pleasant colors
-        r, g, b = colorsys.hsv_to_rgb(h * 0.75, 0.5, 0.95)
+    # Assign a per-node color derived from a stable MD5 hash of the node id.
+    # This produces 'randomized' colors while remaining deterministic across runs.
+    def id_to_hex(node_id: str) -> str:
+        hval = int(hashlib.md5(node_id.encode('utf-8')).hexdigest()[:8], 16) / 0xffffffff
+        # scramble the hue using the golden ratio to avoid clustering
+        hue = (hval * 0.61803398875) % 1.0
+        r, g, b = colorsys.hsv_to_rgb(hue, 0.55, 0.95)
         return '#{0:02x}{1:02x}{2:02x}'.format(int(r * 255), int(g * 255), int(b * 255))
 
-    colors: List[str] = [depth_to_hex(d) for d in depths]
+    colors: List[str] = [id_to_hex(n) for n in ids]
 
     # Prepare short cell text for treemap nodes (sanitized and trimmed)
     cell_texts: List[str] = []
