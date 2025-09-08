@@ -38,3 +38,14 @@ Design notes:
 - Spiritbending is more flexible than elemental bending: creativity and roleplay matter.
 
 [[Spiritbending]]
+<!-- BEGIN-AUTO-COLLECTION:Spiritbending Moves -->
+## Backlinks
+
+  ./
+  └── Players Part
+      └── Rules
+          └── Bending Rules
+              └── Avatar Spirit Bridge
+                  └── [[Spiritbending.md]]
+
+<!-- END-AUTO-COLLECTION -->

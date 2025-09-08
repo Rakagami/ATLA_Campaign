@@ -107,3 +107,18 @@ Track stones and their effects in your [[Spirit Stone Log]].
 
 Tags:  
 #mechanics #spiritbridge #bending #characterprogression #Avatar #spiritstones #advancement
+<!-- BEGIN-AUTO-COLLECTION:Avatar Spirit Bridge Level -->
+## Backlinks
+
+  ./
+  ├── graphs
+      ├── [[wikigraph_sunburst.html]]
+      └── [[wikigraph_treemap.html]]
+  └── Players Part
+      └── Rules
+          └── Bending Rules
+              └── Avatar Spirit Bridge
+                  ├── [[Avatar Spirit Check.md]]
+                  └── [[Spiritbending.md]]
+
+<!-- END-AUTO-COLLECTION -->

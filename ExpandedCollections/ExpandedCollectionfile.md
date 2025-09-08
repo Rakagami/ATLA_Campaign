@@ -10,19 +10,7 @@
 ---
 ---
 
-![[Gentle Push.md]]
-
----
----
----
-
-![[Tail Wind.md]]
-
----
----
----
-
-![[Air Vortex.md]]
+![[Spiritbending Moves.md]]
 
 ---
 ---

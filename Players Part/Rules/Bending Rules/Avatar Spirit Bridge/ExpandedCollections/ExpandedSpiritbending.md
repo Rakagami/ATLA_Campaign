@@ -10,19 +10,13 @@
 ---
 ---
 
-![[Gentle Push.md]]
+![[Avatar Spirit Check.md]]
 
 ---
 ---
 ---
 
-![[Tail Wind.md]]
-
----
----
----
-
-![[Air Vortex.md]]
+![[Spiritbending Moves.md]]
 
 ---
 ---

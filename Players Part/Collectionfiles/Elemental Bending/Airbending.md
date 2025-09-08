@@ -4,6 +4,9 @@
 ## Backlinks
 
   ./
+  ├── graphs
+      ├── [[wikigraph_sunburst.html]]
+      └── [[wikigraph_treemap.html]]
   └── Players Part
       ├── Collectionfiles
           └── Actiontypes
@@ -38,6 +41,7 @@
                       └── [[Sandstream.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

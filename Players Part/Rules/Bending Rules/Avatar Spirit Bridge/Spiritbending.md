@@ -23,3 +23,18 @@ Quick references:
 - Progression and Bridge mechanics: [[Avatar Spirit Bridge Level]]
 
 [[Team-up Moves]]
+<!-- BEGIN-AUTO-COLLECTION:Spiritbending -->
+## Backlinks
+
+  ./
+  ├── graphs
+      ├── [[wikigraph_sunburst.html]]
+      └── [[wikigraph_treemap.html]]
+  └── Players Part
+      └── Rules
+          └── Bending Rules
+              └── Avatar Spirit Bridge
+                  ├── [[Avatar Spirit Check.md]]
+                  └── [[Spiritbending Moves.md]]
+
+<!-- END-AUTO-COLLECTION -->
