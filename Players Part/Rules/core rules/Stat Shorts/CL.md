@@ -21,12 +21,14 @@ Character Level. This will be important to scale moves.
                           └── [[Ice Daggers.md]]
           ├── core rules
               └── Stat Shorts
-                  └── [[Max Hitpoints.md]]
+                  ├── [[Max Hitpoints.md]]
+                  └── [[Proficiency.md]]
           └── Non Bending Rules
               └── Chi Blocking
                   └── Chi Blocking Mechanics
                       └── [[EP.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
