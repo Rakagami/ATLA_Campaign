@@ -61,7 +61,12 @@ def Sync():
         # Stage all changes
         subprocess.run(["git", "add", "-A"], check=True)
         # Commit with automated message (ignore if nothing to commit)
-        subprocess.run(["git", "commit", "-m", "Automated sync commit"], check=False)
+        commit_proc = subprocess.run(["git", "commit", "-m", "Automated sync commit"], capture_output=True, text=True)
+        if 'nothing to commit' in commit_proc.stdout.lower() or 'nothing to commit' in commit_proc.stderr.lower():
+            # No changes, print git status and exit
+            status_proc = subprocess.run(["git", "status"], capture_output=True, text=True)
+            print(status_proc.stdout)
+            return 0
         # Push local commits to remote
         subprocess.run(["git", "push", "origin", "HEAD"], check=True)
         # Fetch latest from origin
