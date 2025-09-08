@@ -111,6 +111,9 @@ Tags:
 ## Backlinks
 
   ./
+  ├── graphs
+      ├── [[wikigraph_sunburst.html]]
+      └── [[wikigraph_treemap.html]]
   └── Players Part
       └── Rules
           └── Bending Rules
@@ -119,5 +122,6 @@ Tags:
                   └── [[Spiritbending.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 

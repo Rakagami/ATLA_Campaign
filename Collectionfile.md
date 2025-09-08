@@ -3,6 +3,9 @@
 ## Backlinks
 
   ./
+  ├── graphs
+      ├── [[wikigraph_sunburst.html]]
+      └── [[wikigraph_treemap.html]]
   └── Players Part
       └── Rules
           └── Bending Rules
@@ -10,5 +13,6 @@
                   └── [[Spiritbending Moves.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 

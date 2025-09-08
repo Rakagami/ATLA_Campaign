@@ -5,6 +5,9 @@ Character Level. This will be important to scale moves.
 ## Backlinks
 
   ./
+  ├── graphs
+      ├── [[wikigraph_sunburst.html]]
+      └── [[wikigraph_treemap.html]]
   └── Players Part
       ├── PCs
           └── Mahogany
@@ -29,6 +32,7 @@ Character Level. This will be important to scale moves.
                       └── [[EP.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

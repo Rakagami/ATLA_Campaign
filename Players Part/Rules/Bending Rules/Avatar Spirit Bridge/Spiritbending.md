@@ -27,6 +27,9 @@ Quick references:
 ## Backlinks
 
   ./
+  ├── graphs
+      ├── [[wikigraph_sunburst.html]]
+      └── [[wikigraph_treemap.html]]
   └── Players Part
       └── Rules
           └── Bending Rules
@@ -35,5 +38,6 @@ Quick references:
                   └── [[Spiritbending Moves.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
