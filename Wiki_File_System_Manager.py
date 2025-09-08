@@ -696,9 +696,9 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     # ---------- Manual Collectionfile Recreation ----------
     if args.recreate_collectionfiles:
-        print("[debug] Entering recreate_collectionfiles block")
+        debug_print("[debug] Entering recreate_collectionfiles block")
         recreate_collectionfiles(roots, candidate_files, args.dry_run, args.backup, color_enabled, args.compact)
-        print("[debug] Finished recreate_collectionfiles block")
+        debug_print("[debug] Finished recreate_collectionfiles block")
         return 0
     total_changes = 0
     changed_files: List[Tuple[Path, int]] = []
