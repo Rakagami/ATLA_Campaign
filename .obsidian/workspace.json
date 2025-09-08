@@ -402,7 +402,7 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -493,7 +493,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
+                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -503,7 +503,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for ExpandedBonus Action"
+              "title": "Backlinks for Proficiency"
             }
           },
           {
@@ -512,12 +512,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
+                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from ExpandedBonus Action"
+              "title": "Outgoing links from Proficiency"
             }
           },
           {
@@ -541,13 +541,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
+                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ExpandedBonus Action"
+              "title": "Outline of Proficiency"
             }
           }
         ]
@@ -567,15 +567,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a2038400b45dfb82",
+  "active": "46fbf80c8d5b6f4a",
   "lastOpenFiles": [
+    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
     "Players Part/Collectionfiles/Actiontypes/Action.md",
     "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
     "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
     "Wiki_File_System_Manager – Manual.md",
     "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 2 Moves/Ice Daggers.md",
     "Players Part/Rules/core rules/Stat Shorts/CL.md",
-    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
     "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedDanger Sense Reaction.md",
     "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedReaction.md",
     "Players Part/Collectionfiles/Elemental Bending/Waterbending.md",
