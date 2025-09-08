@@ -685,7 +685,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     args = parse_args(argv)
     # Enable debug prints globally if --debug is set
     if getattr(args, 'debug', False):
-        import sys
+        # Use the top-level sys module (imported at module scope).
         sys._wfsm_debug = True
 
     def debug_print(msg):
