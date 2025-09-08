@@ -4,12 +4,6 @@
 ---
 ---
 
-![[Glassfruit Seed Mechanics.md.bak]]
-
----
----
----
-
 ![[Core Attributes.md]]
 
 ---

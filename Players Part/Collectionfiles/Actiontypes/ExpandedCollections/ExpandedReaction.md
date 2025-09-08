@@ -10,31 +10,13 @@
 ---
 ---
 
-![[Luma’tik.md.bak]]
-
----
----
----
-
 ![[Emergency Air Push.md]]
 
 ---
 ---
 ---
 
-![[Emergency Air Push.md.bak]]
-
----
----
----
-
 ![[Air Blade.md]]
-
----
----
----
-
-![[Airbending Charges.md.bak]]
 
 ---
 ---
@@ -64,19 +46,13 @@
 ---
 ---
 
-![[Glassfruit Seed Mechanics.md.bak]]
-
----
----
----
-
 ![[Cantrips.md]]
 
 ---
 ---
 ---
 
-![[Cantrips.md.bak]]
+![[Freeze.md]]
 
 ---
 ---
@@ -107,12 +83,6 @@
 ---
 
 ![[Teamwork Moves.md]]
-
----
----
----
-
-![[Teamwork Moves.md.bak]]
 
 ---
 ---

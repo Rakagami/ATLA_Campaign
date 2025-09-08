@@ -69,7 +69,7 @@ def Sync():
         print(f"Error during sync: {e}")
         return 1
     return 0
-from typing import Iterator, List, Optional, Sequence, Tuple
+from typing import Iterator, List, Optional, Sequence, Tuple, Union, Callable
 import fnmatch
 
 
@@ -251,7 +251,7 @@ def recreate_collectionfiles(roots: Sequence[Path], candidate_files: Sequence[Pa
         # --- Also recreate Expanded<CollectionName>.md with ![[...]] embeds in a subfolder ---
         expanded_subfolder = target.parent / "ExpandedCollections"
         expanded_subfolder.mkdir(parents=True, exist_ok=True)
-        expandedfile = expanded_subfolder / f"Expanded{label}"
+        expandedfile = expanded_subfolder / f"Expanded{label}.md"
         embed_lines = [f"![[{p.name}]]" for p in backlinks if p.suffix != ".bak"]
         if embed_lines:
             embed_content = "\n\n---\n---\n---\n\n".join(embed_lines) + "\n\n---\n---\n---\n\n"
@@ -314,7 +314,7 @@ def make_replacer(
     replacement: Optional[str],
     case_sensitive: bool,
     bracket_mode: bool,
-) -> Tuple[re.Pattern, str]:
+) -> Tuple[re.Pattern, Union[str, Callable[[re.Match], str]]]:
     """
     Build a regex pattern and replacement for find/replace.
     If bracket_mode is enabled, wrap matches with [[...]] unless already inside a link.
@@ -360,7 +360,7 @@ def make_replacer(
 def process_file(
     path: Path,
     pattern: re.Pattern,
-    repl: str,
+    repl: Union[str, Callable[[re.Match], str]],
 ) -> Tuple[int, Optional[str]]:
     """
     Apply the regex pattern and replacement to the file's content.
@@ -686,7 +686,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     # Enable debug prints globally if --debug is set
     if getattr(args, 'debug', False):
         # Use the top-level sys module (imported at module scope).
-        sys._wfsm_debug = True
+        # _wfsm_debug is a dynamic attribute used for debugging; set it safely.
+        try:
+            sys._wfsm_debug = True  # type: ignore[attr-defined]
+        except Exception:
+            setattr(sys, '_wfsm_debug', True)
 
     def debug_print(msg):
         if getattr(args, 'debug', False):
@@ -798,6 +802,17 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                 embed_content = "<!-- No backlinks found -->\n"
             if not args.dry_run:
                 write_text_with_backup(allfile, embed_content, args.backup, color_enabled)
+            # --- Also create/update ExpandedCollections/Expanded{label}.md ---
+            expanded_subfolder = target.parent / "ExpandedCollections"
+            expanded_subfolder.mkdir(parents=True, exist_ok=True)
+            expandedfile = expanded_subfolder / f"Expanded{label}.md"
+            if backlinks:
+                expanded_embed_lines = [f"![[{p.name}]]" for p in backlinks if p.suffix != ".bak"]
+                expanded_content = "\n\n---\n---\n---\n\n".join(expanded_embed_lines) + "\n\n---\n---\n---\n\n"
+            else:
+                expanded_content = "<!-- No backlinks found -->\n"
+            if not args.dry_run:
+                write_text_with_backup(expandedfile, expanded_content, args.backup, color_enabled)
 
     # ---------- Summary ----------
     if args.compact:

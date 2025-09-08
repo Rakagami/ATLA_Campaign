@@ -4,7 +4,7 @@
 ## Backlinks
 
   ./
-  ├── Players Part
+  └── Players Part
       └── Rules
           ├── Bending Rules
               ├── Air
@@ -88,9 +88,10 @@
                       └── Level 3 Moves
                           └── [[Chi Surge.md]]
           └── [[Teamwork Moves.md]]
-  └── [[Wiki_File_System_Manager.py]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
 
 
 
