@@ -5,7 +5,7 @@
 
   ./
   └── Players Part
-      ├── Collections
+      ├── Collectionfiles
           └── Actiontypes
               └── [[Danger Sense Reaction.md]]
       └── Rules
@@ -38,6 +38,7 @@
                       └── [[Sandstream.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

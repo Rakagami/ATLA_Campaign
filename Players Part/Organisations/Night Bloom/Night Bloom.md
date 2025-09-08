@@ -15,7 +15,7 @@ The Night Bloom is a radical faction seeking to overthrow the Avatar’s influen
         Waterbending focused on offensive techniques, including the manipulation of black mist—a mixture of water vapor and fine particles, creating disorienting smoke.
     - **Role:**  
         Charismatic leader and visionary behind the rebellion. Isay is a master tactician and inspiring orator.
-2. **[[Jin Koga]](she/her) (Second-in-Command)**
+2. **[[Hanal Koga]](she/her) (Second-in-Command)**
     
     - **Physical Description:**  
         A sturdy woman with sun-kissed skin and short, spiky hair the color of sandy blonde. She has a confident, swaggering gait, often adorned with sand-crusted boots and bracers. Her lightweight armor is covered with fine grains of sand that move subtly as she walks.
@@ -53,7 +53,7 @@ The Night Bloom is a radical faction seeking to overthrow the Avatar’s influen
 - [[Isay Trekal]]
 - [[Rin Kotak]]
 - [[Night Bloom]]
-- [[Jin Koga]]
+- [[Hanal Koga]]
 
 Tags:
 #Earthbending

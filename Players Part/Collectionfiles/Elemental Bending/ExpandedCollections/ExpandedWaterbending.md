@@ -16,12 +16,6 @@
 ---
 ---
 
-![[_Water.md]]
-
----
----
----
-
 ![[Water Charges.md]]
 
 ---
@@ -29,6 +23,12 @@
 ---
 
 ![[Waterbending DC.md]]
+
+---
+---
+---
+
+![[Waterbending Level.md]]
 
 ---
 ---
@@ -142,13 +142,13 @@
 ---
 ---
 
-![[Waterbending Moves.md]]
-
----
----
----
-
 ![[Waterbending rules.md]]
+
+---
+---
+---
+
+![[Waterbottle Water Charges.md]]
 
 ---
 ---

@@ -28,7 +28,7 @@
 ---
 ---
 
-![[Jin Koga.md]]
+![[Hanal Koga.md]]
 
 ---
 ---

@@ -1,4 +1,4 @@
-#Collectionfile
+ #Collectionfile
 
 <!-- BEGIN-AUTO-COLLECTION:Waterbending -->
 ## Backlinks
@@ -15,9 +15,9 @@
                       ├── [[Freeze Projectiles.md]]
                       └── [[Frozen Aegis.md]]
               └── Water
-                  ├── [[_Water.md]]
                   ├── [[Water Charges.md]]
                   ├── [[Waterbending DC.md]]
+                  ├── [[Waterbending Level.md]]
                   ├── Waterbending Moves
                       ├── Cantrips
                           ├── [[Backflow.md]]
@@ -40,12 +40,13 @@
                           ├── [[Ice Wall.md]]
                           ├── [[Icicle Ammunition.md]]
                           └── [[Surfing.md]]
-                      ├── Level 4
+                      └── Level 4
                           └── [[Shockfreeze.md]]
-                      └── [[Waterbending Moves.md]]
-                  └── [[Waterbending rules.md]]
+                  ├── [[Waterbending rules.md]]
+                  └── [[Waterbottle Water Charges.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

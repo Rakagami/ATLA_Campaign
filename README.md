@@ -1,10 +1,12 @@
 # ATLA_Campaign
+
 ## 🚀 How to Set Up
 
-1. **Repository klonen oder herunterladen**  
+1. **Repository klonen oder herunterladen**
    ```bash
    git clone <repo-url>
-Als Obsidian Vault öffnen
+   Als Obsidian Vault öffnen
+   ```
 
 Starte Obsidian
 .
@@ -14,14 +16,45 @@ Wähle "Open folder as vault".
 Navigiere zum heruntergeladenen Repository und öffne es.
 
 👉 So bekommst du die beste File Explorer Experience und kannst alle Notizen, Links und Strukturen direkt nutzen.
+
+
+# Git Plugin
+---
+
+### Step 1 — Install Git on Your Computer
+
+Download and install Git: https://git-scm.com/downloads
+### Step 2 — Generate a Personal Access Token
+
+In GitHub (needs a github accoount), go to:
+Settings → Developer settings → Personal access tokens → Tokens (classic)
+
+Click “Generate new token”.
+
+Set:
+
+Scopes: Select repo.
+
+Expiration: Choose no expiration (recommended for backups).
+
+### Step 3 — Install the Obsidian Git Plugin
+
+In Obsidian:
+
+Go to Settings → Community plugins.
+
+Enable community plugins.
+
+Search for “Obsidian Git” and install it.
+
+Restart Obsidian.
+
+
 ## bulk_find_replace.py — Quickstart
 
 Copy-paste friendly commands. See also: [[bulk_find_replace (Manual)]], [[bulk_find_replace (FAQ)]]
 
 > Tips: start with `--dry-run`, scope with `--ext .md`, keep backups with `--backup .bak`.
-
----
-
 ## Safe wiki-link bracketing
 
 Bracket plain mentions, skipping already-linked:

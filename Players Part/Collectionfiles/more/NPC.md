@@ -15,11 +15,12 @@
           └── The Night Bloom
               ├── [[Isay Trekal.md]]
               ├── Jin Koga
-                  └── [[Jin Koga.md]]
+                  └── [[Hanal Koga.md]]
               └── Rin Kotak
                   └── [[Rin Kotak.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 
