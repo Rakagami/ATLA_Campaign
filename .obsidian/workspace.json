@@ -165,7 +165,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Players Part/Collectionfiles/Elemental Bending/ExpandedCollections/ExpandedAirbending.md",
+                "file": "Players Part/PCs/_PCs.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -180,7 +180,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "ExpandedAirbending"
+              "title": "_PCs"
             }
           }
         ],
@@ -285,7 +285,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Players Part/Collectionfiles/Elemental Bending/ExpandedCollections/ExpandedAirbending.md",
+                "file": "Players Part/PCs/_PCs.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -295,7 +295,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for ExpandedAirbending"
+              "title": "Backlinks for _PCs"
             }
           },
           {
@@ -362,9 +362,10 @@
       "runjs:RunJS": false
     }
   },
-  "active": "e62111f748eb4750",
+  "active": "8f41c7f6c3321352",
   "lastOpenFiles": [
     "Players Part/PCs/Anju/Anju.md",
+    "Players Part/Collectionfiles/Elemental Bending/ExpandedCollections/ExpandedAirbending.md",
     "Players Part/PCs/Anju",
     "Players Part/Collectionfiles/Elemental Bending/Waterbending.md",
     "graphs/wikigraph_treemap.html",
@@ -372,7 +373,6 @@
     "Wiki_File_System_Manager – Manual.md",
     "Players Part/Collectionfiles/Elemental Bending/Airbending.md",
     "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Bridge Level.md",
-    "Players Part/Collectionfiles/Elemental Bending/ExpandedCollections/ExpandedAirbending.md",
     "Players Part/Rules/Bending Rules/Air/Airbending Moves/Level 1 Moves/Air Blade.md",
     "Players Part/Rules/Bending Rules/Water/Water Charges.md",
     "Players Part/Rules/core rules/Stat Shorts/CL.md",
