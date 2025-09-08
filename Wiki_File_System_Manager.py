@@ -21,38 +21,11 @@ from shutil import copy2
 import subprocess
 # -------- Color helpers --------
 def Sync():
-    # Remove any auto-collection HTML/Markdown blocks at the end of this file
-    def remove_auto_collection_block(filepath):
-        with open(filepath, 'r', encoding='utf-8') as f:
-            lines = f.readlines()
-        start = None
-        for i, line in enumerate(lines):
-            if line.strip().startswith('<!-- BEGIN-AUTO-COLLECTION:'):
-                start = i
-                break
-        if start is not None:
-            lines = lines[:start]
-            with open(filepath, 'w', encoding='utf-8') as f:
-                f.writelines(lines)
-
-        def remove_auto_collection_block(filepath):
-            # Never mutate Wiki_File_System_Manager.py
-            if os.path.abspath(filepath) == os.path.abspath(__file__):
-                return
-            with open(filepath, 'r', encoding='utf-8') as f:
-                lines = f.readlines()
-            start = None
-            for i, line in enumerate(lines):
-                if line.strip().startswith('<!-- BEGIN-AUTO-COLLECTION:'):
-                    start = i
-                    break
-            if start is not None:
-                lines = lines[:start]
-                with open(filepath, 'w', encoding='utf-8') as f:
-                    f.writelines(lines)
-
-        # Never mutate Wiki_File_System_Manager.py
-        # remove_auto_collection_block(__file__)
+    # NOTE: remove_auto_collection_block was previously nested/duplicated here.
+    # The function is intentionally omitted to avoid accidental self-mutation
+    # of this module. Collectionfile recreation routines should avoid
+    # modifying this file; any automated removal of blocks should be
+    # performed on target files only.
     """
     Syncs the local repository with the remote 'main' branch.
     Pulls all changes from 'origin/main' into the current branch.
@@ -62,21 +35,36 @@ def Sync():
         subprocess.run(["git", "add", "-A"], check=True)
         # Commit with automated message (ignore if nothing to commit)
         commit_proc = subprocess.run(["git", "commit", "-m", "Automated sync commit"], capture_output=True, text=True)
-        if 'nothing to commit' in commit_proc.stdout.lower() or 'nothing to commit' in commit_proc.stderr.lower():
-            print("Nothing to commit, working tree clean.")
-            return 0
+        # Git may report 'nothing to commit' on stdout or stderr depending on version/localization.
+        out = (commit_proc.stdout or "") + (commit_proc.stderr or "")
+        if commit_proc.returncode != 0:
+            if 'nothing to commit' in out.lower() or 'no changes added to commit' in out.lower():
+                print("Nothing to commit, working tree clean.")
+                # Nothing to do; continue to fetch/merge in case remote has updates
+            else:
+                print(f"Git commit failed: {out.strip()}")
+                # Continue but avoid pushing an undefined state
+        else:
+            # commit succeeded; push the new commit
+            subprocess.run(["git", "push", "origin", "HEAD"], check=True)
         # Push local commits to remote
-        subprocess.run(["git", "push", "origin", "HEAD"], check=True)
-        # Fetch latest from origin
+        # Fetch latest from origin and merge origin/main into current branch
         subprocess.run(["git", "fetch", "origin"], check=True)
-        # Merge origin/main into current branch
         subprocess.run(["git", "merge", "origin/main"], check=True)
         print("Sync complete.")
         main(["--recreate-collectionfiles"])
         # Stage, commit, and push any changes from collectionfile recreation
         subprocess.run(["git", "add", "-A"], check=True)
-        subprocess.run(["git", "commit", "-m", "Automated collectionfile update"], check=False)
-        subprocess.run(["git", "push", "origin", "HEAD"], check=True)
+        # Try to commit collectionfile updates; ignore failure if nothing changed
+        coll_commit = subprocess.run(["git", "commit", "-m", "Automated collectionfile update"], capture_output=True, text=True)
+        coll_out = (coll_commit.stdout or "") + (coll_commit.stderr or "")
+        if coll_commit.returncode == 0:
+            subprocess.run(["git", "push", "origin", "HEAD"], check=True)
+        else:
+            if 'nothing to commit' in coll_out.lower() or 'no changes added to commit' in coll_out.lower():
+                print("No collectionfile changes to commit.")
+            else:
+                print(f"Collectionfile commit failed: {coll_out.strip()}")
     except subprocess.CalledProcessError as e:
         print(f"Error during sync: {e}")
         return 1
@@ -200,12 +188,19 @@ def write_text_with_backup(path: Path, content: str, backup_suffix: Optional[str
             if color:
                 print(f"{Colors.DIM}[skip]{Colors.RESET} {path} (self-mutation prevented)")
             return
-        if backup_suffix:
-            backup_path = path.with_suffix(path.suffix + backup_suffix)
-            copy2(path, backup_path)
-            if color:
-                print(f"{Colors.DIM}[backup]{Colors.RESET} {backup_path}")
-        path.write_text(content, encoding="utf-8")
+        import sys
+        try:
+            if backup_suffix:
+                backup_path = path.with_suffix(path.suffix + backup_suffix)
+                copy2(path, backup_path)
+                if color:
+                    print(f"{Colors.DIM}[backup]{Colors.RESET} {backup_path}")
+            # Always overwrite the file, even if content is unchanged
+            path.write_text(content, encoding="utf-8")
+            print(f"[CONFIRM] Overwrote {path}")
+            print(f"[DEBUG] New content preview: {content[:100]!r}")
+        except Exception as e:
+            print(f"[ERROR] Failed to write to {path}: {e}", file=sys.stderr)
 
 
 
@@ -214,10 +209,30 @@ def recreate_collectionfiles(roots: Sequence[Path], candidate_files: Sequence[Pa
 
     collectionfiles = []
     for f in candidate_files:
-        if f.suffix == ".bak":
+        # Ignore any file that is a backup (case-insensitive)
+        if f.suffix.lower() == ".bak":
+            continue
+        # Only process .md files
+        if f.suffix.lower() != ".md":
             continue
         text = load_text(f)
         if text is not None and "#Collectionfile" in text:
+            collectionfiles.append(f)
+
+    # Find all expected collectionfile paths (by label) that are missing and create them
+    # For robustness, scan all candidate_files for #Collectionfile, and if a file is missing, create it
+    # (This is a fallback for when a file is deleted or missing)
+    for f in candidate_files:
+        if f.suffix.lower() == ".bak":
+            continue
+        if f.suffix.lower() != ".md":
+            continue
+        if not f.exists():
+            # Create a new file with #Collectionfile
+            if not dry_run:
+                f.parent.mkdir(parents=True, exist_ok=True)
+                f.write_text("#Collectionfile\n", encoding="utf-8")
+            # Always append to collectionfiles so update_collection_block runs for new files
             collectionfiles.append(f)
     updated = 0
     skipped = 0
@@ -235,7 +250,7 @@ def recreate_collectionfiles(roots: Sequence[Path], candidate_files: Sequence[Pa
         # --- Also recreate Expanded<CollectionName>.md with ![[...]] embeds in a subfolder ---
         expanded_subfolder = target.parent / "ExpandedCollections"
         expanded_subfolder.mkdir(parents=True, exist_ok=True)
-        expandedfile = expanded_subfolder / f"Expanded{label}.md"
+        expandedfile = expanded_subfolder / f"Expanded{label}"
         embed_lines = [f"![[{p.name}]]" for p in backlinks if p.suffix != ".bak"]
         if embed_lines:
             embed_content = "\n\n---\n---\n---\n\n".join(embed_lines) + "\n\n---\n---\n---\n\n"
@@ -475,6 +490,10 @@ def update_collection_block(
     lines.append("")  # trailing newline
     block_text = "\n".join(lines)
 
+    debug_enabled = getattr(sys, '_wfsm_debug', False)
+    if debug_enabled:
+        print(f"[DEBUG] block_text for {target_file} (first 300 chars):\n{block_text[:300]!r}")
+
     # Read the current content (preserve other content)
     if target_file.exists():
         try:
@@ -485,17 +504,26 @@ def update_collection_block(
     else:
         content = ""
 
+
     # Replace or append the block
     pattern = re.compile(
         re.escape(begin) + r".*?" + re.escape(end),
         re.DOTALL,
     )
+
     if pattern.search(content):
         new_content = pattern.sub(block_text, content, count=1)
+        if debug_enabled:
+            print(f"[DEBUG] Replacing backlink block in {target_file}")
     else:
         # Always ensure exactly one newline before the block
         content = content.rstrip("\n") + "\n"
         new_content = content + block_text
+        if debug_enabled:
+            print(f"[DEBUG] Appending backlink block to {target_file}")
+
+    if debug_enabled:
+        print(f"[DEBUG] new_content for {target_file} (first 300 chars):\n{new_content[:300]!r}")
 
     changed = new_content != content
 
@@ -506,7 +534,8 @@ def update_collection_block(
                 f"{colorize(color, str(target_file), Colors.BOLD)} "
                 f"{colorize(color, '(' + str(len(backlinks)) + ')', Colors.GRAY)}"
             )
-
+        if debug_enabled:
+            print(f"[DEBUG] Writing changes to {target_file}")
         if not dry_run:
             write_text_with_backup(target_file, new_content, backup_suffix, color)
 
@@ -652,8 +681,11 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
 
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
-
     args = parse_args(argv)
+    # Enable debug prints globally if --debug is set
+    if getattr(args, 'debug', False):
+        import sys
+        sys._wfsm_debug = True
 
     def debug_print(msg):
         if getattr(args, 'debug', False):
@@ -677,10 +709,9 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         use_default_excludes=not args.no_default_excludes,
         follow_symlinks=args.follow_symlinks,
     )
-    candidate_files = [p for p in files_iter if should_process_file(p, args.ext)]
-    debug_print(f"[debug] candidate_files: {len(candidate_files)} files found")
 
-    # ---------- Manual Collectionfile Recreation ----------
+    candidate_files = [f for f in files_iter if should_process_file(f, args.ext)]
+
     if args.recreate_collectionfiles:
         debug_print("[debug] Entering recreate_collectionfiles block")
         recreate_collectionfiles(roots, candidate_files, args.dry_run, args.backup, color_enabled, args.compact)
