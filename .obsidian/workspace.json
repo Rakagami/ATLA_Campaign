@@ -189,7 +189,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
+                "file": "DMs Part/Locations/Incencebending.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -204,7 +204,127 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "ExpandedBonus Action"
+              "title": "Incencebending"
+            }
+          },
+          {
+            "id": "b5c49d6d229c26f3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Bridge Level.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Avatar Spirit Bridge Level"
+            }
+          },
+          {
+            "id": "ac277a842d4f7cd1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Check.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Avatar Spirit Check"
+            }
+          },
+          {
+            "id": "3a62f90ad66d8887",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Wiki_File_System_Manager – Manual.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Wiki_File_System_Manager – Manual"
+            }
+          },
+          {
+            "id": "6247807dc2b270cb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Spiritbending Moves.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Spiritbending Moves"
+            }
+          },
+          {
+            "id": "cc40ba801d68321b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Collectionfile.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Collectionfile"
             }
           },
           {
@@ -474,7 +594,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -534,8 +654,8 @@
             "state": {
               "type": "runjs-codelist-view",
               "state": {},
-              "icon": "js-dark-icon",
-              "title": "RunJS Codelist"
+              "icon": "lucide-ghost",
+              "title": "runjs-codelist-view"
             }
           }
         ]
@@ -575,7 +695,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
+                "file": "Wiki_File_System_Manager – Manual.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -585,7 +705,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for ExpandedBonus Action"
+              "title": "Backlinks for Wiki_File_System_Manager – Manual"
             }
           },
           {
@@ -652,53 +772,53 @@
       "runjs:RunJS": false
     }
   },
-  "active": "206e29507e7ac9f1",
+  "active": "3a62f90ad66d8887",
   "lastOpenFiles": [
-    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
-    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedReaction.md",
-    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedDanger Sense Reaction.md",
+    "graphs/wikigraph_treemap.html",
+    "graphs/wikigraph_file_size_histogram.html",
+    "graphs/wikigraph_top_20_dirs.html",
+    "graphs/wikigraph_top_20_files.html",
+    "graphs/wikigraph_sunburst.html",
+    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Spiritbending.md",
+    "DMs Part/Locations/Crimson Sails.md",
+    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Spiritbending Moves.md",
+    "graphs",
+    "Wikigraphs.py",
+    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/ExpandedCollections",
+    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Check.md",
+    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Bridge Level.md",
+    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/na.md",
+    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/_Avatar Spirit Bridge.md",
+    "DMs Part/Locations/Incencebending.md",
+    "Players Part/Rules/Bending Rules/Water/Waterbottle Water Charges.md",
+    "Collectionfile.md",
     "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
-    "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 2 Moves/Freeze.md",
-    "obsidian-plugins-setup.md",
-    "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
-    "Players Part/Rules/core rules/Stat Shorts/ExpandedCollections/ExpandedCL.md",
-    "Players Part/Rules/core rules/Stat Shorts/ExpandedCollections/ExpandedProficiency.md",
-    "Players Part/Rules/core rules/Stat Shorts/Intelligence.md",
-    "Players Part/Rules/Bending Rules/Water/ExpandedCollections/ExpandedCyclic Flow.md",
-    "Players Part/Rules/core rules/Stat Shorts/ExpandedCollections/ExpandedProficiency.bak",
-    "Players Part/Rules/core rules/Stat Shorts/ExpandedCollections/ExpandedCL.bak",
-    "Players Part/Rules/core rules/Stat Shorts/CL.md.bak",
-    "Players Part/Rules/Bending Rules/Water/ExpandedCollections/ExpandedCyclic Flow.bak",
-    "Players Part/Rules/Bending Rules/Water/Cyclic Flow.md.bak",
-    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.bak",
-    "Players Part/Collectionfiles/Actiontypes/Bonus Action.md.bak",
-    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.bak",
-    "Players Part/Collectionfiles/Actiontypes/Action.md.bak",
-    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedReaction.bak",
-    "Players Part/Rules/Combat Rules.md",
-    "Players Part/Rules/core rules/Stat Shorts/CL.md",
-    "Players Part/Rules/core rules/Stat Shorts/Con.md",
-    "Players Part/Rules/core rules/Stat Shorts/Cha.md",
-    "Players Part/Rules/Bending Rules/Air/Airbending Moves/Level 1 Moves/Air Blade.md",
-    "Players Part/Collectionfiles/Actiontypes/Action.md",
-    "Wiki_File_System_Manager – Manual.md",
-    "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 2 Moves/Ice Daggers.md",
-    "Players Part/Collectionfiles/Elemental Bending/Waterbending.md",
-    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Bridge Levels.md",
-    "Players Part/Rules/Bending Rules/Air/Mechanics/Airbending Slot.md",
-    "Players Part/Rules/AGBs.md",
-    "Players Part/PCs/Mahogany/Shapeshifting Forms/Bearturtle.md",
-    "DMs Part/Story/Earth_Kingdom_Folder_Structure/Regional Conflicts/Village_Uprising.md",
-    "DMs Part/Story/Earth_Kingdom_Folder_Structure/Political Intrigue/Governor's_Backstory.md",
-    "Players Part/Maps/Avatar World.jpg",
-    "Players Part/NPCs/The Night Bloom/Rin Kotak/Rin Kotak.png",
-    "Players Part/PCs/Mahogany/Shapeshifting Forms/Pics/Luma'tik.png",
-    "Players Part/PCs/Mahogany/Shapeshifting Forms/Pics/Bearturtle.webp",
-    "Players Part/NPCs/The Night Bloom/Rin Kotak/meditating dark.png",
-    "Players Part/NPCs/The Night Bloom/Rin Kotak/meditating cartoon.png",
+    "DMs Part/Locations/Incencebending",
+    "DMs Part/Story/Modules/World Exploration/Wilderness_Encounters.md",
+    "DMs Part/Story/Modules/World Exploration/Remote_Temples.md",
+    "DMs Part/Story/Modules/Social Encounters/Skybison_Polo_Festival.md.bak",
+    "DMs Part/Story/Modules/Social Encounters/Skybison_Polo_Festival.md",
+    "DMs Part/Story/Modules/Social Encounters/Marketplace_Drama.md",
+    "DMs Part/Story/Modules/Social Encounters/Bandit_Negotiation.md",
+    "DMs Part/Story/Modules/Mysteries/Relic_Discovery.md",
+    "DMs Part/Story/Modules/Mysteries/Marketplace_Clues.md",
+    "DMs Part/Story/Modules/Module Templates 1/Political_Scenario_Template.md",
+    "DMs Part/Story/Modules/Module Templates 1/Earthbending_Challenge_Template.md",
+    "DMs Part/Story/Modules/Earth Kindom Templates/Social_Encounter_Template.md",
+    "DMs Part/Story/Modules/Earth Kindom Templates/Combat_Challenge_Template.md",
+    "DMs Part/Story/Modules/Combat Challenges/Wild_Beast.md",
+    "DMs Part/Story/Modules/Combat Challenges/Bandit_Encounter.md",
+    "DMs Part/Story/Modules/Adventure Hooks/Lost_Relic.md",
+    "DMs Part/Story/Modules/World Exploration",
+    "DMs Part/Story/Airbender Nomands/3atljldbkbk41.jpg",
+    "DMs Part/Story/Airbender Nomands/1664411181325.jpg",
     "DMs Part/Locations/Visual References/Pasted image 20250104171805.png",
-    "DMs Part/NPCs/DMPCs/Kaedo.png",
+    "DMs Part/NPCs/Night Bloom/Dark Spirits/kiki.png",
     "DMs Part/NPCs/Night Bloom/Dark Spirits/boba.png",
-    "DMs Part/NPCs/Night Bloom/Dark Spirits/Frostling puppetier.png"
+    "DMs Part/NPCs/Night Bloom/Dark Spirits/Holiday Spirit.png",
+    "DMs Part/NPCs/Night Bloom/Dark Spirits/Frostling puppetier.png",
+    "DMs Part/NPCs/Spirits/assets_task_01jqk4rq81fnsrfydwnb0gnxr1_img_1.webp",
+    "DMs Part/NPCs/Spirits/assets_task_01jqk424c7ea58gb9jdd0zmvqj_img_0.webp",
+    "DMs Part/NPCs/Spirits/Jellytee.webp"
   ]
 }

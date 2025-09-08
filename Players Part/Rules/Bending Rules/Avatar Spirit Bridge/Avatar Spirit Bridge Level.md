@@ -1,5 +1,5 @@
-## [[Spirit-Bound Evolution Mechanics]]
-
+#Collectionfile 
+[[Avatar Spirit Check]]
 ### 🌌 **Bridge of the Spirit: A Personal Journey**
 
 > _"To be the Avatar is not merely to bend all elements, but to bend one’s self—to align will and wisdom with the needs of the world."_  
@@ -16,7 +16,7 @@ Each character stands at a crossroads between spirit and self, and your progress
 - Or have they found **inner balance**, perhaps discovering a renewed sense of **duty or compassion**, and beginning to understand the role of a **bridge** between the mortal and spiritual worlds?
     
 
-This reflection influences your **[[Avatar Spirit Bridge Level]]** and will guide what type of power you unlock next.
+This reflection influences your **[[na]]** and will guide what type of power you unlock next.
 
 ---
 
