@@ -1,4 +1,5 @@
-#### **Healing Water (1st Level Move)**
+[[Cyclic Flow]]
+[[Level 1]]
 
 - **Cost:** 1-3 Water Charges.
 - **Type:** [[Action]].
@@ -9,14 +10,7 @@
 	- If the creature is unconscious the creature becomes stable.
     - **Healing:** 2d8 per charge + [[Int]] modifier at the beginning of your next Turn.
     - **Limitations:** Cannot heal constructs or undead.
-    
 
-**Links**:
-- [[Healing Water]]
-- [[_Rules]]
-- [[Int]]
-- [[Waterbending Moves]]
 
-Tags:
-#Waterbending
+![[Cyclic Flow]]
 [[Waterbending]]
