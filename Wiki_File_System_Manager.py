@@ -21,6 +21,21 @@ from shutil import copy2
 import subprocess
 # -------- Color helpers --------
 def Sync():
+    # Remove any auto-collection HTML/Markdown blocks at the end of this file
+    def remove_auto_collection_block(filepath):
+        with open(filepath, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+        start = None
+        for i, line in enumerate(lines):
+            if line.strip().startswith('<!-- BEGIN-AUTO-COLLECTION:'):
+                start = i
+                break
+        if start is not None:
+            lines = lines[:start]
+            with open(filepath, 'w', encoding='utf-8') as f:
+                f.writelines(lines)
+
+    remove_auto_collection_block(__file__)
     """
     Syncs the local repository with the remote 'main' branch.
     Pulls all changes from 'origin/main' into the current branch.
@@ -40,6 +55,10 @@ def Sync():
         # Now run the collectionfile recreation
         print("Running --recreate-collectionfiles...")
         main(["--recreate-collectionfiles"])
+        # Stage, commit, and push any changes from collectionfile recreation
+        subprocess.run(["git", "add", "-A"], check=True)
+        subprocess.run(["git", "commit", "-m", "Automated collectionfile update"], check=False)
+        subprocess.run(["git", "push", "origin", "HEAD"], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error during sync: {e}")
         return 1
@@ -801,3 +820,4 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 if __name__ == "__main__":
     import sys
     sys.exit(main())
+

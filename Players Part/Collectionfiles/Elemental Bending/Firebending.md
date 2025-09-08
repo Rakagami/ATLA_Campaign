@@ -9,7 +9,8 @@
           └── Bending Rules
               ├── Earth
                   └── glass fruit bending
-                      └── [[Glassfruit Seed Mechanics.md]]
+                      ├── [[Glassfruit Seed Mechanics.md]]
+                      └── [[Glassfruit Seed Mechanics.md.bak]]
               ├── Fire
                   ├── [[Core Attributes.md]]
                   ├── [[Firebending DC.md]]
@@ -51,6 +52,7 @@
                       └── [[Heat Mirage.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

@@ -9,7 +9,8 @@
           └── Bending Rules
               ├── Earth
                   └── glass fruit bending
-                      └── [[Glassfruit Seed Mechanics.md]]
+                      ├── [[Glassfruit Seed Mechanics.md]]
+                      └── [[Glassfruit Seed Mechanics.md.bak]]
               ├── Team-up Moves
                   └── Water-Water
                       ├── [[Freeze Projectiles.md]]
@@ -46,6 +47,7 @@
                   └── [[Waterbottle Water Charges.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 
