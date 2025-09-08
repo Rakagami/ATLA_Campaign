@@ -402,7 +402,7 @@ def gather_backlinks(
     link_pattern = re.compile(r"\[\[\s*([^\]|#]+)", re.IGNORECASE)
     results: List[Path] = []
     for f in candidate_files:
-        if f == exclude_path:
+        if f == exclude_path or f.suffix == ".bak":
             continue
         text = load_text(f)
         if text is None:

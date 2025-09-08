@@ -383,12 +383,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
+                "file": "Players Part/Collectionfiles/Actiontypes/Action.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
                 "backlinkOpts": {
-                  "collapseAll": false,
+                  "collapseAll": true,
                   "extraContext": false,
                   "sortOrder": "alphabetical",
                   "showSearch": false,
@@ -398,7 +398,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "ExpandedAction"
+              "title": "Action"
             }
           }
         ],
@@ -493,8 +493,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
-                "collapseAll": false,
+                "file": "Players Part/Collectionfiles/Actiontypes/Action.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -503,7 +503,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for ExpandedAction"
+              "title": "Backlinks for Action"
             }
           },
           {
@@ -512,12 +512,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
+                "file": "Players Part/Collectionfiles/Actiontypes/Action.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from ExpandedAction"
+              "title": "Outgoing links from Action"
             }
           },
           {
@@ -541,17 +541,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
+                "file": "Players Part/Collectionfiles/Actiontypes/Action.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ExpandedAction"
+              "title": "Outline of Action"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -570,12 +569,14 @@
   },
   "active": "648719c3f0c87a99",
   "lastOpenFiles": [
+    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
+    "Wiki_File_System_Manager – Manual.md",
+    "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 2 Moves/Ice Daggers.md",
+    "Players Part/Rules/core rules/Stat Shorts/CL.md",
     "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
     "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedDanger Sense Reaction.md",
     "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedReaction.md",
-    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
     "Players Part/Collectionfiles/Elemental Bending/Waterbending.md",
-    "Players Part/Rules/core rules/Stat Shorts/CL.md",
     "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Bridge Levels.md",
     "Players Part/Rules/Bending Rules/Air/Mechanics/Airbending Slot.md",
     "Players Part/Rules/AGBs.md",
@@ -604,8 +605,6 @@
     "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 2 Moves/Wall of water.md",
     "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 3 Moves/Surfing.md",
     "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 3 Moves/Ice Wall.md",
-    "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 3 Moves/Healing Mist.md",
-    "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 2 Moves/Ice Daggers.md",
     "Players Part/Maps/Avatar World.jpg",
     "Players Part/NPCs/The Night Bloom/Rin Kotak/Rin Kotak.png",
     "Players Part/PCs/Mahogany/Shapeshifting Forms/Pics/Luma'tik.png",

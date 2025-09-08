@@ -10,8 +10,6 @@
 
 **Links**:
 - [[CL]]
-- [[_Rules]]
-- [[Waterbending Moves]]
 - [[Proficiency]]
 - [[Ice Daggers]]
 - [[Int]]
