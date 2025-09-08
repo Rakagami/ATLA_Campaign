@@ -232,6 +232,30 @@
             }
           },
           {
+            "id": "a2038400b45dfb82",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Proficiency"
+            }
+          },
+          {
             "id": "e0e7e5b48cef0168",
             "type": "leaf",
             "state": {
@@ -328,9 +352,57 @@
               "icon": "lucide-file",
               "title": "NPC"
             }
+          },
+          {
+            "id": "967a359c12e90e3f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Rules/Bending Rules/Air/Mechanics/Airbending DC.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Airbending DC"
+            }
+          },
+          {
+            "id": "648719c3f0c87a99",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "ExpandedAction"
+            }
           }
         ],
-        "currentTab": 8
+        "currentTab": 15
       }
     ],
     "direction": "vertical"
@@ -363,7 +435,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Character le",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -421,7 +493,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
+                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -431,7 +503,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Proficiency"
+              "title": "Backlinks for ExpandedAction"
             }
           },
           {
@@ -440,12 +512,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
+                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Proficiency"
+              "title": "Outgoing links from ExpandedAction"
             }
           },
           {
@@ -469,13 +541,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
+                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Proficiency"
+              "title": "Outline of ExpandedAction"
             }
           }
         ],
@@ -496,8 +568,26 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "46fbf80c8d5b6f4a",
+  "active": "648719c3f0c87a99",
   "lastOpenFiles": [
+    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
+    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedDanger Sense Reaction.md",
+    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedReaction.md",
+    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
+    "Players Part/Collectionfiles/Elemental Bending/Waterbending.md",
+    "Players Part/Rules/core rules/Stat Shorts/CL.md",
+    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Bridge Levels.md",
+    "Players Part/Rules/Bending Rules/Air/Mechanics/Airbending Slot.md",
+    "Players Part/Rules/AGBs.md",
+    "Players Part/Rules/Bending Rules/Air/Airbending Moves/Level 1 Moves/Air Blade.md",
+    "Players Part/PCs/Mahogany/Shapeshifting Forms/Bearturtle.md",
+    "DMs Part/Story/Earth_Kingdom_Folder_Structure/Regional Conflicts/Village_Uprising.md",
+    "DMs Part/Story/Earth_Kingdom_Folder_Structure/Political Intrigue/Governor's_Backstory.md",
+    "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
+    "Players Part/Rules/Bending Rules/Air/Mechanics/Airbending DC.md",
+    "Players Part/Collectionfiles/Elemental Bending/Airbending.md",
+    "Players Part/Rules/core rules/Stat Shorts/ExpandedCollections",
+    "Players Part/Rules/Bending Rules/Water/ExpandedCollections",
     "Players Part/Rules/core rules/Stat Shorts/Proficiency.md.bak",
     "Players Part/Rules/Bending Rules/Earth/Earthbending Moves/Base Moves/Stone Knuckles.md.bak",
     "Players Part/Rules/Bending Rules/Earth/Earthbending DC.md.bak",
@@ -516,24 +606,6 @@
     "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 3 Moves/Ice Wall.md",
     "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 3 Moves/Healing Mist.md",
     "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 2 Moves/Ice Daggers.md",
-    "Players Part/Rules/Bending Rules/Water/Water Charges.md",
-    "Players Part/Rules/Bending Rules/Water/Cyclic Flow.md",
-    "atla_waterbending_north.txt",
-    "atla_spirit_world_reflection.txt",
-    "atla_firebending_warfronts.txt",
-    "Players Part/Rules/Bending Rules/Water/Waterbending Level.md",
-    "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 4/Shockfreeze.md",
-    "ExpandedCollections/ExpandedWiki_File_System_Manager.md",
-    "Wiki_File_System_Manager – Manual.md",
-    "Players Part/Collectionfiles/Elemental Bending/Airbending.md",
-    "README.md",
-    "Players Part/Rules/Bending Rules/Water/Waterbottle Water Charges.md",
-    "Players Part/Collectionfiles/Actiontypes/Action.md",
-    "Players Part/Rules/Bending Rules/Air/Mechanics/Airbending Level.md",
-    "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Waterbending Moves.md",
-    "Players Part/Rules/Bending Rules/_Bending Rules.md",
-    "Players Part/Rules/Bending Rules/Air/Mechanics/Speed Boost.md",
-    "Players Part/Collectionfiles/Elemental Bending/Waterbending.md",
     "Players Part/Maps/Avatar World.jpg",
     "Players Part/NPCs/The Night Bloom/Rin Kotak/Rin Kotak.png",
     "Players Part/PCs/Mahogany/Shapeshifting Forms/Pics/Luma'tik.png",

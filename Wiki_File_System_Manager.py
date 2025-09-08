@@ -63,9 +63,7 @@ def Sync():
         # Commit with automated message (ignore if nothing to commit)
         commit_proc = subprocess.run(["git", "commit", "-m", "Automated sync commit"], capture_output=True, text=True)
         if 'nothing to commit' in commit_proc.stdout.lower() or 'nothing to commit' in commit_proc.stderr.lower():
-            # No changes, print git status and exit
-            status_proc = subprocess.run(["git", "status"], capture_output=True, text=True)
-            print(status_proc.stdout)
+            print("Nothing to commit, working tree clean.")
             return 0
         # Push local commits to remote
         subprocess.run(["git", "push", "origin", "HEAD"], check=True)
@@ -73,9 +71,7 @@ def Sync():
         subprocess.run(["git", "fetch", "origin"], check=True)
         # Merge origin/main into current branch
         subprocess.run(["git", "merge", "origin/main"], check=True)
-        print("Sync complete: local changes committed, pushed, and up to date with remote main.")
-        # Now run the collectionfile recreation
-        print("Running --recreate-collectionfiles...")
+        print("Sync complete.")
         main(["--recreate-collectionfiles"])
         # Stage, commit, and push any changes from collectionfile recreation
         subprocess.run(["git", "add", "-A"], check=True)
@@ -221,6 +217,8 @@ def recreate_collectionfiles(roots: Sequence[Path], candidate_files: Sequence[Pa
         text = load_text(f)
         if text is not None and "#Collectionfile" in text:
             collectionfiles.append(f)
+    updated = 0
+    skipped = 0
     for target in collectionfiles:
         label = target.stem
         backlinks = gather_backlinks(label, candidate_files, exclude_path=target)
@@ -228,14 +226,9 @@ def recreate_collectionfiles(roots: Sequence[Path], candidate_files: Sequence[Pa
             target, roots, backlinks, label, dry_run, backup_suffix, color, compact
         )
         if changed:
-            if compact:
-                print(f"{colorize(color, '[RECREATE]', Colors.GREEN)} {colorize(color, str(target), Colors.BOLD)} (recreated with backlinks)")
-            else:
-                print(f"[recreate] {target} with {count} backlinks")
-            if compact:
-                print(f"{colorize(color, '[SKIP]', Colors.GRAY)} {colorize(color, str(target), Colors.DIM)} (no changes)")
-            else:
-                print(f"[skip] {target} (no changes)")
+            updated += 1
+        else:
+            skipped += 1
 
         # --- Also recreate Expanded<CollectionName>.md with ![[...]] embeds in a subfolder ---
         expanded_subfolder = target.parent / "ExpandedCollections"
@@ -248,10 +241,8 @@ def recreate_collectionfiles(roots: Sequence[Path], candidate_files: Sequence[Pa
             embed_content = "<!-- No backlinks found -->\n"
         if not dry_run:
             write_text_with_backup(expandedfile, embed_content, backup_suffix, color)
-        if compact:
-            print(f"{colorize(color, '[EXPANDED]', Colors.CYAN)} {colorize(color, str(expandedfile), Colors.BOLD)} (recreated)")
-        else:
-            print(f"[expandedfile] {expandedfile} (recreated)")
+
+    print(f"Collectionfiles: {updated} updated, {skipped} skipped.")
 
 
 # -------- Append String to Files --------
@@ -446,9 +437,7 @@ def update_collection_block(
     Returns (changed, count of backlinks).
     """
 
-    # If there are no backlinks, do not insert a block
-    if not backlinks:
-        return False, 0
+    # Always insert a backlink block, even if there are no backlinks
 
     begin = COLL_BEGIN_TMPL.format(label=label)
     end = COLL_END
@@ -516,8 +505,7 @@ def update_collection_block(
                 f"{colorize(color, str(target_file), Colors.BOLD)} "
                 f"{colorize(color, '(' + str(len(backlinks)) + ')', Colors.GRAY)}"
             )
-        else:
-            print(f"[collect] {target_file} <- {len(backlinks)} backlink(s)")
+
         if not dry_run:
             write_text_with_backup(target_file, new_content, backup_suffix, color)
 
