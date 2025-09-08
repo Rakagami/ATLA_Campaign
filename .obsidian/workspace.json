@@ -189,7 +189,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Wiki_File_System_Manager – Manual.md",
+                "file": "ExpandedCollections/ExpandedWiki_File_System_Manager.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -204,7 +204,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Wiki_File_System_Manager – Manual"
+              "title": "ExpandedWiki_File_System_Manager"
             }
           },
           {
@@ -349,7 +349,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Wiki_File_System_Manager – Manual.md",
+                "file": "ExpandedCollections/ExpandedWiki_File_System_Manager.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -359,7 +359,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Wiki_File_System_Manager – Manual"
+              "title": "Backlinks for ExpandedWiki_File_System_Manager"
             }
           },
           {
@@ -368,12 +368,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Wiki_File_System_Manager – Manual.md",
+                "file": "ExpandedCollections/ExpandedWiki_File_System_Manager.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Wiki_File_System_Manager – Manual"
+              "title": "Outgoing links from ExpandedWiki_File_System_Manager"
             }
           },
           {
@@ -397,13 +397,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Wiki_File_System_Manager – Manual.md",
+                "file": "ExpandedCollections/ExpandedWiki_File_System_Manager.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Wiki_File_System_Manager – Manual"
+              "title": "Outline of ExpandedWiki_File_System_Manager"
             }
           }
         ],
@@ -426,12 +426,12 @@
   },
   "active": "206e29507e7ac9f1",
   "lastOpenFiles": [
+    "Wiki_File_System_Manager – Manual.md",
     "Players Part/Rules/_Rules.md",
     "ExpandedCollections/ExpandedWiki_File_System_Manager.md",
     "ExpandedCollections",
     "__pycache__/Wiki_File_System_Manager.cpython-312.pyc",
     "__pycache__",
-    "Wiki_File_System_Manager – Manual.md",
     "Players Part/Collectionfiles/Elemental Bending/Airbending.md",
     "README.md",
     "Wiki_File_System_Manager.py",

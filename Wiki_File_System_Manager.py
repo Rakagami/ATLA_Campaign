@@ -820,13 +820,3 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 if __name__ == "__main__":
     import sys
     sys.exit(main())
-
-
-
-
-<!-- BEGIN-AUTO-COLLECTION:Wiki_File_System_Manager -->
-## Backlinks
-
-  ./
-
-<!-- END-AUTO-COLLECTION -->
