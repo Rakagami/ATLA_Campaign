@@ -1,0 +1,110 @@
+{
+  "debugEnabled": false,
+  "emptyViewToolbar": null,
+  "export": {
+    "includeIcons": true,
+    "replaceVars": true,
+    "useDataEls": true,
+    "useIds": true
+  },
+  "folderMappings": [],
+  "icon": "circle-ellipsis",
+  "keepPropsState": false,
+  "onboarding": {
+    "new-toolbar-mapping": true
+  },
+  "ribbonAction": "toolbar",
+  "scriptingEnabled": false,
+  "showEditInFabMenu": false,
+  "showLaunchpad": false,
+  "showToolbarIn": {
+    "audio": false,
+    "bases": false,
+    "canvas": false,
+    "image": false,
+    "kanban": false,
+    "pdf": false,
+    "video": false
+  },
+  "showToolbarInFileMenu": false,
+  "showToolbarInOther": "",
+  "toolbarProp": "notetoolbar",
+  "toolbars": [
+    {
+      "uuid": "adcc4edb-0570-41f2-917d-d16eca0322ff",
+      "customClasses": "",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "hasCommand": false,
+      "items": [
+        {
+          "uuid": "411d07ad-8fe4-430d-941a-942f748f0bdf",
+          "hasCommand": false,
+          "icon": "lucide-folder-search",
+          "inGallery": false,
+          "label": "`reveal",
+          "link": "Files: Reveal current file in navigation",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "file-explorer:reveal-active-file",
+            "hasVars": false,
+            "type": "command"
+          },
+          "tooltip": "reveal in file navigator",
+          "visibility": {
+            "desktop": {
+              "allViews": {
+                "components": [
+                  "icon",
+                  "label"
+                ]
+              }
+            },
+            "mobile": {
+              "allViews": {
+                "components": [
+                  "icon",
+                  "label"
+                ]
+              }
+            },
+            "tablet": {
+              "allViews": {
+                "components": [
+                  "icon",
+                  "label"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "toolbelt",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2025-09-08T14:41:04.296Z"
+    }
+  ],
+  "version": 20250313.1,
+  "whatsnew_version": "1.25"
+}

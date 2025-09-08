@@ -189,7 +189,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 2 Moves/Freeze.md",
+                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -204,7 +204,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Freeze"
+              "title": "ExpandedBonus Action"
             }
           },
           {
@@ -261,7 +261,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
+                "file": "obsidian-plugins-setup.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -276,7 +276,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Proficiency"
+              "title": "obsidian-plugins-setup"
             }
           },
           {
@@ -474,7 +474,7 @@
             }
           }
         ],
-        "currentTab": 10
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -527,6 +527,16 @@
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
+          },
+          {
+            "id": "c5925aa05fea2394",
+            "type": "leaf",
+            "state": {
+              "type": "runjs-codelist-view",
+              "state": {},
+              "icon": "js-dark-icon",
+              "title": "RunJS Codelist"
+            }
           }
         ]
       },
@@ -565,7 +575,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
+                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -575,7 +585,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Proficiency"
+              "title": "Backlinks for ExpandedBonus Action"
             }
           },
           {
@@ -584,12 +594,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
+                "file": "obsidian-plugins-setup.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Proficiency"
+              "title": "Outgoing links from obsidian-plugins-setup"
             }
           },
           {
@@ -613,13 +623,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
+                "file": "obsidian-plugins-setup.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Proficiency"
+              "title": "Outline of obsidian-plugins-setup"
             }
           }
         ]
@@ -630,22 +640,31 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false,
+      "runjs:RunJS": false
     }
   },
-  "active": "c7f7e78f6504f4b6",
+  "active": "206e29507e7ac9f1",
   "lastOpenFiles": [
+    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
+    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedReaction.md",
+    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedDanger Sense Reaction.md",
+    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
+    "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 2 Moves/Freeze.md",
+    "obsidian-plugins-setup.md",
+    "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
     "Players Part/Rules/core rules/Stat Shorts/ExpandedCollections/ExpandedCL.md",
     "Players Part/Rules/core rules/Stat Shorts/ExpandedCollections/ExpandedProficiency.md",
     "Players Part/Rules/core rules/Stat Shorts/Intelligence.md",
     "Players Part/Rules/Bending Rules/Water/ExpandedCollections/ExpandedCyclic Flow.md",
-    "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
     "Players Part/Rules/core rules/Stat Shorts/ExpandedCollections/ExpandedProficiency.bak",
     "Players Part/Rules/core rules/Stat Shorts/ExpandedCollections/ExpandedCL.bak",
     "Players Part/Rules/core rules/Stat Shorts/CL.md.bak",
@@ -661,13 +680,9 @@
     "Players Part/Rules/core rules/Stat Shorts/Con.md",
     "Players Part/Rules/core rules/Stat Shorts/Cha.md",
     "Players Part/Rules/Bending Rules/Air/Airbending Moves/Level 1 Moves/Air Blade.md",
-    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
     "Players Part/Collectionfiles/Actiontypes/Action.md",
-    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
     "Wiki_File_System_Manager – Manual.md",
     "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 2 Moves/Ice Daggers.md",
-    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedDanger Sense Reaction.md",
-    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedReaction.md",
     "Players Part/Collectionfiles/Elemental Bending/Waterbending.md",
     "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Bridge Levels.md",
     "Players Part/Rules/Bending Rules/Air/Mechanics/Airbending Slot.md",
@@ -675,8 +690,6 @@
     "Players Part/PCs/Mahogany/Shapeshifting Forms/Bearturtle.md",
     "DMs Part/Story/Earth_Kingdom_Folder_Structure/Regional Conflicts/Village_Uprising.md",
     "DMs Part/Story/Earth_Kingdom_Folder_Structure/Political Intrigue/Governor's_Backstory.md",
-    "Players Part/Rules/Bending Rules/Air/Mechanics/Airbending DC.md",
-    "Players Part/Collectionfiles/Elemental Bending/Airbending.md",
     "Players Part/Maps/Avatar World.jpg",
     "Players Part/NPCs/The Night Bloom/Rin Kotak/Rin Kotak.png",
     "Players Part/PCs/Mahogany/Shapeshifting Forms/Pics/Luma'tik.png",

@@ -8,5 +8,24 @@
       ],
       "key": "C"
     }
+  ],
+  "dataview:dataview-drop-cache": [
+    {
+      "modifiers": [
+        "Alt",
+        "Ctrl",
+        "Mod"
+      ],
+      "key": " "
+    }
+  ],
+  "note-toolbar:open-item-suggester": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "`"
+    }
   ]
 }

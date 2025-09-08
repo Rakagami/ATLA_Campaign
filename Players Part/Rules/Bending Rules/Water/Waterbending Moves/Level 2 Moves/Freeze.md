@@ -7,9 +7,4 @@
 
 **Links**:
 - ![[Waterbending Level]]
-
-Tags:
-#Waterbending
-#freezing
-#Immobilisation 
 [[Waterbending]]
