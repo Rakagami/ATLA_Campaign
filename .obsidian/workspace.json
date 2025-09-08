@@ -34,6 +34,30 @@
             }
           },
           {
+            "id": "9b7d549a4a57d8fc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Wiki_File_System_Manager – Manual.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Wiki_File_System_Manager – Manual"
+            }
+          },
+          {
             "id": "abb4262f3717b8d4",
             "type": "leaf",
             "state": {
@@ -134,467 +158,9 @@
               "icon": "lucide-file",
               "title": "Waterbending"
             }
-          },
-          {
-            "id": "2a6caa50258d7b87",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Players Part/Rules/Bending Rules/Water/Water Charges.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Water Charges"
-            }
-          },
-          {
-            "id": "04637525ddbd7b55",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Players Part/Rules/Bending Rules/Water/Waterbottle Water Charges.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Waterbottle Water Charges"
-            }
-          },
-          {
-            "id": "206e29507e7ac9f1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "DMs Part/Locations/Incencebending.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Incencebending"
-            }
-          },
-          {
-            "id": "b5c49d6d229c26f3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Bridge Level.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Avatar Spirit Bridge Level"
-            }
-          },
-          {
-            "id": "ac277a842d4f7cd1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Check.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Avatar Spirit Check"
-            }
-          },
-          {
-            "id": "3a62f90ad66d8887",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Wiki_File_System_Manager – Manual.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Wiki_File_System_Manager – Manual"
-            }
-          },
-          {
-            "id": "6247807dc2b270cb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Spiritbending Moves.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Spiritbending Moves"
-            }
-          },
-          {
-            "id": "cc40ba801d68321b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Collectionfile.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Collectionfile"
-            }
-          },
-          {
-            "id": "46fbf80c8d5b6f4a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Players Part/Rules/Bending Rules/Air/Airbending Moves/Level 1 Moves/Air Blade.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Air Blade"
-            }
-          },
-          {
-            "id": "c1c08acc9f745494",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Players Part/Rules/core rules/Stat Shorts/CL.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "CL"
-            }
-          },
-          {
-            "id": "c7f7e78f6504f4b6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "obsidian-plugins-setup.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "obsidian-plugins-setup"
-            }
-          },
-          {
-            "id": "96847f72b8aeaf69",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Players Part/Rules/core rules/Stat Shorts/CL.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "CL"
-            }
-          },
-          {
-            "id": "a2038400b45dfb82",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "ExpandedBonus Action"
-            }
-          },
-          {
-            "id": "e0e7e5b48cef0168",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Players Part/Rules/Bending Rules/Water/Cyclic Flow.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Cyclic Flow"
-            }
-          },
-          {
-            "id": "496a3131ec22961b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Players Part/Rules/Bending Rules/Water/Waterbending Level.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Waterbending Level"
-            }
-          },
-          {
-            "id": "50e27bc289b28092",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/Action.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Action"
-            }
-          },
-          {
-            "id": "b08db2026b2d1809",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Players Part/Collectionfiles/more/NPC.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "NPC"
-            }
-          },
-          {
-            "id": "967a359c12e90e3f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Players Part/Rules/Bending Rules/Air/Mechanics/Airbending DC.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Airbending DC"
-            }
-          },
-          {
-            "id": "648719c3f0c87a99",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/Action.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": true,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Action"
-            }
           }
         ],
-        "currentTab": 10
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -772,8 +338,32 @@
       "runjs:RunJS": false
     }
   },
-  "active": "3a62f90ad66d8887",
+  "active": "9b7d549a4a57d8fc",
   "lastOpenFiles": [
+    "Players Part/Collectionfiles/Elemental Bending/ExpandedCollections/ExpandedAirbending.md",
+    "Players Part/Collectionfiles/Elemental Bending/Airbending.md",
+    "Players Part/Rules/Bending Rules/Air/Airbending Moves/Level 1 Moves/Air Blade.md",
+    "Players Part/Collectionfiles/Elemental Bending/Waterbending.md",
+    "Players Part/Rules/Bending Rules/Water/Water Charges.md",
+    "Players Part/Rules/core rules/Stat Shorts/CL.md",
+    "Players Part/Collectionfiles/more/NPC.md",
+    "Players Part/Rules/Bending Rules/Air/Mechanics/Airbending DC.md",
+    "Players Part/Collectionfiles/Actiontypes/Action.md",
+    "obsidian-plugins-setup.md",
+    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
+    "Players Part/Rules/Bending Rules/Water/Cyclic Flow.md",
+    "Players Part/Rules/Bending Rules/Water/Waterbending Level.md",
+    "Players Part/Rules/Bending Rules/Water/Waterbottle Water Charges.md",
+    "DMs Part/Locations/Incencebending.md",
+    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Bridge Level.md",
+    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Check.md",
+    "Wiki_File_System_Manager – Manual.md",
+    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Spiritbending Moves.md",
+    "Collectionfile.md",
+    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/ExpandedCollections/ExpandedSpiritbending.md",
+    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/ExpandedCollections/ExpandedSpiritbending Moves.md",
+    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/ExpandedCollections/ExpandedAvatar Spirit Bridge Level.md",
+    "ExpandedCollections/ExpandedCollectionfile.md",
     "__pycache__/Wiki_File_System_Manager.cpython-312.pyc",
     "__pycache__",
     "graphs/wikigraph_treemap.html",
@@ -783,33 +373,9 @@
     "graphs/wikigraph_sunburst.html",
     "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Spiritbending.md",
     "DMs Part/Locations/Crimson Sails.md",
-    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Spiritbending Moves.md",
     "graphs",
     "Wikigraphs.py",
     "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/ExpandedCollections",
-    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Check.md",
-    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Bridge Level.md",
-    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/na.md",
-    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/_Avatar Spirit Bridge.md",
-    "DMs Part/Locations/Incencebending.md",
-    "Players Part/Rules/Bending Rules/Water/Waterbottle Water Charges.md",
-    "Collectionfile.md",
-    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
-    "DMs Part/Locations/Incencebending",
-    "DMs Part/Story/Modules/World Exploration/Wilderness_Encounters.md",
-    "DMs Part/Story/Modules/World Exploration/Remote_Temples.md",
-    "DMs Part/Story/Modules/Social Encounters/Skybison_Polo_Festival.md",
-    "DMs Part/Story/Modules/Social Encounters/Marketplace_Drama.md",
-    "DMs Part/Story/Modules/Social Encounters/Bandit_Negotiation.md",
-    "DMs Part/Story/Modules/Mysteries/Relic_Discovery.md",
-    "DMs Part/Story/Modules/Mysteries/Marketplace_Clues.md",
-    "DMs Part/Story/Modules/Module Templates 1/Political_Scenario_Template.md",
-    "DMs Part/Story/Modules/Module Templates 1/Earthbending_Challenge_Template.md",
-    "DMs Part/Story/Modules/Earth Kindom Templates/Social_Encounter_Template.md",
-    "DMs Part/Story/Modules/Earth Kindom Templates/Combat_Challenge_Template.md",
-    "DMs Part/Story/Modules/Combat Challenges/Wild_Beast.md",
-    "DMs Part/Story/Modules/Combat Challenges/Bandit_Encounter.md",
-    "DMs Part/Story/Modules/Adventure Hooks/Lost_Relic.md",
     "DMs Part/Story/Airbender Nomands/3atljldbkbk41.jpg",
     "DMs Part/Story/Airbender Nomands/1664411181325.jpg",
     "DMs Part/Locations/Visual References/Pasted image 20250104171805.png",
