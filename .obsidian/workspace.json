@@ -402,7 +402,7 @@
             }
           }
         ],
-        "currentTab": 15
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -493,7 +493,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/Action.md",
+                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -503,7 +503,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Action"
+              "title": "Backlinks for Proficiency"
             }
           },
           {
@@ -512,12 +512,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/Action.md",
+                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Action"
+              "title": "Outgoing links from Proficiency"
             }
           },
           {
@@ -541,13 +541,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/Action.md",
+                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Action"
+              "title": "Outline of Proficiency"
             }
           }
         ]
@@ -567,8 +567,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "648719c3f0c87a99",
+  "active": "a2038400b45dfb82",
   "lastOpenFiles": [
+    "Players Part/Collectionfiles/Actiontypes/Action.md",
     "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
     "Wiki_File_System_Manager – Manual.md",
     "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 2 Moves/Ice Daggers.md",
@@ -604,7 +605,6 @@
     "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 2 Moves/Freeze.md",
     "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 2 Moves/Wall of water.md",
     "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 3 Moves/Surfing.md",
-    "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 3 Moves/Ice Wall.md",
     "Players Part/Maps/Avatar World.jpg",
     "Players Part/NPCs/The Night Bloom/Rin Kotak/Rin Kotak.png",
     "Players Part/PCs/Mahogany/Shapeshifting Forms/Pics/Luma'tik.png",

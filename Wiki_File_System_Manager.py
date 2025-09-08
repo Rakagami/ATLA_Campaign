@@ -214,6 +214,8 @@ def recreate_collectionfiles(roots: Sequence[Path], candidate_files: Sequence[Pa
 
     collectionfiles = []
     for f in candidate_files:
+        if f.suffix == ".bak":
+            continue
         text = load_text(f)
         if text is not None and "#Collectionfile" in text:
             collectionfiles.append(f)
@@ -234,8 +236,8 @@ def recreate_collectionfiles(roots: Sequence[Path], candidate_files: Sequence[Pa
         expanded_subfolder = target.parent / "ExpandedCollections"
         expanded_subfolder.mkdir(parents=True, exist_ok=True)
         expandedfile = expanded_subfolder / f"Expanded{label}.md"
-        if backlinks:
-            embed_lines = [f"![[{p.name}]]" for p in backlinks]
+        embed_lines = [f"![[{p.name}]]" for p in backlinks if p.suffix != ".bak"]
+        if embed_lines:
             embed_content = "\n\n---\n---\n---\n\n".join(embed_lines) + "\n\n---\n---\n---\n\n"
         else:
             embed_content = "<!-- No backlinks found -->\n"
@@ -491,10 +493,9 @@ def update_collection_block(
     if pattern.search(content):
         new_content = pattern.sub(block_text, content, count=1)
     else:
-        # Ensure final newline then append
-        if content and not content.endswith("\n"):
-            content += "\n"
-        new_content = content + "\n" + block_text
+        # Always ensure exactly one newline before the block
+        content = content.rstrip("\n") + "\n"
+        new_content = content + block_text
 
     changed = new_content != content
 

@@ -1,5 +1,7 @@
+#Collectionfile 
+
 Your [[proficiency]] Bonus depends on your [[CL]]:
-#Collectionfile
+
 
 | [[CL]]Range | [[Proficiency]] Bonus |
 | ----------- | ----------------- |
@@ -11,6 +13,5 @@ Your [[proficiency]] Bonus depends on your [[CL]]:
 |             |                   |
 
 
-**Links**:
 - [[Proficiency]]
 - [[CL]]
