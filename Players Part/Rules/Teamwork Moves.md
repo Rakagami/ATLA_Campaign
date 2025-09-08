@@ -23,3 +23,9 @@ You can also combine different Moves if you can explain how they interact. For i
 
 - A **Mud Wall** created by an Earthbender could be reinforced with an **Ice Wall** from a Waterbender, resulting in a sturdier barrier with sharp ice spike defenses.  
     This opens opportunities for creative problem-solving and innovative combinations, adding depth to gameplay.
+<!-- BEGIN-AUTO-COLLECTION:Teamwork Moves -->
+## Backlinks
+
+  ./
+
+<!-- END-AUTO-COLLECTION -->

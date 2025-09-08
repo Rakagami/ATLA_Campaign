@@ -5,7 +5,6 @@
 
   ./
   ├── graphs
-      ├── [[wikigraph_sunburst.html]]
       └── [[wikigraph_treemap.html]]
   └── Players Part
       └── NPCs
@@ -23,6 +22,7 @@
                   └── [[Rin Kotak.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

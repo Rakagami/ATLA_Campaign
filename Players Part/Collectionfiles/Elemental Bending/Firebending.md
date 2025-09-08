@@ -5,7 +5,6 @@
 
   ./
   ├── graphs
-      ├── [[wikigraph_sunburst.html]]
       └── [[wikigraph_treemap.html]]
   └── Players Part
       └── Rules
@@ -26,7 +25,7 @@
                       ├── Level_2
                           ├── [[Fireburst.md]]
                           ├── [[Flame Barrage.md]]
-                          └── [[Infreno Wave.md]]
+                          └── [[Inferno Wave.md]]
                       ├── Level_3
                           ├── [[Rage Fuel.md]]
                           └── [[Scorching_Aura.md]]
@@ -54,6 +53,7 @@
                       └── [[Heat Mirage.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

@@ -15,7 +15,6 @@
 
   ./
   ├── graphs
-      ├── [[wikigraph_sunburst.html]]
       └── [[wikigraph_treemap.html]]
   └── Players Part
       ├── PCs
@@ -78,6 +77,7 @@
                           └── [[Chi Surge.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

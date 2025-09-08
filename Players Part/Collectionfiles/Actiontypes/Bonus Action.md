@@ -5,7 +5,6 @@
 
   ./
   ├── graphs
-      ├── [[wikigraph_sunburst.html]]
       └── [[wikigraph_treemap.html]]
   └── Players Part
       ├── PCs
@@ -34,7 +33,7 @@
                       ├── General Moves
                           └── [[Cantrips.md]]
                       ├── Level_2
-                          └── [[Infreno Wave.md]]
+                          └── [[Inferno Wave.md]]
                       ├── Level_3
                           ├── [[Rage Fuel.md]]
                           └── [[Scorching_Aura.md]]
@@ -56,6 +55,7 @@
                           └── [[Enhanced Reflexes.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

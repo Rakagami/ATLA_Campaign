@@ -4,9 +4,6 @@
 ## Backlinks
 
   ./
-  ├── graphs
-      ├── [[wikigraph_sunburst.html]]
-      └── [[wikigraph_treemap.html]]
   └── Players Part
       └── Organisations
           ├── Night Bloom
@@ -14,6 +11,7 @@
           └── [[The Lotus.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

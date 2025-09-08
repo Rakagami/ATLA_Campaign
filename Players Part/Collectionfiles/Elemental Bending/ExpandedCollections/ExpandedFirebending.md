@@ -1,9 +1,3 @@
-![[wikigraph_sunburst.html]]
-
----
----
----
-
 ![[wikigraph_treemap.html]]
 
 ---
@@ -64,7 +58,7 @@
 ---
 ---
 
-![[Infreno Wave.md]]
+![[Inferno Wave.md]]
 
 ---
 ---
