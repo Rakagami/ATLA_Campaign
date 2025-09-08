@@ -603,6 +603,13 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
         ),
     )
 
+    # NEW: debug flag
+    parser.add_argument(
+        "--debug",
+        action="store_true",
+        help="Enable debug output.",
+    )
+
     # NEW: append string to end of files
     parser.add_argument(
         "--append",
@@ -627,16 +634,22 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
 
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
-    print("[debug] bulk_find_replace.py main() started")
+
     args = parse_args(argv)
-    print(f"[debug] Parsed args: {args}")
+
+    def debug_print(msg):
+        if getattr(args, 'debug', False):
+            print(msg)
+
+    debug_print("[debug] bulk_find_replace.py main() started")
+    debug_print(f"[debug] Parsed args: {args}")
 
     # Decide on color usage
     color_enabled = sys.stdout.isatty() and (os.environ.get("NO_COLOR") is None) and (not args.no_color)
-    print(f"[debug] color_enabled: {color_enabled}")
+    debug_print(f"[debug] color_enabled: {color_enabled}")
 
     roots = [Path(p).resolve() for p in args.paths]
-    print(f"[debug] roots: {roots}")
+    debug_print(f"[debug] roots: {roots}")
 
     # Candidate files to scan
     files_iter = iter_files(
@@ -647,7 +660,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         follow_symlinks=args.follow_symlinks,
     )
     candidate_files = [p for p in files_iter if should_process_file(p, args.ext)]
-    print(f"[debug] candidate_files: {len(candidate_files)} files found")
+    debug_print(f"[debug] candidate_files: {len(candidate_files)} files found")
 
     # ---------- Manual Collectionfile Recreation ----------
     if args.recreate_collectionfiles:
@@ -820,10 +833,3 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 if __name__ == "__main__":
     import sys
     sys.exit(main())
-
-<!-- BEGIN-AUTO-COLLECTION:Wiki_File_System_Manager -->
-## Backlinks
-
-  ./
-
-<!-- END-AUTO-COLLECTION -->
