@@ -3,3 +3,5 @@ DMs Part/
 *.zip
 *.DS_Store
 *__pycache__/
+*.obsidian/workspace.json 
+
