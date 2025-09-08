@@ -38,3 +38,4 @@ Quick references:
                   └── [[Spiritbending Moves.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
