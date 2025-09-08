@@ -20,6 +20,7 @@ import os
 import plotly
 from pathlib import Path
 import colorsys
+import re
 from typing import Dict, List, Tuple
 
 
@@ -27,15 +28,17 @@ DEFAULT_EXCLUDES = {".git", "node_modules", ".obsidian", "__pycache__", "venv", 
 DEFAULT_EXTS = {".md", ".markdown", ".txt"}
 
 
-def gather_file_tree(root: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EXCLUDES) -> Tuple[Dict[str, int], Dict[str, str]]:
+def gather_file_tree(root: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EXCLUDES) -> Tuple[Dict[str, int], Dict[str, str], Dict[str, str]]:
     """Return a mapping of path parts joined by '/' to aggregated size in bytes.
 
     Keys include directories and files. Directory keys end with '/'.
     """
     root = root.resolve()
     sizes: Dict[str, int] = {}
-    # Map from file key (relative path) to file content (for .md files)
+    # Map from file key (relative path) to sanitized file content (for .md files)
     contents: Dict[str, str] = {}
+    # Raw file text (un-sanitized) kept to detect special markers like '![['
+    raw_contents: Dict[str, str] = {}
 
     for p in root.rglob("*"):
         # Skip excluded directories
@@ -55,10 +58,34 @@ def gather_file_tree(root: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EXCLUDES) -
             # Read markdown content for hover text when available
             try:
                 if p.suffix.lower() == '.md':
-                    # Read text, but keep it reasonably sized for hover
+                    # Read text, sanitize markdown/obsidian syntax, and keep it reasonably sized
                     txt = p.read_text(encoding='utf-8', errors='replace')
-                    # Trim to first 2000 chars to avoid huge hover payloads
-                    contents[file_key] = txt[:2000]
+
+                    def sanitize_markdown(s: str) -> str:
+                        # Remove YAML frontmatter
+                        s = re.sub(r'^---\n.*?\n---\n', '', s, flags=re.S)
+                        # Handle Obsidian embeds first: ![[target|display]] -> display, ![[target]] -> target
+                        s = re.sub(r'!\[\[([^|\]]+)\|([^\]]+)\]\]', r'\2', s)
+                        s = re.sub(r'!\[\[([^\]]+)\]\]', r'\1', s)
+                        # Obsidian wikilinks with display [[target|display]] -> display
+                        s = re.sub(r'\[\[([^|\]]+)\|([^\]]+)\]\]', r'\2', s)
+                        # Wikilinks [[target]] -> target
+                        s = re.sub(r'\[\[([^\]]+)\]\]', r'\1', s)
+                        # Markdown links [text](url) -> text
+                        s = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', s)
+                        # Remove heading markers at line starts (e.g. #, ##)
+                        s = re.sub(r'(?m)^[ \t]*#{1,6}\s*', '', s)
+                        # Strip emphasis and code markers *, _, `, ~
+                        s = re.sub(r'[\*_`~]+', '', s)
+                        # Collapse multiple blank lines
+                        s = re.sub(r'\n{3,}', '\n\n', s)
+                        # Trim whitespace
+                        return s.strip()
+
+                    clean = sanitize_markdown(txt)
+                    # Store full sanitized content; trimming will be done at display time
+                    contents[file_key] = clean
+                    raw_contents[file_key] = txt
             except Exception:
                 # ignore read errors
                 pass
@@ -69,7 +96,7 @@ def gather_file_tree(root: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EXCLUDES) -
             # Also add root directory bucket
             sizes["/"] = sizes.get("/", 0) + (size or 1)
 
-    return sizes, contents
+    return sizes, contents, raw_contents
 
 
 def build_plotly_lists(sizes: Dict[str, int], root_label: str = "root") -> Tuple[List[str], List[str], List[str], List[int]]:
@@ -116,7 +143,61 @@ def build_plotly_lists(sizes: Dict[str, int], root_label: str = "root") -> Tuple
 
 def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EXCLUDES, mode: str = 'size', embed_js: bool = False) -> None:
     # mode: 'size' uses file byte sizes, 'count' counts each file as 1
-    sizes, contents = gather_file_tree(root, exts=exts, excludes=excludes)
+    sizes, contents, raw_contents = gather_file_tree(root, exts=exts, excludes=excludes)
+
+    # Auto-create simple Expanded megafiles: for any source whose basename starts with 'Expanded',
+    # write a file named 'simple_Expanded_Megafile.md' in the same directory containing the
+    # sanitized content with embeds inlined (using the sanitized contents index).
+    try:
+        for file_key, sanitized in list(contents.items()):
+            # basename without trailing slash
+            base = Path(file_key).name
+            if not base.lower().startswith('expanded'):
+                continue
+
+            # helper to find sanitized content for a target name
+            def find_sanitized_for(target: str) -> str:
+                # Try direct matches: exact key
+                for k, v in contents.items():
+                    if k.lower() == target.lower():
+                        return v
+                # Try with .md suffix
+                if not target.lower().endswith('.md'):
+                    for k, v in contents.items():
+                        if k.lower().endswith(target.lower() + '.md'):
+                            return v
+                # Match by filename suffix
+                for k, v in contents.items():
+                    if k.lower().endswith('/' + target.lower()) or k.lower().endswith(target.lower()):
+                        return v
+                return ''
+
+            raw = raw_contents.get(file_key, '')
+
+            def embed_repl(m: re.Match) -> str:
+                target = m.group(1).strip()
+                if '|' in target:
+                    target = target.split('|', 1)[0].strip()
+                found = find_sanitized_for(target)
+                if found:
+                    return '\n' + found + '\n'
+                return target
+
+            resolved = re.sub(r'!\[\[([^\]]+)\]\]', embed_repl, raw)
+            final_text = resolved.strip() or sanitized
+
+            # write into the same directory as the source file
+            src_path = root.joinpath(file_key)
+            out_dir = src_path.parent if src_path.parent.exists() else root
+            out_path = out_dir / 'simple_Expanded_Megafile.md'
+            try:
+                out_path.write_text(final_text + '\n', encoding='utf-8')
+            except Exception:
+                # ignore write errors
+                pass
+    except Exception:
+        # non-fatal; continue
+        pass
     # Ensure there's at least a root node
     if not sizes:
         sizes = {"/": 1}
@@ -159,6 +240,33 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
             else:
                 hovertexts.append('')
 
+    # Create a treemap-specific hovertext that only shows the first couple of rows
+    treemap_hovertexts: List[str] = []
+    for node_id in ids:
+        if node_id.endswith('/'):
+            treemap_hovertexts.append('')
+            continue
+        raw = contents.get(node_id, '')
+        if not raw:
+            treemap_hovertexts.append('')
+            continue
+        # take first 2 non-empty lines
+        lines = raw.splitlines()
+        first_lines: List[str] = []
+        for ln in lines:
+            t = ln.strip()
+            if not t:
+                continue
+            first_lines.append(t)
+            if len(first_lines) >= 2:
+                break
+        if not first_lines and lines:
+            first_lines = [lines[0].strip()]
+        h = '<br>'.join(first_lines)
+        if len(lines) > len(first_lines):
+            h = h + '...'
+        treemap_hovertexts.append(h)
+
     # Compute depth per node and map to colors.
     depths: List[int] = []
     for node_id in ids:
@@ -179,6 +287,60 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
         return '#{0:02x}{1:02x}{2:02x}'.format(int(r * 255), int(g * 255), int(b * 255))
 
     colors: List[str] = [depth_to_hex(d) for d in depths]
+
+    # Prepare short cell text for treemap nodes (sanitized and trimmed)
+    cell_texts: List[str] = []
+    for node_id in ids:
+        txt = ''
+        if not node_id.endswith('/'):
+            sanitized = contents.get(node_id, '')
+            raw = raw_contents.get(node_id, '')
+            if sanitized:
+                # If the raw file contains embed markers like ![[target]] we should
+                # inline the referenced file's full sanitized content in place of the token.
+                if raw and '![[' in raw:
+                    # helper to find sanitized content for a target name
+                    def find_sanitized_for(target: str) -> str:
+                        # Try direct matches: exact key
+                        for k, v in contents.items():
+                            if k.lower() == target.lower():
+                                return v
+                        # Try with/without .md
+                        if not target.lower().endswith('.md'):
+                            for k, v in contents.items():
+                                if k.lower().endswith(target.lower() + '.md'):
+                                    return v
+                        # Match by filename suffix
+                        for k, v in contents.items():
+                            if k.lower().endswith('/' + target.lower()) or k.lower().endswith(target.lower()):
+                                return v
+                        return ''
+
+                    # replace embeds with the sanitized content of the referenced file
+                    def embed_repl(m: re.Match) -> str:
+                        target = m.group(1).strip()
+                        # strip optional display part if provided (target|display)
+                        if '|' in target:
+                            target = target.split('|', 1)[0].strip()
+                        found = find_sanitized_for(target)
+                        if found:
+                            return '\n' + found + '\n'
+                        # fallback: show the target name
+                        return target
+
+                    resolved = re.sub(r'!\[\[([^\]]+)\]\]', embed_repl, raw)
+                    # sanitize the resolved text (it may already be sanitized pieces)
+                    t = sanitized.replace('\n', '<br>')
+                    # If resolved produced additional content, prioritize it
+                    if resolved and resolved != raw:
+                        t = re.sub(r'\n+', '<br>', resolved.strip())
+                    txt = t
+                else:
+                    t = sanitized.replace('\n', '<br>')
+                    if len(t) > 300:
+                        t = t[:300] + '...'
+                    txt = t
+        cell_texts.append(txt)
 
     # Lazy import plotly
     try:
@@ -209,8 +371,11 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
         parents=parents,
         values=values,
         branchvalues="total",
-        hovertext=hovertexts,
+        hovertext=treemap_hovertexts,
         hovertemplate='%{label}<br>%{hovertext}<extra></extra>',
+        text=cell_texts,
+    texttemplate='%{label}<br>%{text}<extra></extra>',
+    textfont=dict(size=12),
         marker=dict(colors=colors, line=dict(width=0.5, color='white')),
     )
     fig_treemap = go.Figure(tre)
