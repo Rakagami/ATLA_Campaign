@@ -177,30 +177,31 @@ def load_text(path: Path) -> Optional[str]:
 
 def write_text_with_backup(path: Path, content: str, backup_suffix: Optional[str], color: bool) -> None:
     """Write content to file, making a backup if requested."""
+    # Never mutate this script
+    if os.path.abspath(str(path)) == os.path.abspath(__file__):
+        if color:
+            print(f"{Colors.DIM}[skip]{Colors.RESET} {path} (self-mutation prevented)")
+        return
+
+    # Create a single backup if requested
     if backup_suffix:
         try:
-            copy2(path, Path(str(path) + backup_suffix))
-        except Exception as e:
-            # Warning printed in yellow if color is enabled
-            print(colorize(color, f"[warn] Failed to create backup for {path}: {e}", Colors.YELLOW), file=sys.stderr)
-        # Never mutate Wiki_File_System_Manager.py
-        if os.path.abspath(str(path)) == os.path.abspath(__file__):
+            backup_path = path.with_suffix(path.suffix + backup_suffix)
+            copy2(path, backup_path)
             if color:
-                print(f"{Colors.DIM}[skip]{Colors.RESET} {path} (self-mutation prevented)")
-            return
-        import sys
-        try:
-            if backup_suffix:
-                backup_path = path.with_suffix(path.suffix + backup_suffix)
-                copy2(path, backup_path)
-                if color:
-                    print(f"{Colors.DIM}[backup]{Colors.RESET} {backup_path}")
-            # Always overwrite the file, even if content is unchanged
-            path.write_text(content, encoding="utf-8")
-            print(f"[CONFIRM] Overwrote {path}")
-            print(f"[DEBUG] New content preview: {content[:100]!r}")
+                print(f"{Colors.DIM}[backup]{Colors.RESET} {backup_path}")
         except Exception as e:
-            print(f"[ERROR] Failed to write to {path}: {e}", file=sys.stderr)
+            print(colorize(color, f"[warn] Failed to create backup for {path}: {e}", Colors.YELLOW), file=sys.stderr)
+
+    try:
+        # Always overwrite the file, even if content is unchanged
+        path.write_text(content, encoding="utf-8")
+        if color:
+            print(f"{Colors.GREEN}[CONFIRM]{Colors.RESET} Overwrote {path}")
+        if getattr(sys, '_wfsm_debug', False):
+            print(f"[DEBUG] New content preview: {content[:100]!r}")
+    except Exception as e:
+        print(f"[ERROR] Failed to write to {path}: {e}", file=sys.stderr)
 
 
 
