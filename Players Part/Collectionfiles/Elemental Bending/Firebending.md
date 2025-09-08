@@ -4,9 +4,6 @@
 ## Backlinks
 
   ./
-  ├── graphs
-      ├── [[wikigraph_sunburst.html]]
-      └── [[wikigraph_treemap.html]]
   └── Players Part
       └── Rules
           └── Bending Rules
@@ -54,6 +51,7 @@
                       └── [[Heat Mirage.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

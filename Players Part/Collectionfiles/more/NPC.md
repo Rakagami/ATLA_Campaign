@@ -4,9 +4,6 @@
 ## Backlinks
 
   ./
-  ├── graphs
-      ├── [[wikigraph_sunburst.html]]
-      └── [[wikigraph_treemap.html]]
   └── Players Part
       └── NPCs
           ├── Lotus
@@ -23,6 +20,7 @@
                   └── [[Rin Kotak.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

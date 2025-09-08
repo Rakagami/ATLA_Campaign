@@ -1,15 +1,3 @@
-![[wikigraph_sunburst.html]]
-
----
----
----
-
-![[wikigraph_treemap.html]]
-
----
----
----
-
 ![[Glassfruit Seed Mechanics.md]]
 
 ---

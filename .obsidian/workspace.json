@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Wiki_File_System_Manager – Manual.md",
+                "file": "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Bridge Level.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -54,7 +54,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Wiki_File_System_Manager – Manual"
+              "title": "Avatar Spirit Bridge Level"
             }
           },
           {
@@ -158,9 +158,33 @@
               "icon": "lucide-file",
               "title": "Waterbending"
             }
+          },
+          {
+            "id": "8f41c7f6c3321352",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Players Part/Collectionfiles/Elemental Bending/ExpandedCollections/ExpandedAirbending.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "ExpandedAirbending"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -261,7 +285,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Wiki_File_System_Manager – Manual.md",
+                "file": "Players Part/Collectionfiles/Elemental Bending/ExpandedCollections/ExpandedAirbending.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -271,7 +295,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Wiki_File_System_Manager – Manual"
+              "title": "Backlinks for ExpandedAirbending"
             }
           },
           {
@@ -338,12 +362,16 @@
       "runjs:RunJS": false
     }
   },
-  "active": "9b7d549a4a57d8fc",
+  "active": "8f41c7f6c3321352",
   "lastOpenFiles": [
-    "Players Part/Collectionfiles/Elemental Bending/ExpandedCollections/ExpandedAirbending.md",
-    "Players Part/Collectionfiles/Elemental Bending/Airbending.md",
-    "Players Part/Rules/Bending Rules/Air/Airbending Moves/Level 1 Moves/Air Blade.md",
     "Players Part/Collectionfiles/Elemental Bending/Waterbending.md",
+    "graphs/wikigraph_treemap.html",
+    "graphs/wikigraph_sunburst.html",
+    "Wiki_File_System_Manager – Manual.md",
+    "Players Part/Collectionfiles/Elemental Bending/Airbending.md",
+    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Bridge Level.md",
+    "Players Part/Collectionfiles/Elemental Bending/ExpandedCollections/ExpandedAirbending.md",
+    "Players Part/Rules/Bending Rules/Air/Airbending Moves/Level 1 Moves/Air Blade.md",
     "Players Part/Rules/Bending Rules/Water/Water Charges.md",
     "Players Part/Rules/core rules/Stat Shorts/CL.md",
     "Players Part/Collectionfiles/more/NPC.md",
@@ -355,9 +383,7 @@
     "Players Part/Rules/Bending Rules/Water/Waterbending Level.md",
     "Players Part/Rules/Bending Rules/Water/Waterbottle Water Charges.md",
     "DMs Part/Locations/Incencebending.md",
-    "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Bridge Level.md",
     "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Check.md",
-    "Wiki_File_System_Manager – Manual.md",
     "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Spiritbending Moves.md",
     "Collectionfile.md",
     "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/ExpandedCollections/ExpandedSpiritbending.md",
@@ -366,13 +392,10 @@
     "ExpandedCollections/ExpandedCollectionfile.md",
     "__pycache__/Wiki_File_System_Manager.cpython-312.pyc",
     "__pycache__",
-    "graphs/wikigraph_treemap.html",
     "graphs/wikigraph_file_size_histogram.html",
     "graphs/wikigraph_top_20_dirs.html",
     "graphs/wikigraph_top_20_files.html",
-    "graphs/wikigraph_sunburst.html",
     "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Spiritbending.md",
-    "DMs Part/Locations/Crimson Sails.md",
     "graphs",
     "Wikigraphs.py",
     "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/ExpandedCollections",
