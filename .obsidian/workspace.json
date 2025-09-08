@@ -237,7 +237,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
+                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -252,7 +252,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Proficiency"
+              "title": "ExpandedBonus Action"
             }
           },
           {
@@ -493,7 +493,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
+                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -503,7 +503,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Proficiency"
+              "title": "Backlinks for ExpandedBonus Action"
             }
           },
           {
@@ -512,12 +512,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
+                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Proficiency"
+              "title": "Outgoing links from ExpandedBonus Action"
             }
           },
           {
@@ -541,13 +541,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
+                "file": "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedBonus Action.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Proficiency"
+              "title": "Outline of ExpandedBonus Action"
             }
           }
         ]
@@ -570,6 +570,7 @@
   "active": "a2038400b45dfb82",
   "lastOpenFiles": [
     "Players Part/Collectionfiles/Actiontypes/Action.md",
+    "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
     "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedAction.md",
     "Wiki_File_System_Manager – Manual.md",
     "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 2 Moves/Ice Daggers.md",
@@ -585,7 +586,6 @@
     "Players Part/PCs/Mahogany/Shapeshifting Forms/Bearturtle.md",
     "DMs Part/Story/Earth_Kingdom_Folder_Structure/Regional Conflicts/Village_Uprising.md",
     "DMs Part/Story/Earth_Kingdom_Folder_Structure/Political Intrigue/Governor's_Backstory.md",
-    "Players Part/Rules/core rules/Stat Shorts/Proficiency.md",
     "Players Part/Rules/Bending Rules/Air/Mechanics/Airbending DC.md",
     "Players Part/Collectionfiles/Elemental Bending/Airbending.md",
     "Players Part/Rules/core rules/Stat Shorts/ExpandedCollections",
