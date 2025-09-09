@@ -4,8 +4,6 @@
 ## Backlinks
 
   ./
-  ├── graphs
-      └── [[wikigraph_treemap.html]]
   └── Players Part
       └── Rules
           └── Bending Rules
@@ -27,18 +25,18 @@
                           ├── [[Icecubes.md]]
                           ├── [[Mistbending.md]]
                           └── [[Shape Water.md]]
-                      ├── Level 1 Moves
+                      ├── Level 1
                           ├── [[Healing Water.md]]
                           ├── [[Piercing Water.md]]
                           ├── [[Puffy Clouds.md]]
                           ├── [[Slicing Water.md]]
                           └── [[Water Whip.md]]
-                      ├── Level 2 Moves
+                      ├── Level 2
                           ├── [[Freeze.md]]
                           ├── [[Ice Daggers.md]]
                           ├── [[Wall of water.md]]
                           └── [[Water Tentacles.md]]
-                      ├── Level 3 Moves
+                      ├── Level 3
                           ├── [[Healing Mist.md]]
                           ├── [[Ice Wall.md]]
                           ├── [[Icicle Ammunition.md]]
@@ -49,6 +47,11 @@
                   └── [[Waterbottle Water Charges.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+
+
+
 
 
 

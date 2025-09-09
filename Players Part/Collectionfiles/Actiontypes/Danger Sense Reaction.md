@@ -17,20 +17,23 @@ You have [[Danger Sense Reaction]]s per Turn scaling with your Airbending Level
 ## Backlinks
 
   ./
-  ├── graphs
-      └── [[wikigraph_treemap.html]]
   └── Players Part
       └── Rules
           └── Bending Rules
               └── Air
                   └── Airbending Moves
-                      ├── Level 1 Moves
+                      ├── Level 1
                           ├── [[Gentle Push.md]]
                           └── [[Tail Wind.md]]
-                      └── Level 2 Moves
+                      └── Level 2
                           └── [[Air Vortex.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+
+
+
 
 
 

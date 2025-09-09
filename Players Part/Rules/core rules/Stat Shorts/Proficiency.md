@@ -14,8 +14,6 @@
 ## Backlinks
 
   ./
-  ├── graphs
-      └── [[wikigraph_treemap.html]]
   └── Players Part
       ├── PCs
           └── Mahogany
@@ -28,9 +26,9 @@
           ├── Bending Rules
               ├── Air
                   ├── Airbending Moves
-                      ├── Level 1 Moves
+                      ├── Level 1
                           └── [[Air Blade.md]]
-                      └── Level 2 Moves
+                      └── Level 2
                           └── [[Wind spiral.md]]
                   └── Mechanics
                       └── [[Airbending DC.md]]
@@ -39,7 +37,7 @@
                   └── Earthbending Moves
                       ├── Base Moves
                           └── [[Stone Knuckles.md]]
-                      ├── Level 1 Moves
+                      ├── Level 1
                           └── [[Rock Hurl.md]]
                       └── Level 2 Moves
                           └── [[Ground Unlock.md]]
@@ -58,11 +56,11 @@
               └── Water
                   ├── [[Waterbending DC.md]]
                   └── Waterbending Moves
-                      ├── Level 1 Moves
+                      ├── Level 1
                           ├── [[Piercing Water.md]]
                           ├── [[Slicing Water.md]]
                           └── [[Water Whip.md]]
-                      └── Level 2 Moves
+                      └── Level 2
                           ├── [[Ice Daggers.md]]
                           └── [[Water Tentacles.md]]
           └── Non Bending Rules
@@ -77,6 +75,11 @@
                           └── [[Chi Surge.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+
+
+
 
 
 

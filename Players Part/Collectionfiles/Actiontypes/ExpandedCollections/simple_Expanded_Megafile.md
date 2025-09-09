@@ -1,10 +1,3 @@
-wikigraph_treemap.html
-
----
----
----
-
-
 Danger Sense Reaction.
 Level 1
 - Range: 3  Airbending Slot meters.
@@ -45,6 +38,7 @@ Effects:
 	Create a swirling vortex of air around you to deflect projectiles and disperse lingering Damgage effects.
 
 Airbending
+Level 2
 
 
 ---

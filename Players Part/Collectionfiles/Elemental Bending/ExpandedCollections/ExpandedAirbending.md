@@ -1,9 +1,3 @@
-![[wikigraph_treemap.html]]
-
----
----
----
-
 ![[Danger Sense Reaction.md]]
 
 ---
@@ -46,13 +40,13 @@
 ---
 ---
 
-![[Cyclone Shield.md]]
-
----
----
----
-
 ![[Hovering Hands.md]]
+
+---
+---
+---
+
+![[Cyclone Shield.md]]
 
 ---
 ---

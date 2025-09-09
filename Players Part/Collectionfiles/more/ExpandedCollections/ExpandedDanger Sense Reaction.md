@@ -1,16 +1,16 @@
-![[Gentle Push.md]]
+![[Gentle Push]]
 
 
 ---
 
 
-![[Tail Wind.md]]
+![[Tail Wind]]
 
 
 ---
 
 
-![[Air Vortex.md]]
+![[Air Vortex]]
 
 
 ---

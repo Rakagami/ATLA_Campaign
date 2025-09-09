@@ -1,4 +1,4 @@
-
+#Collectionfile 
 Water Charges represent the amount of water available for a water-bender to manipulate.
 
 ![[Waterbottle Water Charges]] 
@@ -18,3 +18,33 @@ Water Charges represent the amount of water available for a water-bender to mani
     - **Abilities:** Certain abilities allow Water Charges recovery or [[Cyclic Flow]].
     
 [[Waterbending]]
+[[Waterbottle Water Charges]]
+[[Level 1]]
+[[Level 2]]
+[[Level 3]]
+[[Level 4]]
+[[Level 5]]
+[[Level 6]]
+[[Level 7]]
+[[Level 8]]
+[[Level 9]]
+<!-- BEGIN-AUTO-COLLECTION:Water Charges -->
+## Backlinks
+
+  ./
+  └── Players Part
+      └── Rules
+          └── Bending Rules
+              └── Water
+                  ├── [[Cyclic Flow.md]]
+                  └── Waterbending Moves
+                      ├── Level 1
+                          ├── [[Piercing Water.md]]
+                          └── [[Puffy Clouds.md]]
+                      ├── Level 2
+                          ├── [[Freeze.md]]
+                          └── [[Ice Daggers.md]]
+                      └── Level 3
+                          └── [[Healing Mist.md]]
+
+<!-- END-AUTO-COLLECTION -->

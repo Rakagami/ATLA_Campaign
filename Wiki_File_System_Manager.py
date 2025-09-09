@@ -473,17 +473,40 @@ def update_collection_block(
             if part not in d:
                 d[part] = {}
             d = d[part]
-    def print_tree(d, prefix="", is_last=True):
+    # Only create wiki-links ([[...]] ) for files that are inside the specified root folder.
+    root_base = Path(roots[0]).resolve() if roots else None
+
+    def print_tree(d, prefix="", path_parts: Optional[List[str]] = None):
+        if path_parts is None:
+            path_parts = []
         items = list(d.items())
         for idx, (name, subtree) in enumerate(items):
             connector = "└── " if idx == len(items)-1 else "├── "
-            # Only bracket files (leaf nodes), not folders
+            # If subtree is non-empty, it's a folder node
             if subtree:
                 lines.append(f"{prefix}{connector}{name}")
                 extension = "    "  # Always use spaces, no vertical lines
-                print_tree(subtree, prefix + extension, True)
+                print_tree(subtree, prefix + extension, path_parts + [name])
             else:
-                lines.append(f"{prefix}{connector}[[{name}]]")
+                # Build the relative path from the root used earlier when creating the tree
+                try:
+                    rel_path = os.path.join(*([p for p in path_parts] + [name]))
+                except Exception:
+                    rel_path = name
+                bracket = True
+                if root_base is None:
+                    bracket = False
+                else:
+                    try:
+                        full_path = (root_base / rel_path).resolve()
+                        # Ensure the file is within the root_base directory
+                        bracket = os.path.commonpath([str(full_path), str(root_base)]) == str(root_base)
+                    except Exception:
+                        bracket = False
+                if bracket:
+                    lines.append(f"{prefix}{connector}[[{name}]]")
+                else:
+                    lines.append(f"{prefix}{connector}{name}")
     lines.append(f"  {cwd}/")
     print_tree(tree, prefix="  ")
     lines.append("")  # trailing newline
@@ -879,17 +902,38 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                     if part not in d:
                         d[part] = {}
                     d = d[part]
-            def print_tree(d, prefix="", is_last=True):
+            # Only bracket files ([[...]] ) for files that are inside the specified root folder.
+            root_base = Path(roots[0]).resolve() if roots else None
+
+            def print_tree(d, prefix="", path_parts: Optional[List[str]] = None):
+                if path_parts is None:
+                    path_parts = []
                 items = list(d.items())
                 for idx, (name, subtree) in enumerate(items):
                     connector = "└── " if idx == len(items)-1 else "├── "
-                    # Only bracket files (leaf nodes), not folders
                     if subtree:
                         print(f"{prefix}{connector}{name}")
                         extension = "    "  # Always use spaces, no vertical lines
-                        print_tree(subtree, prefix + extension, True)
+                        print_tree(subtree, prefix + extension, path_parts + [name])
                     else:
-                        print(f"{prefix}{connector}[[{name}]]")
+                        try:
+                            rel_path = os.path.join(*([p for p in path_parts] + [name]))
+                        except Exception:
+                            rel_path = name
+                        bracket = True
+                        if root_base is None:
+                            bracket = False
+                        else:
+                            try:
+                                full_path = (root_base / rel_path).resolve()
+                                bracket = os.path.commonpath([str(full_path), str(root_base)]) == str(root_base)
+                            except Exception:
+                                bracket = False
+                        if bracket:
+                            print(f"{prefix}{connector}[[{name}]]")
+                        else:
+                            print(f"{prefix}{connector}{name}")
+
             print_tree(tree, prefix="  ")
         print()
     return 0

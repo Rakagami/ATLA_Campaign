@@ -30,6 +30,18 @@
 1. **Slots Increase Each Level**: As characters level up, they gain slots to learn new moves, and the distribution of slots ensures steady growth and access to higher-level moves.
 2. **Balanced Progression**: Players gain slots evenly while progressively unlocking new levels at **Levels 3, 5, 7, 9, 11, 13, 15, and 17**.
 
+[[Level 1]]
+[[Level 2]]
+[[Level 3]]
+[[Level 4]]
+[[Level 5]]
+[[Level 6]]
+[[Level 7]]
+[[Level 8]]
+[[Level 9]]
+
+[
+
 Tags:
 #Airbending
 [[Airbending]]

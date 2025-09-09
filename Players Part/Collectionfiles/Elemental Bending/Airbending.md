@@ -4,8 +4,6 @@
 ## Backlinks
 
   ./
-  ├── graphs
-      └── [[wikigraph_treemap.html]]
   └── Players Part
       ├── Collectionfiles
           └── Actiontypes
@@ -15,17 +13,18 @@
               ├── Air
                   ├── Airbending Moves
                       ├── [[Emergency Air Push.md]]
-                      ├── Level 1 Moves
+                      ├── Level 1
                           ├── [[Air Blade.md]]
                           ├── [[Airdash.md]]
                           └── [[Tail Wind.md]]
-                      ├── Level 2 Moves
+                      ├── Level 2
                           ├── [[Air Vortex.md]]
                           └── [[Wind spiral.md]]
-                      ├── Level 3 Moves
-                          ├── [[Cyclone Shield.md]]
+                      ├── Level 3
                           └── [[Hovering Hands.md]]
-                      └── Level 5 Moves
+                      ├── Level 4
+                          └── [[Cyclone Shield.md]]
+                      └── Level 5
                           └── [[Tornado Shield.md]]
                   └── Mechanics
                       ├── [[Airbending DC.md]]
@@ -40,6 +39,11 @@
                       └── [[Sandstream.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+
+
+
 
 
 

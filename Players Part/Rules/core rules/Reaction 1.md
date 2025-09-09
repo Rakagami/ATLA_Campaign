@@ -18,7 +18,7 @@
       │   ├── Earth
       │   │   ├── Earthbending Moves
       │   │   │   ├── Level 1 Moves
-      │   │   │   │   └── [[Earth Brace.md]]
+      │   │   │   │   └── [[Earth Brace]]
       │   │   │   └── Level 2 Moves
       │   │   │       ├── [[Gravel Vortex.md]]
       │   │   │       └── [[Stone Shield.md]]
@@ -31,7 +31,7 @@
       │   └── Water
       │       ├── Waterbending Moves
       │       │   └── Level 3 Moves
-      │       │       └── [[Icicle Ammunition.md]]
+      │       │       └── [[Icicle Ammunition]]
       │       └── [[Waterbending rules.md]]
       ├── Non Bending Rules
       │   └── Chi Blocking

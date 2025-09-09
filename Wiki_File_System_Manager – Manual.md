@@ -35,6 +35,9 @@ Bracket plain mentions, skipping already-linked:
 
 ```bash
 python Wiki_File_System_Manager.py --ext .md --find "[[[[Bumi]]]]" --bracket --dry-run
+```
+
+```
 python Wiki_File_System_Manager.py --ext .md --find "[[[[Bumi]]]]" --bracket --backup .bak
 ```
 

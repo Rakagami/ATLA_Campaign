@@ -4,20 +4,18 @@
 ## Backlinks
 
   ./
-  ├── graphs
-      └── [[wikigraph_treemap.html]]
-  ├── Players Part
+  └── Players Part
       └── Rules
           ├── Bending Rules
               ├── Air
                   └── Airbending Moves
-                      ├── Level 2 Moves
+                      ├── Level 2
                           └── [[Wind spiral.md]]
-                      └── Level 3 Moves
+                      └── Level 3
                           └── [[Hovering Hands.md]]
               ├── Earth
                   ├── Earthbending Moves
-                      ├── Level 1 Moves
+                      ├── Level 1
                           └── [[Rock Hurl.md]]
                       └── Level 2 Moves
                           ├── [[Gravel Vortex.md]]
@@ -62,16 +60,16 @@
                           ├── [[Icecubes.md]]
                           ├── [[Mistbending.md]]
                           └── [[Shape Water.md]]
-                      ├── Level 1 Moves
+                      ├── Level 1
                           ├── [[Healing Water.md]]
                           ├── [[Piercing Water.md]]
                           ├── [[Slicing Water.md]]
                           └── [[Water Whip.md]]
-                      ├── Level 2 Moves
+                      ├── Level 2
                           ├── [[Ice Daggers.md]]
                           ├── [[Wall of water.md]]
                           └── [[Water Tentacles.md]]
-                      ├── Level 3 Moves
+                      ├── Level 3
                           ├── [[Ice Wall.md]]
                           └── [[Icicle Ammunition.md]]
                       └── Level 4
@@ -90,9 +88,13 @@
                       └── Level 3 Moves
                           └── [[Chi Surge.md]]
           └── [[Teamwork Moves.md]]
-  └── [[Wiki_File_System_Manager.py]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+
+
+
 
 
 

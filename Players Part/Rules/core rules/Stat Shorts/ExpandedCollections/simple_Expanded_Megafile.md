@@ -26,6 +26,8 @@ Links:
 
 Airbending
 
+Level 3
+
 
 ---
 ---
@@ -51,6 +53,7 @@ Links:
 Tags:
 Waterbending
 Waterbending
+Level 2
 
 
 ---
@@ -85,8 +88,6 @@ Collectionfile
 Backlinks
 
   ./
-  ├── graphs
-      └── wikigraphtreemap.html
   └── Players Part
       ├── PCs
           └── Mahogany
@@ -99,9 +100,9 @@ Backlinks
           ├── Bending Rules
               ├── Air
                   ├── Airbending Moves
-                      ├── Level 1 Moves
+                      ├── Level 1
                           └── Air Blade.md
-                      └── Level 2 Moves
+                      └── Level 2
                           └── Wind spiral.md
                   └── Mechanics
                       └── Airbending DC.md
@@ -110,7 +111,7 @@ Backlinks
                   └── Earthbending Moves
                       ├── Base Moves
                           └── Stone Knuckles.md
-                      ├── Level 1 Moves
+                      ├── Level 1
                           └── Rock Hurl.md
                       └── Level 2 Moves
                           └── Ground Unlock.md
@@ -129,11 +130,11 @@ Backlinks
               └── Water
                   ├── Waterbending DC.md
                   └── Waterbending Moves
-                      ├── Level 1 Moves
+                      ├── Level 1
                           ├── Piercing Water.md
                           ├── Slicing Water.md
                           └── Water Whip.md
-                      └── Level 2 Moves
+                      └── Level 2
                           ├── Ice Daggers.md
                           └── Water Tentacles.md
           └── Non Bending Rules

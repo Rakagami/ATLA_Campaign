@@ -1,10 +1,3 @@
-wikigraph_treemap.html
-
----
----
----
-
-
 Glassfruit Team-Up Techniques 
 
 X = yz
@@ -168,17 +161,15 @@ Waterbending
 Backlinks
 
   ./
-  ├── graphs
-      └── wikigraphtreemap.html
   └── Players Part
       └── Rules
           └── Bending Rules
               └── Water
                   ├── Water Charges.md
                   └── Waterbending Moves
-                      ├── Level 1 Moves
+                      ├── Level 1
                           └── Healing Water.md
-                      └── Level 3 Moves
+                      └── Level 3
                           └── Healing Mist.md
 
 <!-- END-AUTO-COLLECTION -->
@@ -189,6 +180,7 @@ Backlinks
 ---
 
 
+Collectionfile 
 Water Charges represent the amount of water available for a water-bender to manipulate.
 
 Waterbottle Water Charges 
@@ -207,6 +199,36 @@ Waterbottle Water Charges
     - Abilities: Certain abilities allow Water Charges recovery or Cyclic Flow.
     
 Waterbending
+Waterbottle Water Charges
+Level 1
+Level 2
+Level 3
+Level 4
+Level 5
+Level 6
+Level 7
+Level 8
+Level 9
+<!-- BEGIN-AUTO-COLLECTION:Water Charges -->
+Backlinks
+
+  ./
+  └── Players Part
+      └── Rules
+          └── Bending Rules
+              └── Water
+                  ├── Cyclic Flow.md
+                  └── Waterbending Moves
+                      ├── Level 1
+                          ├── Piercing Water.md
+                          └── Puffy Clouds.md
+                      ├── Level 2
+                          ├── Freeze.md
+                          └── Ice Daggers.md
+                      └── Level 3
+                          └── Healing Mist.md
+
+<!-- END-AUTO-COLLECTION -->
 
 
 ---
@@ -335,6 +357,7 @@ Level 1
 
 Cyclic Flow
 Waterbending
+Level 1
 
 
 ---
@@ -361,6 +384,7 @@ Links:
 Tags:
 Waterbending
 Waterbending
+Level 1
 
 
 ---
@@ -395,6 +419,7 @@ Advanced Technique (Mastery Level):
 
 - Cleansing Veil: Condenses the mist into a swirling cloak around allies, granting them resistance to poison, disease, or negative spiritual effects for a short duration.
 Waterbending
+Level 1
 
 
 ---
@@ -422,6 +447,7 @@ Links:
 Tags:
 Waterbending
 Waterbending
+Level 1
 
 
 ---
@@ -451,6 +477,7 @@ Links:
 Tags:
 Waterbending
 Waterbending
+Level 1
 
 
 ---
@@ -467,6 +494,7 @@ Reaction
 Links:
 - Waterbending Level
 Waterbending
+Level 2
 
 
 ---
@@ -493,6 +521,7 @@ Links:
 Tags:
 Waterbending
 Waterbending
+Level 2
 
 
 ---
@@ -516,6 +545,7 @@ Links:
 Tags:
 Waterbendingx 
 Waterbending
+Level 2
 
 
 ---
@@ -545,6 +575,7 @@ Links:
 Tags:
 Waterbending
 Waterbending
+Level 2
 
 
 ---
@@ -568,6 +599,7 @@ Effect:
 
 Waterbending
 Cyclic Flow
+Level 3
 
 
 ---
@@ -575,8 +607,7 @@ Cyclic Flow
 ---
 
 
-Ice Wall (3rd Level Move)
-
+Level 3
 - Cost: 4 Water Charges.
 - Type: Action.
 - Range: 60 ft.
@@ -592,6 +623,7 @@ Links:
 Tags:
 Waterbending
 Waterbending
+Level 3
 
 
 ---
@@ -615,6 +647,7 @@ Tags:
 Waterbending
 
 Waterbending
+Level 3
 
 
 ---
@@ -633,6 +666,7 @@ Waterbending
 Tags:
 Waterbending
 Waterbending
+Level 3
 
 
 ---
@@ -656,6 +690,7 @@ Waterbending
 freezing
 Immobilisation 
 Waterbending
+Level 4
 
 
 ---

@@ -4,8 +4,6 @@
 ## Backlinks
 
   ./
-  ├── graphs
-      └── [[wikigraph_treemap.html]]
   └── Players Part
       ├── PCs
           └── Mahogany
@@ -17,11 +15,11 @@
               ├── Air
                   └── Airbending Moves
                       ├── [[Emergency Air Push.md]]
-                      └── Level 1 Moves
+                      └── Level 1
                           └── [[Air Blade.md]]
               ├── Earth
                   ├── Earthbending Moves
-                      ├── Level 1 Moves
+                      ├── Level 1
                           └── [[Earth Brace.md]]
                       └── Level 2 Moves
                           ├── [[Gravel Vortex.md]]
@@ -34,9 +32,9 @@
                           └── [[Cantrips.md]]
               └── Water
                   ├── Waterbending Moves
-                      ├── Level 2 Moves
+                      ├── Level 2
                           └── [[Freeze.md]]
-                      └── Level 3 Moves
+                      └── Level 3
                           └── [[Icicle Ammunition.md]]
                   └── [[Waterbending rules.md]]
           ├── Non Bending Rules
@@ -49,6 +47,11 @@
           └── [[Teamwork Moves.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+
+
+
 
 
 

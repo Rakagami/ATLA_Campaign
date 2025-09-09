@@ -4,7 +4,7 @@
 ## Backlinks
 
   ./
-  ├── Players Part
+  └── Players Part
       └── Rules
           └── Bending Rules
               ├── Earth
@@ -12,7 +12,7 @@
                       ├── Base Moves
                           ├── [[Earth Shift.md]]
                           └── [[Stone Knuckles.md]]
-                      ├── Level 1 Moves
+                      ├── Level 1
                           ├── [[Earth Brace.md]]
                           └── [[Rock Hurl.md]]
                       ├── Level 2 Moves
@@ -36,9 +36,13 @@
               └── Team-up Moves
                   └── Air-Earth
                       └── [[Sandstream.md]]
-  └── [[Wiki_File_System_Manager.py]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+
+
+
 
 
 

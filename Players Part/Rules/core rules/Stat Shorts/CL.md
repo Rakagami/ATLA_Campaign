@@ -13,11 +13,11 @@ Character Level. This will be important to scale moves.
           ├── Bending Rules
               ├── Air
                   └── Airbending Moves
-                      └── Level 3 Moves
+                      └── Level 3
                           └── [[Hovering Hands.md]]
               └── Water
                   └── Waterbending Moves
-                      └── Level 2 Moves
+                      └── Level 2
                           └── [[Ice Daggers.md]]
           ├── core rules
               └── Stat Shorts
@@ -29,6 +29,11 @@ Character Level. This will be important to scale moves.
                       └── [[EP.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+
+
+
 
 
 

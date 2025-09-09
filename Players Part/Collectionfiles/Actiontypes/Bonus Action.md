@@ -4,8 +4,6 @@
 ## Backlinks
 
   ./
-  ├── graphs
-      └── [[wikigraph_treemap.html]]
   └── Players Part
       ├── PCs
           └── Mahogany
@@ -16,9 +14,9 @@
           ├── Bending Rules
               ├── Air
                   └── Airbending Moves
-                      ├── Level 1 Moves
+                      ├── Level 1
                           └── [[Airdash.md]]
-                      └── Level 3 Moves
+                      └── Level 4
                           └── [[Cyclone Shield.md]]
               ├── Earth
                   └── Earthbending Moves
@@ -55,6 +53,11 @@
                           └── [[Enhanced Reflexes.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
+
+
+
+
 
 
 

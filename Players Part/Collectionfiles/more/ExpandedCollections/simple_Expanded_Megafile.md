@@ -38,6 +38,7 @@ Effects:
 	Create a swirling vortex of air around you to deflect projectiles and disperse lingering Damgage effects.
 
 Airbending
+Level 2
 
 
 

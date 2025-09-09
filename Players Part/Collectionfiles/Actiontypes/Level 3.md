@@ -1,0 +1,37 @@
+#Collectionfile 
+<!-- BEGIN-AUTO-COLLECTION:Level 3 -->
+## Backlinks
+
+  ./
+  └── Players Part
+      └── Rules
+          └── Bending Rules
+              ├── Air
+                  ├── Airbending Moves
+                      ├── Level 1
+                          └── [[Tail Wind.md]]
+                      └── Level 3
+                          └── [[Hovering Hands.md]]
+                  └── Mechanics
+                      └── [[Airbending Slot.md]]
+              ├── Earth
+                  └── [[Earthbending Slot.md]]
+              ├── Fire
+                  └── [[Firebending Slot.md]]
+              ├── Team-up Moves
+                  └── Air-Fire
+                      └── [[Heat Mirage.md]]
+              └── Water
+                  ├── [[Water Charges.md]]
+                  └── Waterbending Moves
+                      └── Level 3
+                          ├── [[Healing Mist.md]]
+                          ├── [[Ice Wall.md]]
+                          ├── [[Icicle Ammunition.md]]
+                          └── [[Surfing.md]]
+
+<!-- END-AUTO-COLLECTION -->
+
+
+
+
