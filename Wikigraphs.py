@@ -29,6 +29,27 @@ DEFAULT_EXCLUDES = {".git", "node_modules", ".obsidian", "__pycache__", "venv", 
 DEFAULT_EXTS = {".md", ".markdown", ".txt"}
 
 
+def hsv_to_hex(h: float, s: float, v: float) -> str:
+    """Convert HSV (h in [0,1), s,v in [0,1]) to a hex color string like '#rrggbb'."""
+    # normalize hue into [0,1)
+    hh = h % 1.0
+    r, g, b = colorsys.hsv_to_rgb(hh, s, v)
+    return '#{0:02x}{1:02x}{2:02x}'.format(int(r * 255), int(g * 255), int(b * 255))
+
+
+# Hardcoded recolors you want preserved across runs. Each entry is a tuple
+# (node_id_or_suffix, hex_color). Node ids are the same ids used by the
+# visualization (directories end with '/'); suffix matching is supported.
+# Example:
+# HARDCODED_RECOLORS = [("Players Part/Rules/Bending Rules/Fire/", "#ff0000")]
+HARDCODED_RECOLORS: List[Tuple[str, str]] = []
+
+# Set of node ids that are protected from being overwritten by the normal
+# hue-assignment logic. When a recolor is applied with protect=True the
+# node and its descendants are added here.
+protected_ids: set = set()
+
+
 def gather_file_tree(root: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EXCLUDES) -> Tuple[Dict[str, int], Dict[str, str], Dict[str, str]]:
     """Return a mapping of path parts joined by '/' to aggregated size in bytes.
 
@@ -142,7 +163,7 @@ def build_plotly_lists(sizes: Dict[str, int], root_label: str = "root") -> Tuple
     return ids, labels, parents, values
 
 
-def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EXCLUDES, mode: str = 'size', embed_js: bool = False) -> None:
+def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EXCLUDES, mode: str = 'size', embed_js: bool = False, child_spread: float = 0.35, spread_growth: float = 1.0, recolor_list: List[str] | None = None) -> None:
     # mode: 'size' uses file byte sizes, 'count' counts each file as 1
     sizes, contents, raw_contents = gather_file_tree(root, exts=exts, excludes=excludes)
 
@@ -344,16 +365,401 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
             h = h + '...'
         treemap_hovertexts.append(h)
 
-    # Assign a per-node color derived from a stable MD5 hash of the node id.
-    # This produces 'randomized' colors while remaining deterministic across runs.
-    def id_to_hex(node_id: str) -> str:
-        hval = int(hashlib.md5(node_id.encode('utf-8')).hexdigest()[:8], 16) / 0xffffffff
-        # scramble the hue using the golden ratio to avoid clustering
-        hue = (hval * 0.61803398875) % 1.0
-        r, g, b = colorsys.hsv_to_rgb(hue, 0.55, 0.95)
-        return '#{0:02x}{1:02x}{2:02x}'.format(int(r * 255), int(g * 255), int(b * 255))
+    # Hierarchical gradient: split the hue range for each parent among its
+    # immediate children, then recurse so leaves receive colors from their
+    # final subrange. Deterministic and stable across runs.
+    colors_by_id: Dict[str, str] = {}
+    parent_children: Dict[str, List[str]] = {}
+    for node_id, parent_id in zip(ids, parents):
+        parent_children.setdefault(parent_id, []).append(node_id)
 
-    colors: List[str] = [id_to_hex(n) for n in ids]
+    # Count descendant leaf files for weighting
+    desc_cache: Dict[str, int] = {}
+
+    def descendant_leaves(node_id: str) -> int:
+        if node_id in desc_cache:
+            return desc_cache[node_id]
+        children = parent_children.get(node_id, [])
+        if not children:
+            # leaf (file) counts as 1
+            desc_cache[node_id] = 1
+            return 1
+        total = 0
+        for c in children:
+            total += descendant_leaves(c)
+        # ensure every subtree has at least weight 1
+        desc_cache[node_id] = max(1, total)
+        return desc_cache[node_id]
+
+    # Deterministic gaussian sampler for child centers. Moved out so it can be
+    # reused by recolor_subtree.
+    def deterministic_child_center(parent_id: str, child_id: str, idx: int, center: float, spread: float) -> float:
+        key = f"{parent_id}||{child_id}||{idx}"
+        digest = hashlib.md5(key.encode('utf-8')).hexdigest()
+        # use two 8-hex chunks as uint32
+        u1 = int(digest[0:8], 16)
+        u2 = int(digest[8:16], 16)
+        # map to (0,1]
+        U1 = (u1 + 1) / (2**32 + 2)
+        U2 = (u2 + 1) / (2**32 + 2)
+        # Box-Muller -> standard normal
+        import math
+        z = math.sqrt(-2.0 * math.log(U1)) * math.cos(2.0 * math.pi * U2)
+        # sigma chosen so ~99.7% of values fall within +/- spread/2
+        sigma = (spread / 6.0) if spread > 0 else 0.0
+        raw = center + z * sigma
+        # normalize to [0,1)
+        def norm(x: float) -> float:
+            return x % 1.0
+        val = norm(raw)
+        # compute signed circular delta from parent center in [-0.5,0.5)
+        delta = ((val - center + 0.5) % 1.0) - 0.5
+        maxd = spread / 2.0
+        if delta > maxd:
+            delta = maxd
+        if delta < -maxd:
+            delta = -maxd
+        return norm(center + delta)
+
+    def recolor_subtree(node_id: str, center: float, spread: float, sat_override: float | None = None, val_override: float | None = None, level: int = 0, hex_override: str | None = None, protect: bool = False) -> None:
+        """Recursively assign colors to node and its descendants.
+
+        If hex_override is provided and valid it will be used for each node in
+        the subtree. If protect is True the node ids will be added to
+        `protected_ids` so `assign_hues` will not overwrite them.
+        """
+        # assign color for this node
+        try:
+            if hex_override and re.match(r'^#[0-9a-fA-F]{6}$', hex_override):
+                colors_by_id[node_id] = hex_override.lower()
+            else:
+                hue = center % 1.0
+                if sat_override is not None and val_override is not None:
+                    sat = sat_override
+                    val = val_override
+                else:
+                    if node_id.endswith('/'):
+                        sat, val = 0.40, 0.92
+                    else:
+                        sat, val = 0.55, 0.95
+                colors_by_id[node_id] = hsv_to_hex(hue, sat, val)
+            if protect:
+                protected_ids.add(node_id)
+        except Exception:
+            colors_by_id.setdefault(node_id, '#dddddd')
+
+        children = parent_children.get(node_id, [])
+        if not children:
+            return
+
+        # compute weights proportional to descendant leaf counts
+        weights = [max(1, descendant_leaves(c)) for c in children]
+        total_weight = sum(weights) or len(children)
+        left = (center - spread / 2.0) % 1.0
+        acc = 0.0
+        for idx, child in enumerate(children):
+            w = weights[idx]
+            frac = w / total_weight
+            child_span = spread * frac
+            # compute child center using deterministic gaussian around parent center
+            try:
+                child_center = deterministic_child_center(node_id, child, idx, center, spread)
+            except Exception:
+                child_center_rel = acc + child_span / 2.0
+                child_center = (left + child_center_rel) % 1.0
+            acc += child_span
+            # recurse
+            next_spread = min(1.0, spread * spread_growth)
+            recolor_subtree(child, child_center, next_spread, sat_override=None, val_override=None, level=level + 1, hex_override=hex_override, protect=protect)
+
+    def assign_hues(node_id: str, center: float, spread: float, level: int = 0) -> None:
+        children = parent_children.get(node_id, [])
+        # Ensure the current node (folder or file) has a color based on the center
+        try:
+            mid_hue_node = center % 1.0
+            # Directories get a slightly lower saturation/value so they're visually
+            # distinguishable from file leaves. Files keep the brighter values.
+            if node_id.endswith('/'):
+                sat = 0.40
+                val = 0.92
+            else:
+                sat = 0.55
+                val = 0.95
+            # Do not overwrite colors for protected ids
+            if node_id not in protected_ids:
+                colors_by_id[node_id] = hsv_to_hex(mid_hue_node, sat, val)
+        except Exception:
+            # fallback color
+            colors_by_id.setdefault(node_id, '#dddddd')
+    # Use the module-level deterministic_child_center (declared above)
+
+        # Special-case: Avatar Spirit Bridge subtree should be white -> near-white
+        # Only apply this when the node represents a directory to avoid matching
+        # filenames that contain the phrase.
+        if node_id.endswith('/') and 'avatar spirit bridge' in node_id.lower():
+            # Recolor the Avatar Spirit Bridge subtree to a white->grey range.
+            # Use low saturation and values from ~0.98 (white) down to ~0.82 (grey).
+            n = len(children)
+            for idx, child in enumerate(children):
+                frac = idx / (n - 1) if n > 1 else 0.5
+                value = 0.98 - frac * 0.16  # range ~0.98 -> ~0.82
+                sat = 0.02
+                # Recolor the full subtree under this child with the sat/value overrides
+                recolor_subtree(child, center, spread, sat_override=sat, val_override=value, level=level + 1)
+            return
+        # Special-case: if we're at a 'Bending Rules' folder, give the four
+        # primary element folders fixed hue subranges so they map to the
+        # requested color palettes. Only apply to directories.
+        if node_id.endswith('/') and 'bending rules' in node_id.lower():
+            # element -> (start_hue, end_hue)
+            element_ranges = {
+                # air: light cyan / very light blue
+                'air': (0.50, 0.58),
+                # water: deeper blue
+                'water': (0.66, 0.75),
+                # fire: middle of dark to bright red 
+                'fire': (0.98, 0.03),
+                # earth: dark green (center ~0.30-0.33)
+                'earth': (0.25, 0.35),
+                # Avatar Spirit Bridge: pale white-grey-ish )
+                'Avatar Spirit Bridge': (0.55, 0.62),
+            }
+            for child in children:
+                name = Path(child).name.lower()
+                matched = False
+                for key, (a, b) in element_ranges.items():
+                    if key in name:
+                        # handle wrap for fire (a > b)
+                        if a <= b:
+                            sub_start, sub_end = a, b
+                        else:
+                            # when range wraps, map it into two parts by shifting
+                            # values > a as >a..1 and 0..b; to keep it simple pick midpoint across wrap
+                            mid = ((a + (b + 1.0)) / 2.0) % 1.0
+                            sub_start = (mid - 0.02) % 1.0
+                            sub_end = (mid + 0.02) % 1.0
+                        # assign color and recurse
+                        mid_hue = ((sub_start + sub_end) / 2.0) % 1.0
+                        # compute span, handling wrap-around correctly
+                        span = (sub_end - sub_start) % 1.0
+                        # avoid zero span
+                        if span == 0:
+                            span = 0.04
+                        colors_by_id[child] = hsv_to_hex(mid_hue, 0.55, 0.95)
+                        # recolor full subtree under this child using the
+                        # mid_hue and span so all descendants get updated.
+                        recolor_subtree(child, mid_hue, span)
+                        matched = True
+                        break
+                if not matched:
+                    # fallback: neutral light gray range
+                    colors_by_id[child] = '#cccccc'
+                    recolor_subtree(child, 0.5, 0.5)
+            return
+        if not children:
+            # leaf node: pick center hue
+            hue = center % 1.0
+            colors_by_id[node_id] = hsv_to_hex(hue, 0.55, 0.95)
+            return
+        # compute weights proportional to descendant leaf counts
+        weights = [max(1, descendant_leaves(c)) for c in children]
+        total_weight = sum(weights) or len(children)
+        # left edge of the spread (handle wrap by staying in [0,1) arithmetic)
+        left = (center - spread / 2.0) % 1.0
+        acc = 0.0
+        for idx, child in enumerate(children):
+            w = weights[idx]
+            frac = w / total_weight
+            child_span = spread * frac
+            # compute child center using deterministic gaussian around parent center
+            try:
+                child_center = deterministic_child_center(node_id, child, idx, center, spread)
+            except Exception:
+                # fallback to proportional center
+                child_center_rel = acc + child_span / 2.0
+                child_center = (left + child_center_rel) % 1.0
+            acc += child_span
+            # assign mid color for the child
+            mid_hue = child_center
+            colors_by_id[child] = hsv_to_hex(mid_hue, 0.55, 0.95)
+            # next level spread grows/shrinks by spread_growth
+            next_spread = min(1.0, spread * spread_growth)
+            assign_hues(child, child_center, next_spread, level + 1)
+
+    # Start recursion from root '/'. Use configured child_spread and spread_growth
+    # Choose a deterministic root hue based on the vault (root) name so the
+    # overall palette isn't always the same light-blue.
+    try:
+        root_digest = hashlib.md5(str(root.name).encode('utf-8')).hexdigest()
+        root_center = int(root_digest[:8], 16) / float(2**32)
+    except Exception:
+        root_center = 0.5
+    assign_hues('/', root_center, child_spread, level=0)
+
+    # Helper: load and save recolor directives to a markdown file inside the
+    # vault root. The file is simple: lines matching 'path=#rrggbb' are used.
+    def load_recolor_md(p: Path) -> List[Tuple[str, str]]:
+        if not p.exists():
+            return []
+        out: List[Tuple[str, str]] = []
+        try:
+            txt = p.read_text(encoding='utf-8', errors='replace')
+        except Exception:
+            return []
+        for ln in txt.splitlines():
+            m = re.match(r'^\s*([^=]+)=\s*(#[0-9a-fA-F]{6})\s*$', ln)
+                
+            if m:
+                key = m.group(1).strip()
+                val = m.group(2).lower()
+                out.append((key, val))
+        return out
+
+    def write_recolor_md(p: Path, entries: List[Tuple[str, str]]) -> None:
+        try:
+            lines = ['# Wikigraph recolor settings', '', '<!-- lines of the form: path=#rrggbb -->', '']
+            for k, v in entries:
+                lines.append(f"{k}={v}")
+            p.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+        except Exception:
+            pass
+
+    # Apply any recolor directives passed via CLI --recolor entries. Expected
+    # format: 'node_id=#rrggbb' where node_id should match the ids used in the
+    # visualization (directories end with '/'). If a node_id matches multiple
+    # candidates, the exact match is preferred. Apply recolor_subtree so the
+    # override propagates to all descendants.
+    # Load persisted recolors from `color_recolors.md` in the vault root.
+    recolor_md_path = root.joinpath('color_recolors.md')
+    file_recolors = load_recolor_md(recolor_md_path) if recolor_md_path.exists() else HARDCODED_RECOLORS
+
+    # First apply file-based (protected) recolors. Match and apply to all
+    # candidate ids (exact, suffix, etc.) so every folder with that name is
+    # recolored, not just the first occurrence.
+    for node_part, hex_part in file_recolors:
+        if not re.match(r'^#[0-9a-fA-F]{6}$', hex_part):
+            continue
+        npart = node_part.strip('/').lower()
+        targets: List[str] = []
+        # exact id match
+        if node_part in ids:
+            targets.append(node_part)
+        # case-insensitive exact matches
+        for cand in ids:
+            if cand.lower() == node_part.lower() and cand not in targets:
+                targets.append(cand)
+        # suffix matches (e.g., 'Rules/Bending Rules/Fire/') -> match any path that endswith that
+        for cand in ids:
+            if cand.strip('/').lower().endswith(npart) and cand not in targets:
+                targets.append(cand)
+        # apply to all found targets
+        for target in targets:
+            recolor_subtree(target, 0.5, 0.5, hex_override=hex_part.lower(), protect=True)
+
+    # Then apply CLI recolors (these are not protected by default).
+    # We support a bare --recolor (const='__STORED__') which means "apply
+    # stored recolors only"; in that case we do not merge/write the recolor
+    # file.
+    cli_entries: List[str] = []
+    stored_flag = False
+    if recolor_list:
+        for d in recolor_list:
+            if d == '__STORED__':
+                stored_flag = True
+            elif d:
+                cli_entries.append(d)
+
+    # If there are CLI recolor entries, process them and persist the file.
+    if cli_entries:
+        for directive in cli_entries:
+            if '=' not in directive:
+                continue
+            node_part, hex_part = directive.split('=', 1)
+            node_part = node_part.strip()
+            hex_part = hex_part.strip()
+            if not re.match(r'^#[0-9a-fA-F]{6}$', hex_part):
+                # skip invalid hex
+                continue
+            # find candidate id in ids: exact match preferred, fallback to case-insensitive match
+            target = None
+            if node_part in ids:
+                target = node_part
+            else:
+                lowered = node_part.lower()
+                for cand in ids:
+                    if cand.lower() == lowered:
+                        target = cand
+                        break
+            if not target:
+                # allow matching by suffix of the node id (case-insensitive)
+                npart = node_part.strip('/').lower()
+                for cand in ids:
+                    if cand.strip('/').lower().endswith(npart):
+                        target = cand
+                        break
+            if not target:
+                # allow matching by label (basename) if provided
+                for cand in ids:
+                    if Path(cand).name.lower() == node_part.lower().strip('/'):
+                        target = cand
+                        break
+            if node_part:
+                npart = node_part.strip('/').lower()
+                targets: List[str] = []
+                # exact id
+                if node_part in ids:
+                    targets.append(node_part)
+                # case-insensitive exact
+                lowered = node_part.lower()
+                for cand in ids:
+                    if cand.lower() == lowered and cand not in targets:
+                        targets.append(cand)
+                # suffix matches
+                for cand in ids:
+                    if cand.strip('/').lower().endswith(npart) and cand not in targets:
+                        targets.append(cand)
+                # basename match fallback
+                for cand in ids:
+                    if Path(cand).name.lower() == node_part.lower().strip('/') and cand not in targets:
+                        targets.append(cand)
+                # apply recolor to each target and merge into recolor file once
+                if targets:
+                    for target in targets:
+                        recolor_subtree(target, 0.5, 0.5, hex_override=hex_part.lower(), protect=False)
+                    # Merge into file_recolors (overwrite existing entry for same key)
+                    k = node_part.strip('/')
+                    replaced = False
+                    for i, (kk, vv) in enumerate(file_recolors):
+                        if kk.strip('/').lower() == k.lower():
+                            file_recolors[i] = (node_part, hex_part.lower())
+                            replaced = True
+                            break
+                    if not replaced:
+                        file_recolors.append((node_part, hex_part.lower()))
+        # After processing CLI recolors, persist updates to the recolor md file
+        try:
+            write_recolor_md(recolor_md_path, file_recolors)
+        except Exception:
+            pass
+    else:
+        # No CLI recolor entries; if user passed bare --recolor (stored_flag)
+        # we simply applied file-based recolors above and we do not write the file.
+        if stored_flag:
+            pass
+
+    # Ensure every id has a color; generate a deterministic fallback for any
+    # node that wasn't assigned during the recursive hue allocation. This
+    # guarantees the same coloring logic (deterministic, hue-based) applies
+    # to all filetypes and to both the sunburst and treemap outputs.
+    for n in ids:
+        if n not in colors_by_id or colors_by_id.get(n) == '#dddddd':
+            # Use md5 of the node id to get a stable pseudo-random hue in [0,1)
+            digest = hashlib.md5(n.encode('utf-8')).hexdigest()
+            h = int(digest[:8], 16) / float(2**32)
+            colors_by_id[n] = hsv_to_hex(h % 1.0, 0.55, 0.95)
+
+    # Final ordered colors list aligned with ids
+    colors: List[str] = [colors_by_id.get(n, '#dddddd') for n in ids]
 
     # Prepare short cell text for treemap nodes (sanitized and trimmed)
     cell_texts: List[str] = []
@@ -529,6 +935,13 @@ def parse_args():
     p.add_argument("--exclude", action='append', help="Directory names to exclude (name only). Can be provided multiple times")
     p.add_argument("--embed", action='store_true', help="Embed Plotly JS into the HTML (works offline)")
     p.add_argument("--mode", choices=['size', 'count'], default='size', help="Use file size (bytes) or file count for values")
+    p.add_argument("--child-spread", type=float, default=0.35, help="Initial hue spread allocated to root children (0..1)")
+    p.add_argument("--spread-growth", type=float, default=1.0, help="Multiplier applied to spread each level (>=0)")
+    # --recolor can be provided multiple times. If provided without a value
+    # (i.e. `--recolor` alone) it will apply stored recolors from
+    # color_recolors.md. If provided with values, each should be
+    # path=#rrggbb and will be applied and merged into the recolor file.
+    p.add_argument("--recolor", action='append', nargs='?', const='__STORED__', help="Recolor a node subtree with a hex color: 'path=#rrggbb'. Provide no value (just --recolor) to apply stored recolors from color_recolors.md.")
     return p.parse_args()
 
 
@@ -539,7 +952,7 @@ def main():
     exts = DEFAULT_EXTS if not args.ext else {e if e.startswith('.') else '.' + e for e in args.ext}
     excludes = DEFAULT_EXCLUDES.union(set(args.exclude or []))
     print(f"Scanning: {root}\nExtensions: {sorted(exts)}\nExcludes: {sorted(excludes)}\nMode: {args.mode}\nEmbed JS: {args.embed}\nWriting to: {outdir}")
-    make_graphs(root, outdir, exts=exts, excludes=excludes, mode=args.mode, embed_js=args.embed)
+    make_graphs(root, outdir, exts=exts, excludes=excludes, mode=args.mode, embed_js=args.embed, child_spread=args.child_spread, spread_growth=args.spread_growth, recolor_list=args.recolor)
 
 
 if __name__ == '__main__':

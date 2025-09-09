@@ -165,7 +165,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Players Part/Rules/Bending Rules/Earth/Earthbending Slot.md",
+                "file": "color_recolors.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -180,7 +180,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Earthbending Slot"
+              "title": "color_recolors"
             }
           }
         ],
@@ -285,7 +285,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Players Part/Rules/Bending Rules/Earth/Earthbending Slot.md",
+                "file": "color_recolors.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -295,7 +295,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Earthbending Slot"
+              "title": "Backlinks for color_recolors"
             }
           },
           {
@@ -364,6 +364,11 @@
   },
   "active": "8f41c7f6c3321352",
   "lastOpenFiles": [
+    "Collectionfile.md",
+    "Wiki_File_System_Manager – Manual.md",
+    "Players Part/Rules/Bending Rules/Earth/Earthbending Slot.md",
+    "color_recolors.md",
+    "__pycache__/Wikigraphs.cpython-312.pyc",
     "Players Part/Rules/Bending Rules/Earth/Earthbending rules.md",
     "Players Part/Rules/Teamwork Moves.md",
     "Players Part/Rules/ExpandedCollections/simple_Expanded_Megafile.md",
@@ -385,21 +390,16 @@
     "Players Part/Collectionfiles/Elemental Bending/Waterbending.md",
     "graphs/wikigraph_treemap.html",
     "graphs/wikigraph_sunburst.html",
-    "Wiki_File_System_Manager – Manual.md",
     "Players Part/Collectionfiles/Elemental Bending/Airbending.md",
     "Players Part/Rules/Bending Rules/Avatar Spirit Bridge/Avatar Spirit Bridge Level.md",
     "Players Part/Rules/Bending Rules/Air/Airbending Moves/Level 1 Moves/Air Blade.md",
     "Players Part/Rules/Bending Rules/Water/Water Charges.md",
     "Players Part/Rules/core rules/Stat Shorts/CL.md",
-    "Players Part/Collectionfiles/more/NPC.md",
-    "Players Part/Rules/Bending Rules/Air/Mechanics/Airbending DC.md",
-    "Players Part/Collectionfiles/Actiontypes/Action.md",
     "__pycache__/Wiki_File_System_Manager.cpython-312.pyc",
     "__pycache__",
     "graphs/wikigraph_file_size_histogram.html",
     "graphs/wikigraph_top_20_dirs.html",
     "graphs/wikigraph_top_20_files.html",
-    "graphs",
     "DMs Part/Story/Airbender Nomands/3atljldbkbk41.jpg",
     "DMs Part/Story/Airbender Nomands/1664411181325.jpg",
     "DMs Part/Locations/Visual References/Pasted image 20250104171805.png",
