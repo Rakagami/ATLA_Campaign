@@ -1,3 +1,9 @@
+![[wikigraph_treemap.html]]
+
+---
+---
+---
+
 ![[Air Vortex.md]]
 
 ---

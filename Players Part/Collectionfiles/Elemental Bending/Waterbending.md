@@ -4,6 +4,8 @@
 ## Backlinks
 
   ./
+  ├── graphs
+      └── [[wikigraph_treemap.html]]
   └── Players Part
       └── Rules
           └── Bending Rules
@@ -47,6 +49,7 @@
                   └── [[Waterbottle Water Charges.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

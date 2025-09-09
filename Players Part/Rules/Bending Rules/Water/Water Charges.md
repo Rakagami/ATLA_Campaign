@@ -32,6 +32,8 @@ Water Charges represent the amount of water available for a water-bender to mani
 ## Backlinks
 
   ./
+  ├── graphs
+      └── [[wikigraph_treemap.html]]
   └── Players Part
       └── Rules
           └── Bending Rules
@@ -48,3 +50,4 @@ Water Charges represent the amount of water available for a water-bender to mani
                           └── [[Healing Mist.md]]
 
 <!-- END-AUTO-COLLECTION -->
+

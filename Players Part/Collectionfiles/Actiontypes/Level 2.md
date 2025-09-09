@@ -3,6 +3,8 @@
 ## Backlinks
 
   ./
+  ├── graphs
+      └── [[wikigraph_treemap.html]]
   └── Players Part
       └── Rules
           └── Bending Rules
@@ -30,6 +32,7 @@
                           └── [[Water Tentacles.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

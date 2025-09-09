@@ -3,6 +3,8 @@
 ## Backlinks
 
   ./
+  ├── graphs
+      └── [[wikigraph_treemap.html]]
   └── Players Part
       └── Rules
           └── Bending Rules
@@ -28,6 +30,7 @@
                           └── [[Shockfreeze.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 

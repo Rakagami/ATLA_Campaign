@@ -3,6 +3,8 @@
 ## Backlinks
 
   ./
+  ├── graphs
+      └── [[wikigraph_treemap.html]]
   └── Players Part
       └── Rules
           └── Bending Rules
@@ -34,6 +36,7 @@
                           └── [[Water Whip.md]]
 
 <!-- END-AUTO-COLLECTION -->
+
 
 
 
