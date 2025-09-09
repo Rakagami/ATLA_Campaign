@@ -986,9 +986,9 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
             return
 
     # Write additional charts
-    write_top_files(20)
-    write_top_dirs(20)
-    write_histogram(50)
+    #write_top_files(20)
+    #write_top_dirs(20)
+    #write_histogram(50)
 
 
 def parse_args():
