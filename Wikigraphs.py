@@ -948,9 +948,8 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
             out = outdir / f"wikigraph_top_{n}_files.html"
             fig.write_html(str(out), include_plotlyjs='cdn' if not embed_js else True)
         else:
-            # Fallback: basic text file
-            out = outdir / f"wikigraph_top_{n}_files.txt"
-            out.write_text('\n'.join(f"{v}\t{k}" for k, v in top))
+            # If plotly.express is not available, do not produce a fallback text file.
+            return
 
     # Top N directories (directories end with '/')
     def write_top_dirs(n: int = 20):
@@ -966,8 +965,8 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
             out = outdir / f"wikigraph_top_{n}_dirs.html"
             fig.write_html(str(out), include_plotlyjs='cdn' if not embed_js else True)
         else:
-            out = outdir / f"wikigraph_top_{n}_dirs.txt"
-            out.write_text('\n'.join(f"{v}\t{k}" for k, v in top))
+            # No fallback when plotly.express is missing
+            return
 
     # Histogram of file sizes
     def write_histogram(bins: int = 50):
@@ -983,8 +982,8 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
             out = outdir / "wikigraph_file_size_histogram.html"
             fig.write_html(str(out), include_plotlyjs='cdn' if not embed_js else True)
         else:
-            out = outdir / "wikigraph_file_size_histogram.txt"
-            out.write_text('\n'.join(str(v) for v in vals))
+            # Skip creating a text histogram if plotly.express isn't available
+            return
 
     # Write additional charts
     write_top_files(20)
