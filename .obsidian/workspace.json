@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/Level 3.md",
+                "file": "Wikigraphs_MANUAL.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -54,7 +54,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Level 3"
+              "title": "Wikigraphs_MANUAL"
             }
           },
           {
@@ -237,7 +237,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Wiki_File_System_Manager – Manual.md",
+                "file": "Wikigraphs_MANUAL.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -252,7 +252,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Wiki_File_System_Manager – Manual"
+              "title": "Wikigraphs_MANUAL"
             }
           },
           {
@@ -405,7 +405,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Players Part/Collectionfiles/Actiontypes/Level 3.md",
+                "file": "Wikigraphs_MANUAL.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -415,7 +415,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Level 3"
+              "title": "Backlinks for Wikigraphs_MANUAL"
             }
           },
           {
@@ -484,9 +484,12 @@
   },
   "active": "5331686191fc5f9d",
   "lastOpenFiles": [
+    "Wiki_File_System_Manager – MANUAL.md",
+    "color_recolors.md",
+    "Wikigraphs_MANUAL.md",
+    "Players Part/Collectionfiles/Actiontypes/Level 3.md",
     "Players Part/Collectionfiles/Actiontypes/Level 1.md",
     "Players Part/Collectionfiles/Actiontypes/Level 2.md",
-    "color_recolors.md",
     "Players Part/Rules/Bending Rules/Water/ExpandedCollections/ExpandedWater Charges.md",
     "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 3/Ice Wall.md",
     "Players Part/Rules/Bending Rules/Water/Waterbending Moves/Level 3/Healing Mist.md",
@@ -508,9 +511,6 @@
     "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedLevel 5.md",
     "Players Part/Collectionfiles/Actiontypes/Level 5.md",
     "Players Part/Collectionfiles/Actiontypes/Level 4.md",
-    "Players Part/Collectionfiles/Actiontypes/Level 6.md",
-    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedLevel 8.md",
-    "Players Part/Collectionfiles/Actiontypes/ExpandedCollections/ExpandedLevel 7.md",
     "Players Part/Rules/Bending Rules/Air/Airbending Moves/Level 4",
     "__pycache__/Wikigraphs.cpython-312.pyc",
     "Players Part/Rules/ExpandedCollections",

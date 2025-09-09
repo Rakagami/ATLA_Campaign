@@ -22,6 +22,7 @@ from pathlib import Path
 import colorsys
 import hashlib
 import re
+import fnmatch
 from typing import Dict, List, Tuple
 
 
@@ -62,9 +63,67 @@ def gather_file_tree(root: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EXCLUDES) -
     # Raw file text (un-sanitized) kept to detect special markers like '![['
     raw_contents: Dict[str, str] = {}
 
+    # Load .gitignore patterns from the vault root (if present) to mirror repo ignores
+    gitignore_path = root.joinpath('.gitignore')
+    git_patterns: List[str] = []
+    if gitignore_path.exists():
+        try:
+            raw = gitignore_path.read_text(encoding='utf-8', errors='replace')
+            for ln in raw.splitlines():
+                ln = ln.strip()
+                if not ln or ln.startswith('#'):
+                    continue
+                git_patterns.append(ln)
+        except Exception:
+            git_patterns = []
+
+    def matches_gitignore(rel_str: str, parts: List[str]) -> bool:
+        # Basic support for the simple patterns used in the project's .gitignore
+        for pat in git_patterns:
+            p = pat.strip()
+            if not p:
+                continue
+            # directory pattern like 'DMs Part/' or 'dir/'
+            if p.endswith('/'):
+                name = p.rstrip('/')
+                # match if any path part equals the directory name or rel path starts with it
+                if any(part == name for part in parts):
+                    return True
+                if rel_str.startswith(name + os.sep):
+                    return True
+            elif '/' in p:
+                # pattern contains a path component; match against the relative path
+                if fnmatch.fnmatch(rel_str, p):
+                    return True
+            else:
+                # filename/glob pattern (e.g. *.bak, *.zip, .DS_Store)
+                if fnmatch.fnmatch(parts[-1], p):
+                    return True
+        return False
+
     for p in root.rglob("*"):
-        # Skip excluded directories
-        if any(part in excludes for part in p.parts):
+        # Build relative path and parts for matching
+        try:
+            rel = p.relative_to(root)
+            rel_str = str(rel)
+            parts = list(rel.parts)
+        except Exception:
+            rel_str = str(p)
+            parts = list(p.parts)
+
+        # Skip excluded directories by simple name matching
+        if any(part in excludes for part in parts):
+            continue
+        # Explicitly ignore common auto-generated collection/expanded files and folders
+        low_parts = [p.lower() for p in parts]
+        # Skip files or dirs that contain 'collectionfile' (singular) or 'collectionfiles' (plural)
+        if any('collectionfile' in lp or 'collectionfiles' in lp for lp in low_parts):
+            continue
+        # Skip ExpandedCollections and simple/expanded megafiles
+        if any('expandedcollections' in lp or 'simple_expanded_megafile' in lp or 'expanded' == lp for lp in low_parts):
+            continue
+        # Skip files/dirs matched by .gitignore patterns (when present)
+        if git_patterns and matches_gitignore(rel_str, parts):
             continue
         if p.is_file() and (not exts or p.suffix.lower() in exts):
             try:

@@ -6,7 +6,11 @@ This manual explains usage, CLI options, recolor persistence, and a few implemen
 
 ## Example workflows
 
-- Regenerate graphs with a wider sibling hue spread (temporarily override default):
+- Regenerate graphs:
+
+```bash
+python3 Wikigraphs.py --root "$(pwd)" --out graphs
+```
 
 ```bash
 python3 Wikigraphs.py --root "$(pwd)" --out graphs --child-spread 0.7
