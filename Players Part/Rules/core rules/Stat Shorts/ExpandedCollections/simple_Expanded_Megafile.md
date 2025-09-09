@@ -88,6 +88,8 @@ Collectionfile
 Backlinks
 
   ./
+  ├── graphs
+      └── wikigraphtreemap.html
   └── Players Part
       ├── PCs
           └── Mahogany

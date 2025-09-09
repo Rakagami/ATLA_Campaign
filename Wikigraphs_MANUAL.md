@@ -1,4 +1,3 @@
-
 ## Purpose
 
 `Wikigraphs.py` scans an Obsidian-style vault (or any folder of markdown/text files) and writes Plotly Sunburst and Treemap HTML visualizations that show the directory/file hierarchy, sizes (or counts), and sanitized Markdown content inside nodes.
@@ -16,7 +15,7 @@ python3 Wikigraphs.py --root "$(pwd)" --out graphs --child-spread 0.7
 - Recolor every matching `Bending Rules/Fire` subtree to red and persist:
 
 ```bash
-python3 Wikigraphs.py --root "$(pwd)" --out graphs --recolor "Rules/Bending Rules/Fire/=#ff0000"
+python3 Wikigraphs.py --root "$(pwd)" --out graphs --recolor "Rules/Bending Rules/Fire/=#ffb3b3"
 ```
 
 - Apply stored recolors only without changing the recolor file:
@@ -24,7 +23,6 @@ python3 Wikigraphs.py --root "$(pwd)" --out graphs --recolor "Rules/Bending Rule
 ```bash
 python3 Wikigraphs.py --root "$(pwd)" --out graphs --recolor
 ```
-
 
 ## Requirements
 
@@ -93,8 +91,8 @@ path=#rrggbb
 Examples:
 
 ```
-/=#ff0000
-Players Part/Rules/Bending Rules/Fire/=#ff4500
+/=#ffb3b3
+Players Part/Rules/Bending Rules/Fire/=#ffb3b3
 ```
 
 Rules for matching recolor directives
@@ -148,7 +146,6 @@ If you want coarser or wider palettes, increase `--child-spread` (closer to 1.0 
 
 - The treemap intentionally shows the full sanitized `.md` file text inside cells (no truncation). Hovertext for sunburst and treemap is limited to ~1000 chars to keep the hover concise.
 - Embedded files `![[...]]` are inlined heuristically by filename/suffix lookup in the sanitized content index. If you need more robust embed resolution (frontmatter aliases, explicit path handling) the embed resolution helper can be extended.
-
 
 ## Contact / Next changes
 

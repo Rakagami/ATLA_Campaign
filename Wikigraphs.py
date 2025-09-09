@@ -438,10 +438,12 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
                     sat = sat_override
                     val = val_override
                 else:
-                    if node_id.endswith('/'):
-                        sat, val = 0.40, 0.92
-                    else:
-                        sat, val = 0.55, 0.95
+                        if node_id.endswith('/'):
+                            # pastel directories: lower saturation, high value (lighter)
+                            sat, val = 0.30, 0.98
+                        else:
+                            # pastel files: slightly higher saturation than dirs but still muted
+                            sat, val = 0.35, 0.98
                 colors_by_id[node_id] = hsv_to_hex(hue, sat, val)
             if protect:
                 protected_ids.add(node_id)
@@ -480,11 +482,13 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
             # Directories get a slightly lower saturation/value so they're visually
             # distinguishable from file leaves. Files keep the brighter values.
             if node_id.endswith('/'):
-                sat = 0.40
-                val = 0.92
+                # pastel directories
+                sat = 0.30
+                val = 0.98
             else:
-                sat = 0.55
-                val = 0.95
+                # pastel files
+                sat = 0.35
+                val = 0.98
             # Do not overwrite colors for protected ids
             if node_id not in protected_ids:
                 colors_by_id[node_id] = hsv_to_hex(mid_hue_node, sat, val)
@@ -545,7 +549,8 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
                         # avoid zero span
                         if span == 0:
                             span = 0.04
-                        colors_by_id[child] = hsv_to_hex(mid_hue, 0.55, 0.95)
+                        # use a pastel variant for element subtrees
+                        colors_by_id[child] = hsv_to_hex(mid_hue, 0.35, 0.98)
                         # recolor full subtree under this child using the
                         # mid_hue and span so all descendants get updated.
                         recolor_subtree(child, mid_hue, span)
@@ -756,7 +761,8 @@ def make_graphs(root: Path, outdir: Path, exts=DEFAULT_EXTS, excludes=DEFAULT_EX
             # Use md5 of the node id to get a stable pseudo-random hue in [0,1)
             digest = hashlib.md5(n.encode('utf-8')).hexdigest()
             h = int(digest[:8], 16) / float(2**32)
-            colors_by_id[n] = hsv_to_hex(h % 1.0, 0.55, 0.95)
+            # fallback pastel color for any unassigned node
+            colors_by_id[n] = hsv_to_hex(h % 1.0, 0.35, 0.98)
 
     # Final ordered colors list aligned with ids
     colors: List[str] = [colors_by_id.get(n, '#dddddd') for n in ids]
